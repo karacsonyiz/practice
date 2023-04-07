@@ -1,5 +1,6 @@
 package arrayofarrays;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 
 public class ArrayOfArraysMain {
@@ -10,6 +11,7 @@ public class ArrayOfArraysMain {
         arrayOfArraysMain.printArrayOfArrays(result);
         System.out.println(Arrays.deepToString(result));
         arrayOfArraysMain.triangularMatrix(3);
+        System.out.println(Arrays.deepToString(arrayOfArraysMain.getValues()));
     }
 
     public int[][] multiplicationTable(int size){
@@ -42,5 +44,14 @@ public class ArrayOfArraysMain {
             System.out.println();
         }
         return arr;
+    }
+
+    public int[][] getValues(){
+        int [][] months = new int[12][];
+        for(int i = 0;i < 12;i++){
+            LocalDate localDate = LocalDate.of(1994, i+1, 15);
+            months[i] = new int[localDate.lengthOfMonth()];
+        }
+        return months;
     }
 }
