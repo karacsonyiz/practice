@@ -12,6 +12,12 @@ public class ArraysMain {
         System.out.println(arraysMain.multiplicationTableAsString(3));
         System.out.println(arraysMain.sameTempValues(new double[]{1.4,2,3.1},new double[]{1,2,3}));
         System.out.println(arraysMain.sameTempValues(new double[]{1.4,2,3.1},new double[]{1.4,2,3.1}));
+        int[] a = new int[]{1,2,3,4,5};
+        int[] b = new int[]{5,4,3,2,1};
+        System.out.println(arraysMain.wonLottery(a,b));
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
+
     }
 
     public String numberOfDaysAsString(){
@@ -35,5 +41,13 @@ public class ArraysMain {
 
     public boolean sameTempValues(double[] day,double[] anotherDay){
         return Arrays.equals(day,anotherDay);
+    }
+
+    public boolean wonLottery(int[] a,int[] b){
+        int [] a1 = Arrays.copyOf(a,a.length);
+        int [] b1 = Arrays.copyOf(b,b.length);
+        Arrays.sort(a1);
+        Arrays.sort(b1);
+        return Arrays.equals(a1,b1);
     }
 }
