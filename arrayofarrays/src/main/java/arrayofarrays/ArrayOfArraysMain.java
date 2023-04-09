@@ -50,6 +50,7 @@ public class ArrayOfArraysMain {
         int [][] months = new int[12][];
         for(int i = 0;i < 12;i++){
             LocalDate localDate = LocalDate.of(1994, i+1, 15);
+            System.out.println(localDate.lengthOfMonth());
             months[i] = new int[localDate.lengthOfMonth()];
         }
         return months;
