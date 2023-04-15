@@ -1,6 +1,5 @@
 package introexception.trainer;
 
-import introexception.trainer.TrainerAgeValidator;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

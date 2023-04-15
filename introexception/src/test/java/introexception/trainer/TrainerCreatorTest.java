@@ -1,6 +1,5 @@
 package introexception.trainer;
 
-import introexception.trainer.TrainerCreator;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

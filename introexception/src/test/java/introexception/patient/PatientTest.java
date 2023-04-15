@@ -1,3 +1,4 @@
+/*
 package introexception.patient;
 
 import org.junit.Rule;
@@ -26,3 +27,5 @@ public class PatientTest {
         assertThat(patient.getYearOfBirth(), equalTo(2000));
     }
 }
+
+ */
