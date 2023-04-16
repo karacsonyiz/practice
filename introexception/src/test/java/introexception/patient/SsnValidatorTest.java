@@ -1,4 +1,3 @@
-/*
 package introexception.patient;
 
 import org.junit.Rule;
@@ -9,6 +8,9 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class SsnValidatorTest {
+
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void testSsnLength() {
@@ -30,5 +32,3 @@ public class SsnValidatorTest {
         assertThat(new SsnValidator().isValidSsn("123456788"), is(true));
     }
 }
-
- */

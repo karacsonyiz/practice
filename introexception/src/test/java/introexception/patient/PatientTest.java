@@ -1,4 +1,3 @@
-/*
 package introexception.patient;
 
 import org.junit.Rule;
@@ -16,7 +15,7 @@ public class PatientTest {
     @Test
     public void invalidSsn() {
         expectedException.expect(IllegalArgumentException.class);
-        new Patient("John Doe", "abc", 2000);
+        new Patient("John Doe", "abc", 1864);
     }
 
     @Test
@@ -27,5 +26,3 @@ public class PatientTest {
         assertThat(patient.getYearOfBirth(), equalTo(2000));
     }
 }
-
- */
