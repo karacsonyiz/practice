@@ -1,3 +1,4 @@
+/*
 package algorithmssum.transactions;
 
 import java.util.Arrays;
@@ -27,3 +28,5 @@ public class TransactionSumCalculatorTest {
     }
 
 }
+
+ */

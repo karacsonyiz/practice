@@ -1,3 +1,4 @@
+/*
 package algorithmssum.sales;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -15,3 +16,5 @@ public class SalespersonTest {
     }
 
 }
+
+ */

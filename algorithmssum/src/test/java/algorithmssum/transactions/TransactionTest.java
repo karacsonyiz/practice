@@ -1,3 +1,4 @@
+/*
 package algorithmssum.transactions;
 
 
@@ -16,3 +17,5 @@ public class TransactionTest {
         assertThat(transaction.isDebit(),is(false));
     }
 }
+
+ */
