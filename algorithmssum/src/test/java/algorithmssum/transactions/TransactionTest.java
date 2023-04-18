@@ -1,4 +1,3 @@
-/*
 package algorithmssum.transactions;
 
 
@@ -18,4 +17,3 @@ public class TransactionTest {
     }
 }
 
- */
