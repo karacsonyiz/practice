@@ -1,4 +1,3 @@
-/*
 package algorithmssum.sales;
 
 import java.util.Arrays;
@@ -26,6 +25,3 @@ public class SalesAmountSumCalculatorTest {
     }
 
 }
-
-
- */
