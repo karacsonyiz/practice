@@ -17,3 +17,4 @@ public class TransactionTest {
         assertThat(transaction.getAmount(), equalTo(100));
     }
 }
+

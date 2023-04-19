@@ -24,3 +24,4 @@ public class TransactionCounterTest {
         assertThat(new TransactionCounter().countEntryLessThan(transactions, 10000), equalTo(4));
     }
 }
+
