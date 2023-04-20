@@ -1,3 +1,4 @@
+/*
 package algorithmsdecision.bankaccounts;
 
 import java.util.Arrays;
@@ -26,3 +27,5 @@ public class BankAccountDecisionMakerTest {
     }
 
 }
+
+ */

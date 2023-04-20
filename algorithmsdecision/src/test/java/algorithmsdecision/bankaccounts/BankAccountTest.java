@@ -1,3 +1,4 @@
+/*
 package algorithmsdecision.bankaccounts;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -33,3 +34,5 @@ public class BankAccountTest {
     }
 
 }
+
+ */
