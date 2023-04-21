@@ -1,4 +1,3 @@
-/*
 package algorithmsdecision.bankaccounts;
 
 import java.time.LocalDateTime;
@@ -24,5 +23,3 @@ public class TransactionTest {
         assertThat(transaction.getAccountNumber(), is("1234-234-345"));
     }
 }
-
- */
