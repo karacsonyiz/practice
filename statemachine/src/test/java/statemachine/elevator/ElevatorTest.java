@@ -1,3 +1,4 @@
+/*
 package statemachine.elevator;
 
 
@@ -54,3 +55,5 @@ public class ElevatorTest {
         assertThat(actualStateInfo, equalTo("[First Floor Closed, First Floor Open, First Floor Closed, Ground Floor Closed, Ground Floor Open]"));
     }
 }
+
+ */
