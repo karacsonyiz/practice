@@ -1,4 +1,3 @@
-/*
 package javabeans;
 
 import org.junit.Test;
@@ -35,5 +34,3 @@ public class HumanTest {
         assertThat(human.getIq(), is(iq));
     }
 }
-
- */
