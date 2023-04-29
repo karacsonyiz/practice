@@ -1,4 +1,3 @@
-/*
 package methodstructure.pendrives;
 
 import org.junit.Test;
@@ -47,5 +46,3 @@ public class PendriveTest {
         assertThat(pendrive2.cheaperThan(pendrive), is(false));
     }
 }
-
- */
