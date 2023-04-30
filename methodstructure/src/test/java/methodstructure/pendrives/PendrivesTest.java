@@ -1,4 +1,3 @@
-/*
 package methodstructure.pendrives;
 
 import org.junit.Test;
@@ -43,5 +42,3 @@ public class PendrivesTest {
         }
     }
 }
-
- */
