@@ -4,7 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -38,13 +37,5 @@ public class RobotTest {
         //Then
         assertThat(robot.getAzimut(), is(0));
     }
-
-    //Bónusz feladat tesztje, kommentezd ki az alapfeladathoz
-    @Test
-    public void testNavigationChain() {
-        //When
-        robot.go(5).rotate(45).registerNavigationPoint().go(10).rotate(-15).registerNavigationPoint();
-        //Then
-        assertThat(robot.getNavigationList().toString(), equalTo("[distance: 5 azimut: 45, distance: 15 azimut: 30]"));
-    }
 }
+
