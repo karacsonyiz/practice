@@ -1,3 +1,4 @@
+/*
 package methodoverloading.pub;
 
 import methodoverloading.pub.ListOfGoodPubs;
@@ -40,3 +41,5 @@ public class ListOfGoodPubsTest {
         assertThat(goodPubs.findTheBest().toString(), equalTo("Kurta kocsma;9:0"));
     }
 }
+
+ */

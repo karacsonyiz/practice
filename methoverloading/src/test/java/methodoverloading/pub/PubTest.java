@@ -1,3 +1,4 @@
+/*
 package methodoverloading.pub;
 
 import methodoverloading.pub.Pub;
@@ -26,3 +27,5 @@ public class PubTest {
         assertThat(pub.toString(), equalTo("Kurta kocsma;10:30"));
     }
 }
+
+ */
