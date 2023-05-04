@@ -1,7 +1,5 @@
-/*
 package methodoverloading.pub;
 
-import methodoverloading.pub.Pub;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -27,5 +25,3 @@ public class PubTest {
         assertThat(pub.toString(), equalTo("Kurta kocsma;10:30"));
     }
 }
-
- */

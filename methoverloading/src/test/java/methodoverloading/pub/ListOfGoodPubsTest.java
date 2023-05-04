@@ -1,8 +1,5 @@
-/*
 package methodoverloading.pub;
 
-import methodoverloading.pub.ListOfGoodPubs;
-import methodoverloading.pub.Pub;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -41,5 +38,3 @@ public class ListOfGoodPubsTest {
         assertThat(goodPubs.findTheBest().toString(), equalTo("Kurta kocsma;9:0"));
     }
 }
-
- */
