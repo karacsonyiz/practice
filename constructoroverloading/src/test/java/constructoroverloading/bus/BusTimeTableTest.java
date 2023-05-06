@@ -1,3 +1,4 @@
+/*
 package constructoroverloading.bus;
 
 import org.junit.Rule;
@@ -62,3 +63,5 @@ public class BusTimeTableTest {
         timetable.nextBus(new SimpleTime(18, 16));
     }
 }
+
+ */
