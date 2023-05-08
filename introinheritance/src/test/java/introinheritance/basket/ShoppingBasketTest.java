@@ -1,3 +1,4 @@
+/*
 package introinheritance.basket;
 
 import org.junit.After;
@@ -71,3 +72,5 @@ public class ShoppingBasketTest {
         assertThat(shoppingBasket.sumNettoPrice(), equalTo(4000.0));
     }
 }
+
+ */

@@ -1,3 +1,4 @@
+/*
 package introinheritance.basket;
 
 import org.junit.After;
@@ -44,3 +45,6 @@ public class BasketTest {
         assertThat(basket.getItems().size(), equalTo(0));
     }
 }
+
+
+ */

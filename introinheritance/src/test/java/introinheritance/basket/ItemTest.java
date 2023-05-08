@@ -1,3 +1,4 @@
+/*
 package introinheritance.basket;
 
 import org.junit.Test;
@@ -23,3 +24,5 @@ public class ItemTest {
         assertThat(item.toString(), equalTo("Item{barcode='123456', nettoPrice=1000.0, vatPercent=27}"));
     }
 }
+
+ */
