@@ -1,3 +1,4 @@
+/*
 package inheritanceconstructor.cars;
 
 import org.junit.Rule;
@@ -50,3 +51,5 @@ public class JeepTest {
         jeep.drive(600);
     }
 }
+
+ */

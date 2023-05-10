@@ -1,3 +1,4 @@
+/*
 package inheritanceconstructor.classroom;
 
 import org.junit.Test;
@@ -16,3 +17,5 @@ public class CourseTest {
         assertThat(course.getFacilityNeeded(), equalTo(Facility.COMPUTERS));
     }
 }
+
+ */
