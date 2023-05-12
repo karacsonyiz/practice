@@ -6,6 +6,8 @@ public class Car {
     private double fuel;
     double tankCapacity;
 
+    public Car() {}
+
     public Car(double fuelRate, double fuel, double tankCapacity) {
         if(fuel > tankCapacity) {
             throw new IllegalArgumentException("Tank capacity is less than fuel!");
@@ -31,6 +33,7 @@ public class Car {
     public void modifyFuelAmount(double fuel) {
         this.fuel = this.fuel + fuel;
     }
+
     public void drive(int km) {
         if((this.fuel - ((this.fuelRate * km) / 100)) < 0) {
             throw new RuntimeException("Not enough fuel available!");
@@ -42,4 +45,15 @@ public class Car {
         return this.tankCapacity - this.fuel;
     }
 
+    public void setFuelRate(double fuelRate) {
+        this.fuelRate = fuelRate;
+    }
+
+    public void setFuel(double fuel) {
+        this.fuel = fuel;
+    }
+
+    public void setTankCapacity(double tankCapacity) {
+        this.tankCapacity = tankCapacity;
+    }
 }
