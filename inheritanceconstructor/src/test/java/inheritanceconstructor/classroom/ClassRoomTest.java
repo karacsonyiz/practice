@@ -1,4 +1,3 @@
-/*
 package inheritanceconstructor.classroom;
 
 import org.junit.Test;
@@ -37,5 +36,3 @@ public class ClassRoomTest {
         assertThat(classroom.isSuitable(course), equalTo(false));
     }
 }
-
- */
