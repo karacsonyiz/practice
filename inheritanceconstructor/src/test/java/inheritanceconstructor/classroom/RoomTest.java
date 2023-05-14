@@ -1,4 +1,3 @@
-/*
 package inheritanceconstructor.classroom;
 
 import org.junit.Test;
@@ -17,5 +16,3 @@ public class RoomTest {
         assertThat(room.getCapacity(), equalTo(20));
     }
 }
-
- */
