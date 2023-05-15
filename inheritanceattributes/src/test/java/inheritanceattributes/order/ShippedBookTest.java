@@ -1,4 +1,3 @@
-/*
 package inheritanceattributes.order;
 
 import org.junit.Test;
@@ -25,5 +24,3 @@ public class ShippedBookTest {
     }
 
 }
-
- */
