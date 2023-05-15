@@ -1,4 +1,3 @@
-/*
 package inheritanceattributes.order;
 
 import org.junit.Test;
@@ -16,5 +15,3 @@ public class ShippedBookTestBonus {
         assertThat(book.purchase(2), equalTo(6000));
     }
 }
-
- */
