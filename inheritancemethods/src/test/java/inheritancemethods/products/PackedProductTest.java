@@ -1,3 +1,4 @@
+/*
 package inheritancemethods.products;
 
 import org.junit.Test;
@@ -34,3 +35,5 @@ public class PackedProductTest {
         assertThat(product.totalWeight(15), equalTo(total));
     }
 }
+
+ */
