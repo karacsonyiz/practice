@@ -1,4 +1,3 @@
-/*
 package inheritancemethods.bankaccount;
 
 import org.junit.Test;
@@ -52,5 +51,3 @@ public class DebitAccountTest {
         assertThat(debitAccount.getBalance(), equalTo(50000L));
     }
 }
-
- */
