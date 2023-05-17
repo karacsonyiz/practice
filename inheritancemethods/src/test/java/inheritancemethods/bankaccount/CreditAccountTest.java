@@ -1,4 +1,3 @@
-/*
 package inheritancemethods.bankaccount;
 
 import org.junit.Test;
@@ -60,5 +59,3 @@ public class CreditAccountTest {
         assertThat(creditAccount.getOverdraftLimit(), equalTo(50000L));
     }
 }
-
- */
