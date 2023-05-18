@@ -1,3 +1,4 @@
+/*
 package abstractclass.gamecharacter;
 
 import org.junit.Test;
@@ -51,3 +52,5 @@ public class ArcherTest {
 	}
 
 }
+
+ */

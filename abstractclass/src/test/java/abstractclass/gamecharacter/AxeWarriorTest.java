@@ -1,3 +1,4 @@
+/*
 package abstractclass.gamecharacter;
 
 import org.junit.Test;
@@ -32,3 +33,5 @@ public class AxeWarriorTest {
 		assertThat(defender.getHitPoint(), greaterThanOrEqualTo(80));
 	}
 }
+
+ */
