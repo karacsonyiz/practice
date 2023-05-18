@@ -1,4 +1,3 @@
-/*
 package abstractclass.gamecharacter;
 
 import org.junit.Test;
@@ -39,7 +38,7 @@ public class ArcherTest {
 	}
 
 	@Test
-	public void secondaryAttack() throws Exception {
+	public void secondaryAttack()  {
 		Random random = new Random(123);
 		Archer offender = new Archer(new Point(0,0), random);
 		Character defender = new Archer(new Point(12,0), random);
@@ -52,5 +51,3 @@ public class ArcherTest {
 	}
 
 }
-
- */
