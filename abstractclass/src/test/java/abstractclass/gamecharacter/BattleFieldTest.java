@@ -1,4 +1,3 @@
-/*
 package abstractclass.gamecharacter;
 
 import org.junit.Test;
@@ -35,5 +34,3 @@ public class BattleFieldTest {
 		assertTrue(!characterArcher.isAlive()|| !characterWarrior.isAlive());
 	}
 }
-
- */
