@@ -40,7 +40,7 @@ public abstract class Character {
         hitPoint = hitPoint - diff;
     }
 
-    abstract public void secondaryAttack(Character enemy) throws Exception;
+    abstract public void secondaryAttack(Character enemy);
 
     public Random getRandom() {
         return random;
