@@ -1,7 +1,5 @@
-/*
 package interfacemethods.print;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -35,5 +33,3 @@ public class PrintableTest {
         assertThat(Printable.countNumberOfColoredPrintables(printables), equalTo(1));
     }
 }
-
- */

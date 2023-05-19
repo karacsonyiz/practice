@@ -25,4 +25,5 @@ public class NewsPaper implements Printable {
     public String getColor(int page) {
         return Printable.super.getColor(page);
     }
+
 }

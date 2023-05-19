@@ -1,4 +1,3 @@
-/*
 package interfacemethods.print;
 
 import org.junit.Test;
@@ -24,5 +23,3 @@ public class PrinterTest {
         assertThat(new Printer().print(storyBook), equalTo("Page1\n[#ff0000]Page2\n"));
     }
 }
-
- */
