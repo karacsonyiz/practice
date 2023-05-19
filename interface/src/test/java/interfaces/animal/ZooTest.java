@@ -1,4 +1,3 @@
-/*
 package interfaces.animal;
 
 import org.junit.Test;
@@ -43,5 +42,3 @@ public class ZooTest {
 		assertThat(zoo.getNumberOfAnimals(), is(4));
 	}
 }
-
- */
