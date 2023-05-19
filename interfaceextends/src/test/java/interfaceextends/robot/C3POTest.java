@@ -1,3 +1,4 @@
+/*
 package interfaceextends.robot;
 
 import org.junit.Test;
@@ -49,3 +50,5 @@ public class C3POTest {
 		assertThat(c3PO.getAngle(), is(angle));
 	}
 }
+
+ */

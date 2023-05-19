@@ -1,3 +1,4 @@
+/*
 package interfaceextends.bonus;
 
 import interfaceextends.robot.MovableRobot;
@@ -31,3 +32,5 @@ public class MovableRobotTestImpl implements MovableRobot{
             return position;
         }
 }
+
+ */

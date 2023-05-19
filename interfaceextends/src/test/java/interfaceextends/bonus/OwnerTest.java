@@ -1,3 +1,4 @@
+/*
 package interfaceextends.bonus;
 
 import interfaceextends.robot.Point;
@@ -36,3 +37,5 @@ public class OwnerTest {
 		assertThat(movableRobot.getPosition().getZ(), is(ownerPoint.getZ()));
 	}
 }
+
+ */

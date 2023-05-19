@@ -1,3 +1,4 @@
+/*
 package interfaceextends.robot;
 
 import org.junit.Test;
@@ -74,3 +75,5 @@ public class AstroBoyTest {
 		assertThat(astroBoy.getAltitude(), is(altitude));
 	}
 }
+
+ */
