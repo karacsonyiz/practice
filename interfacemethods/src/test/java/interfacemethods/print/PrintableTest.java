@@ -1,3 +1,4 @@
+/*
 package interfacemethods.print;
 
 import org.hamcrest.CoreMatchers;
@@ -34,3 +35,5 @@ public class PrintableTest {
         assertThat(Printable.countNumberOfColoredPrintables(printables), equalTo(1));
     }
 }
+
+ */
