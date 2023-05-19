@@ -1,4 +1,3 @@
-/*
 package interfacemethods.print;
 
 import org.junit.Test;
@@ -23,5 +22,3 @@ public class StoryBookTest {
         assertThat(storyBook.getColor(1), equalTo("#FF0000"));
     }
 }
-
- */
