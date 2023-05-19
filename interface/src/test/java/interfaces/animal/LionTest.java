@@ -1,4 +1,3 @@
-/*
 package interfaces.animal;
 
 import org.junit.Test;
@@ -20,5 +19,3 @@ public class LionTest {
 	}
 
 }
-
- */
