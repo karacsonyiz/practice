@@ -5,11 +5,11 @@ import java.util.List;
 public class Tutor {
 
     private String name;
-    private List<Subject> subjectList;
+    private List<Subject> taughtSubjects;
 
     public Tutor(String name, List<Subject> subjectList) {
         this.name = name;
-        this.subjectList = subjectList;
+        this.taughtSubjects = subjectList;
     }
 
     public String getName() {
@@ -17,8 +17,8 @@ public class Tutor {
     }
 
     public boolean tutorTeachingSubject(Subject subject) {
-        for(Subject sub : subjectList){
-            if(sub.getName().equals(subject.getName())){
+        for(Subject sub : taughtSubjects){
+            if(sub.getSubjectName().equals(subject.getSubjectName())){
                 return true;
             }
         }

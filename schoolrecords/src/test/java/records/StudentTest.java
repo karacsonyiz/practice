@@ -1,11 +1,9 @@
-/*
 package records;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -100,5 +98,3 @@ public class StudentTest {
         assertThat(student.calculateSubjectAverage(new Subject("földrajz")), equalTo(0.0));
     }
 }
-
- */
