@@ -3,7 +3,6 @@ package records;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Student {
 
@@ -60,8 +59,12 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        if (!Objects.equals(marks, student.marks)) return false;
-        return Objects.equals(name, student.name);
+        return name.equals(student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
     }
 
     @Override
@@ -77,5 +80,9 @@ public class Student {
 
     private boolean isEmpty(String str) {
         return str.isEmpty();
+    }
+
+    public String getName() {
+        return name;
     }
 }
