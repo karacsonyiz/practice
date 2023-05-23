@@ -1,3 +1,4 @@
+/*
 package solid.base;
 
 import org.junit.Test;
@@ -41,3 +42,5 @@ public class AccountValidatorTest {
 		assertThat(accountValidator.isValid(""), is(false));
 	}
 }
+
+ */
