@@ -1,4 +1,4 @@
-/*package solid.base;
+package solid.base;
 
 import org.junit.Test;
 import java.util.ArrayList;
@@ -99,5 +99,3 @@ public class UserControllerTest {
 		assertThat(userService.getParameterOfLastMethodCall() , is(nullValue()));
 	}
 }
-
- */
