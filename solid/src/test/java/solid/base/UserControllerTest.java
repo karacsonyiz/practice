@@ -1,5 +1,4 @@
-/*
-package solid.base;
+/*package solid.base;
 
 import org.junit.Test;
 import java.util.ArrayList;
