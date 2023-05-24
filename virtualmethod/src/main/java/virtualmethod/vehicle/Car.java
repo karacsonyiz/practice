@@ -25,4 +25,8 @@ public class Car extends Vehicle {
                 "numberOfPassenger=" + numberOfPassenger + "," + " vehicleWeight=" + getVehicleWeight() +
                 '}';
     }
+
+    public int getNumberOfPassenger() {
+        return numberOfPassenger;
+    }
 }
