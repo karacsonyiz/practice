@@ -1,7 +1,8 @@
 package solid.base;
 
-public class AccountValidator implements Validator{
+public class AccountValidator implements Validator {
 
+        @Override
         public boolean isValid(String account) {
             if(isEmpty(account)) {
                 return false;
