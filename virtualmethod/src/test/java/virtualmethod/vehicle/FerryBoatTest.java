@@ -1,4 +1,3 @@
-/*
 package virtualmethod.vehicle;
 
 import org.junit.Test;
@@ -87,5 +86,3 @@ public class FerryBoatTest {
 	}
 
 }
-
- */
