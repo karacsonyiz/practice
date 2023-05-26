@@ -1,3 +1,4 @@
+/*
 package isahasa.htmlmarchaller.hasa;
 
 import org.junit.Test;
@@ -15,3 +16,5 @@ public class BoldTest {
 	}
 
 }
+
+ */

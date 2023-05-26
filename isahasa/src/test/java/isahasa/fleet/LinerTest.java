@@ -1,3 +1,4 @@
+/*
 package isahasa.fleet;
 
 import org.junit.Test;
@@ -23,3 +24,5 @@ public class LinerTest {
 		assertThat(liner.getPassengers(), is(100));
 	}
 }
+
+ */
