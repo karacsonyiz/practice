@@ -1,4 +1,3 @@
-/*
 package isahasa.htmlmarchaller;
 
 import org.junit.Test;
@@ -57,5 +56,3 @@ public class ClientTest {
 	}
 
 }
-
- */
