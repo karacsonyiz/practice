@@ -10,6 +10,13 @@ public class HtmlText implements TextSource {
 
     @Override
     public String getPlainText() {
+        isEmpty(text);
         return text;
+    }
+
+    public void isEmpty(String text) {
+        if(text == null ||text.equals("")) {
+            throw new IllegalArgumentException("Text can not be empty!");
+        }
     }
 }
