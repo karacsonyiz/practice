@@ -14,7 +14,7 @@ public class HtmlText implements TextSource {
         return text;
     }
 
-    public void isEmpty(String text) {
+    private void isEmpty(String text) {
         if(text == null ||text.equals("")) {
             throw new IllegalArgumentException("Text can not be empty!");
         }

@@ -1,4 +1,3 @@
-/*
 package isahasa.htmlmarchaller.isa;
 
 import org.junit.Test;
@@ -15,5 +14,3 @@ public class UnderlinedAndItalicAndBoldHtmlTextTest {
 	}
 
 }
-
- */
