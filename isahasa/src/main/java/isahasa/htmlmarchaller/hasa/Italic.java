@@ -2,17 +2,17 @@ package isahasa.htmlmarchaller.hasa;
 
 import isahasa.htmlmarchaller.TextSource;
 
-public class Bold extends TextDecorator {
+public class Italic extends TextDecorator {
 
     TextSource textSource;
 
-
-    public Bold(TextSource textSource) {
+    public Italic(TextSource textSource) {
         this.textSource = textSource;
     }
 
     @Override
     public String getPlainText() {
-        return "<b>" + textSource.getPlainText() + "</b>";
+        return "<i>" + textSource.getPlainText() + "</i>";
     }
+
 }
