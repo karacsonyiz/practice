@@ -1,4 +1,3 @@
-/*
 package isahasa.fleet;
 
 import org.junit.Test;
@@ -36,5 +35,3 @@ public class CargoShipTest {
 		assertThat(cargoShip.getCargoWeight(), is(100));
 	}
 }
-
- */
