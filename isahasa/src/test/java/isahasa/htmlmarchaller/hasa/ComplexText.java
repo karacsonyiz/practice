@@ -1,4 +1,3 @@
-/*
 package isahasa.htmlmarchaller.hasa;
 
 import isahasa.htmlmarchaller.TextSource;
@@ -41,5 +40,3 @@ public class ComplexText {
 	}
 
 }
-
- */
