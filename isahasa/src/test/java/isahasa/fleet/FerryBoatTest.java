@@ -1,4 +1,3 @@
-/*
 package isahasa.fleet;
 
 import org.junit.Test;
@@ -28,5 +27,3 @@ public class FerryBoatTest {
 		assertThat(ferryBoat.getPassengers(), is(100));
 	}
 }
-
- */
