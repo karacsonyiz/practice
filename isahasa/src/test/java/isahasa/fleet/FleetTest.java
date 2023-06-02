@@ -1,4 +1,3 @@
-/*
 package isahasa.fleet;
 
 import org.junit.Before;
@@ -62,5 +61,3 @@ public class FleetTest {
 	}
 
 }
-
- */
