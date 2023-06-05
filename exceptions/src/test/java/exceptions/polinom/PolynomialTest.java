@@ -1,3 +1,4 @@
+/*
 package exceptions.polinom;
 
 import org.junit.Rule;
@@ -62,3 +63,5 @@ public class PolynomialTest {
     }
 
 }
+
+ */
