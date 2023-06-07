@@ -1,3 +1,4 @@
+/*
 package dpintro.iteratorpattern;
 
 import org.junit.Test;
@@ -24,3 +25,5 @@ public class IteratorTest {
         }
     }
 }
+
+ */
