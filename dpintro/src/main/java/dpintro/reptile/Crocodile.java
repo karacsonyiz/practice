@@ -1,7 +1,6 @@
 package dpintro.reptile;
 
-public class Crocodile extends  LandDweller implements CanSwim {
-
+public class Crocodile extends LandDweller implements CanSwim {
 
     public Crocodile(int energy) {
         super(energy);
