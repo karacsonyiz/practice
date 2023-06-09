@@ -17,6 +17,7 @@ public class ZooIterator implements Iterator {
         try {
             animalList.get(pointer);
         } catch (IndexOutOfBoundsException e) {
+            pointer -= 1;
             return false;
         }
         return true;
