@@ -5,7 +5,7 @@ import java.util.List;
 
 public class NewsPaper implements Printable {
 
-    private List<String> pages = new ArrayList<>();
+    private final List<String> pages = new ArrayList<>();
 
     public void addPage(String page){
         pages.add(page);

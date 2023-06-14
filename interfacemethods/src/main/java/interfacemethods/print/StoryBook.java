@@ -5,7 +5,7 @@ import java.util.List;
 
 public class StoryBook implements Printable {
 
-    private List<ColoredPage> pages = new ArrayList<>();
+    private final List<ColoredPage> pages = new ArrayList<>();
 
     public void addPage(String content,String color){
         pages.add(new ColoredPage(content,color));

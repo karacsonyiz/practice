@@ -2,8 +2,8 @@ package interfacemethods.print;
 
 public final class ColoredPage {
 
-    private String content;
-    private String color;
+    private final String content;
+    private final String color;
 
     public ColoredPage(String content, String color) {
         this.content = content;
