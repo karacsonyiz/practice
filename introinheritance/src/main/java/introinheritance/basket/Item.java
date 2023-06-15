@@ -2,9 +2,9 @@ package introinheritance.basket;
 
 public class Item {
 
-    private String barcode;
-    private double nettoPrice;
-    private int vatPercent;
+    private final String barcode;
+    private final double nettoPrice;
+    private final int vatPercent;
 
     public Item(String barcode, double nettoPrice, int vatPercent) {
         this.barcode = barcode;

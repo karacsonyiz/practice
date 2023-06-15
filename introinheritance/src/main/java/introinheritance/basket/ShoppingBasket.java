@@ -2,7 +2,7 @@ package introinheritance.basket;
 
 public class ShoppingBasket {
 
-    private Basket basket = new Basket();
+    private final Basket basket = new Basket();
 
     public void addItem(Item item) {
         basket.addItem(item);

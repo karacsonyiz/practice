@@ -2,7 +2,7 @@ package introinheritance.employee;
 
 public class Person {
 
-    private String name;
+    private final String name;
     private String address;
 
 
