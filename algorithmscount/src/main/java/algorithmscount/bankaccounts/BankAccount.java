@@ -2,9 +2,9 @@ package algorithmscount.bankaccounts;
 
 public class BankAccount {
 
-    private String nameOfOwner;
-    private String accountNumber;
-    private int balance;
+    private final String nameOfOwner;
+    private final String accountNumber;
+    private final int balance;
 
     public BankAccount(String nameOfOwner, String accountNumber, int balance) {
         this.nameOfOwner = nameOfOwner;

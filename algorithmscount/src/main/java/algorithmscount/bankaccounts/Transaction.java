@@ -2,9 +2,9 @@ package algorithmscount.bankaccounts;
 
 public class Transaction {
 
-    private String accountNumber;
-    private TransactionType operation;
-    private int amount;
+    private final String accountNumber;
+    private final TransactionType operation;
+    private final int amount;
 
     public Transaction(String accountNumber, TransactionType operation, int amount) {
         this.accountNumber = accountNumber;
