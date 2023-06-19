@@ -4,11 +4,10 @@ import java.time.LocalDateTime;
 
 public class Transaction {
 
-    private String accountNumber;
-    private TransactionOperation transactionOperation;
-    private int amount;
-    private LocalDateTime dateOfTransaction;
-    private Status status;
+    private final String accountNumber;
+    private final TransactionOperation transactionOperation;
+    private final int amount;
+    private final LocalDateTime dateOfTransaction;
 
     public Transaction(String accountNumber, TransactionOperation transactionOperation, int amount, LocalDateTime dateOfTransaction) {
         this.accountNumber = accountNumber;
@@ -21,20 +20,12 @@ public class Transaction {
         return accountNumber;
     }
 
-    public TransactionOperation getTransactionOperation() {
-        return transactionOperation;
-    }
-
     public int getAmount() {
         return amount;
     }
 
     public LocalDateTime getDateOfTransaction() {
         return dateOfTransaction;
-    }
-
-    public Status getStatus() {
-        return status;
     }
 
     public boolean isCredit(){
