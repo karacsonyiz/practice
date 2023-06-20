@@ -2,18 +2,12 @@ package algorithmssum.transactions;
 
 public class Transaction {
 
-    private String accountNumber;
-    private TransactionOperation operation;
-    private int amount;
+    private final TransactionOperation operation;
+    private final int amount;
 
-    public Transaction(String accountNumber, TransactionOperation operation, int amount) {
-        this.accountNumber = accountNumber;
+    public Transaction(TransactionOperation operation, int amount) {
         this.operation = operation;
         this.amount = amount;
-    }
-
-    public String getAccountNumber() {
-        return accountNumber;
     }
 
     public boolean isCredit() {
