@@ -6,9 +6,9 @@ import java.util.List;
 
 public class Restaurant {
 
-    private List<String> menu = new ArrayList<>();
-    private String name;
-    private int capacity;
+    private final List<String> menu = new ArrayList<>();
+    private final String name;
+    private final int capacity;
 
     public Restaurant(String name,int numberOfTables){
         this.name = name;
