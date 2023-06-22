@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SocialNetwork {
 
-    private List<Member> members = new ArrayList<>();
+    private final List<Member> members = new ArrayList<>();
 
     public void addMember(String name){
         this.members.add(new Member(name));

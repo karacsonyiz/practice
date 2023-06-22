@@ -6,7 +6,7 @@ import java.util.List;
 public class Member {
 
     private String name;
-    List<Member> connections = new ArrayList<>();
+    private final List<Member> connections = new ArrayList<>();
 
     public Member() {
     }
