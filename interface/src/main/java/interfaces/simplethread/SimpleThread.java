@@ -4,7 +4,7 @@ import java.util.List;
 
 public class SimpleThread implements Runnable {
 
-    private List<String> tasks;
+    private final List<String> tasks;
 
     public SimpleThread(List<String> tasks) {
         this.tasks = tasks;
