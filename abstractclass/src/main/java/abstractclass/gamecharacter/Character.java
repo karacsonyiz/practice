@@ -4,9 +4,9 @@ import java.util.Random;
 
 public abstract class Character {
 
-    private Point position;
+    private final Point position;
     private int hitPoint;
-    private Random random;
+    private final Random random;
 
     public Character(Point position,Random random) {
         this.position = position;
