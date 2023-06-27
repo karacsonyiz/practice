@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Books {
 
-    private List<String> books;
+    private final List<String> books;
 
     public Books(List<String> books){
         this.books = books;

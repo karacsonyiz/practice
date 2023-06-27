@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Capsules {
 
-    private List<String> capsules;
+    private final List<String> capsules;
 
     public Capsules(List<String> capsules) {
         this.capsules = capsules;
