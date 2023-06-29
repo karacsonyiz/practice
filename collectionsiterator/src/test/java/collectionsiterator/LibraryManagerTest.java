@@ -28,9 +28,9 @@ public class LibraryManagerTest {
     public final ExpectedException exception = ExpectedException.none();
 
     @Test
-    public void missingRegnumberShouldThrowException() throws MissingBookException {
+    public void missingRegnumberShouldThrowException() throws IllegalArgumentException {
         // Given
-        exception.expect(MissingBookException.class);
+        exception.expect(IllegalArgumentException.class);
         exception.expectMessage("No books found with regnumber:");
         // When
         manager.findBookByRegNumber(1212);
@@ -46,9 +46,9 @@ public class LibraryManagerTest {
     }
 
     @Test
-    public void missingRegnumberShouldThrowExceptionAtRemove() throws MissingBookException {
+    public void missingRegnumberShouldThrowExceptionAtRemove() throws IllegalArgumentException {
         // Given
-        exception.expect(MissingBookException.class);
+        exception.expect(IllegalArgumentException.class);
         exception.expectMessage("No books found with regnumber:");
         // When
         manager.removeBookByRegNumber(1212);
@@ -64,9 +64,9 @@ public class LibraryManagerTest {
     }
 
     @Test
-    public void nonExistingAuthorShouldThrowExceptionAtRemove() throws MissingBookException {
+    public void nonExistingAuthorShouldThrowExceptionAtRemove() throws IllegalArgumentException {
         // Given
-        exception.expect(MissingBookException.class);
+        exception.expect(IllegalArgumentException.class);
         exception.expectMessage("No books found by");
         // When
         manager.selectBooksByAuthor("Tolkien");
