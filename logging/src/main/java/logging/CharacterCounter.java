@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 
 public class CharacterCounter {
 
-    private static Logger logger = LoggerFactory.getLogger(CharacterCounter.class);
+    private static final Logger logger = LoggerFactory.getLogger(CharacterCounter.class);
 
     public int countCharacters(String source, String chars) {
         logger.info(("Finding ") + (chars) + (" in ") + (source));
