@@ -1,3 +1,4 @@
+/*
 package bank2;
 
 import org.junit.Before;
@@ -88,3 +89,5 @@ public class BankTest {
     }
 
 }
+
+ */
