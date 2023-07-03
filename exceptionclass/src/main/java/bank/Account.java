@@ -7,9 +7,12 @@ public class Account {
     private double maxSubtract;
 
     public Account(String accountNumber, double balance) {
+        if(accountNumber == null) {
+            throw new IllegalArgumentException("Account number can not be empty!") ;
+        }
         this.accountNumber = accountNumber;
         this.balance = balance;
-        this.maxSubtract = 1000;
+        this.maxSubtract = 100000;
     }
 
     public String getAccountNumber() {
@@ -25,14 +28,28 @@ public class Account {
     }
 
     public void setMaxSubtract(double maxSubtract) {
+        if(maxSubtract < 0) {
+            throw new InvalidBankOperationException("Invalid Amount!",ErrorCode.INVALID_AMOUNT);
+        }
         this.maxSubtract = maxSubtract;
     }
 
-    private void subtract(double amount){
+    public double subtract(double amount) {
+        if(amount > balance) {
+            throw new InvalidBankOperationException("Low Balance!",ErrorCode.LOW_BALANCE);
+        }
+        if(amount < 0) {
+            throw new InvalidBankOperationException("Invalid Amount!",ErrorCode.INVALID_AMOUNT);
+        }
         this.balance = this.balance - amount;
+        return this.balance;
     }
 
-    private void deposit(double amount){
+    public double deposit(double amount) {
+        if(amount <= 0) {
+            throw new InvalidBankOperationException("Invalid Amount!",ErrorCode.INVALID_AMOUNT);
+        }
         this.balance = this.balance + amount;
+        return this.balance;
     }
 }
