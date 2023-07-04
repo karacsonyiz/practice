@@ -2,7 +2,7 @@ package bank;
 
 public class InvalidBankOperationException extends RuntimeException {
 
-    private ErrorCode errorCode;
+    private final ErrorCode errorCode;
 
     public InvalidBankOperationException(String errorMessage, ErrorCode errorCode) {
         super(errorMessage);

@@ -2,7 +2,7 @@ package bank;
 
 public class Account {
 
-    private String accountNumber;
+    private final String accountNumber;
     private double balance;
     private double maxSubtract;
 
