@@ -1,4 +1,3 @@
-/*
 package bank2;
 
 import org.junit.Rule;
@@ -129,5 +128,3 @@ public class AccountTest {
     }
 
 }
-
- */
