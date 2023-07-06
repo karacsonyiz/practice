@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Bank {
 
-    private List<Account> accountList;
+    private final List<Account> accountList;
 
     public Bank(List<Account> accountList) {
         if(accountList == null) {

@@ -97,7 +97,7 @@ public class AccountTest {
 
 
     @Test
-    public void depositShouldThrowException() throws Exception {
+    public void depositShouldThrowException() {
         double amount = -10;
 
         Account account = new Account("a", 100);
@@ -107,7 +107,7 @@ public class AccountTest {
     }
 
     @Test
-    public void depositShouldCorrectReturn() throws Exception {
+    public void depositShouldCorrectReturn() {
         double balance = 300;
         double amount = 10;
 
@@ -117,7 +117,7 @@ public class AccountTest {
     }
 
     @Test
-    public void depositShouldModifyBalance() throws Exception {
+    public void depositShouldModifyBalance() {
         double balance = 300;
         double amount = 10;
 
