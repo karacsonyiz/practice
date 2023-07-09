@@ -1,4 +1,3 @@
-/*
 package course;
 
 import org.junit.Rule;
@@ -56,5 +55,3 @@ public class CourseTest {
     }
 
 }
-
- */
