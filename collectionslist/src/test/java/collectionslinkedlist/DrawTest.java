@@ -1,4 +1,3 @@
-/*
 package collectionslinkedlist;
 
 import org.junit.Rule;
@@ -44,5 +43,3 @@ public class DrawTest {
         }
     }
 }
-
- */

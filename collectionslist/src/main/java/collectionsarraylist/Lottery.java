@@ -6,7 +6,7 @@ public class Lottery {
 
     public List<Integer> selectWinningNumbers(int lotteryType, int ballCount) {
         if(ballCount <= lotteryType) {
-            throw new IllegalArgumentException("Balls must be more then the winning numbers!");
+            throw new IllegalArgumentException("Balls must be more than the winning numbers!");
         }
         Set<Integer> result = new HashSet<>();
         do {

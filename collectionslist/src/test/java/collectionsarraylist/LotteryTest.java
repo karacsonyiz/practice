@@ -23,7 +23,7 @@ public class LotteryTest {
         int ballCount = 6;
 
         exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Balls must be more then the winning numbers!");
+        exception.expectMessage("Balls must be more than the winning numbers!");
 
         //When
         new Lottery().selectWinningNumbers(lotteryType, ballCount);
