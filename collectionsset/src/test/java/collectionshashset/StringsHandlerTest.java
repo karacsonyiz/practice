@@ -1,4 +1,3 @@
-/*
 package collectionshashset;
 
 
@@ -40,5 +39,3 @@ public class StringsHandlerTest {
         assertThat(strings.size() < (a + b), is(true));
     }
 }
-
- */
