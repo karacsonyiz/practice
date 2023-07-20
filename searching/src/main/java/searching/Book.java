@@ -2,12 +2,12 @@ package searching;
 
 public class Book implements Comparable<Book> {
 
-    int regNumber;
-    String title;
-    String author;
+    private int id;
+    private String title;
+    private String author;
 
-    public Book(int regNumber, String title, String author) {
-        this.regNumber = regNumber;
+    public Book(int id, String author, String title) {
+        this.id = id;
         this.title = title;
         this.author = author;
     }
@@ -20,6 +20,9 @@ public class Book implements Comparable<Book> {
         return author;
     }
 
+    public int getId() {
+        return id;
+    }
 
     @Override
     public int compareTo(Book o) {
@@ -28,5 +31,11 @@ public class Book implements Comparable<Book> {
             result = title.compareTo(o.title);
         }
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return id +
+                " " + author + " " + title ;
     }
 }
