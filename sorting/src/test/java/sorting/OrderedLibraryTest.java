@@ -1,4 +1,3 @@
-/*
 package sorting;
 
 import org.junit.Before;
@@ -43,7 +42,7 @@ public class OrderedLibraryTest {
     public void emptyCollectionShouldThrowException() throws NullPointerException {
         // Given
         exception.expect(NullPointerException.class);
-        exception.expectMessage("Libray is empty!");
+        exception.expectMessage("Library is empty!");
         // When
         new OrderedLibrary(new TreeSet<>()).lendFirstBook();
     }
@@ -59,5 +58,3 @@ public class OrderedLibraryTest {
         assertThat(book.getId(), equalTo(1001));
     }
 }
-
- */
