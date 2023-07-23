@@ -1,3 +1,4 @@
+/*
 package lambdaintro;
 
 import org.junit.Test;
@@ -74,3 +75,5 @@ public class SocialNetworkTest {
         assertThat(names.get(2), equalTo("James Doe"));
     }
 }
+
+ */

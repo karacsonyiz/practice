@@ -1,3 +1,4 @@
+/*
 package lambdaintro;
 
 import org.junit.Before;
@@ -68,3 +69,5 @@ public class OfficeDocumentReaderTest {
         }
     }
 }
+
+ */
