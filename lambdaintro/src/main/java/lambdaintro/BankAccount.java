@@ -1,6 +1,8 @@
 package lambdaintro;
 
-public class BankAccount {
+import java.util.Objects;
+
+public class BankAccount implements Comparable<BankAccount>{
 
     private final String accountNumber;
     private final String nameOfOwner;
@@ -22,6 +24,11 @@ public class BankAccount {
 
     public double getBalance() {
         return balance;
+    }
+
+    @Override
+    public int compareTo(BankAccount o) {
+        return accountNumber.compareTo(o.accountNumber);
     }
 
 }

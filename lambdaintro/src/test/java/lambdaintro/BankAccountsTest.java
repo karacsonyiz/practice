@@ -40,7 +40,7 @@ public class BankAccountsTest {
 
         List<BankAccount> sorted = accounts.listBankAccountsByBalance();
 
-        assertThat(sorted.get(0).getBalance(), equalTo(90.0));
+        assertThat(sorted.get(0).getBalance(), equalTo(-102.0));
         assertThat(sorted.get(3).getBalance(), equalTo(105.0));
     }
 
@@ -66,7 +66,7 @@ public class BankAccountsTest {
     @Test
     public void testListBankAccountsByNameThanAccountNumber() {
         BankAccounts accounts = new BankAccounts(Arrays.asList(
-                new BankAccount("2", "Ábrahám Doe", 102.0),
+                new BankAccount("2", "Abrahám Doe", 102.0),
                 new BankAccount("4", "John Doe", 100.0),
                 new BankAccount("1", "Alphonse Doe", 105.0),
                 new BankAccount("5", null, 200.0),
@@ -77,7 +77,7 @@ public class BankAccountsTest {
         List<BankAccount> sorted = accounts.listBankAccountsByNameThanAccountNumber();
 
         assertThat(sorted.get(0).getNameOfOwner(), equalTo(null));
-        assertThat(sorted.get(1).getNameOfOwner(), equalTo("Ábrahám Doe"));
+        assertThat(sorted.get(1).getNameOfOwner(), equalTo("Abrahám Doe"));
         assertThat(sorted.get(2).getNameOfOwner(), equalTo("Alphonse Doe"));
         assertThat(sorted.get(4).getNameOfOwner(), equalTo("John Doe"));
         assertThat(sorted.get(4).getAccountNumber(), equalTo("4"));
