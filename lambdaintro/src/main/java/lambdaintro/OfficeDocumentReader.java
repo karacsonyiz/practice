@@ -1,31 +1,17 @@
 package lambdaintro;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-
-public class OfficeDocumentReaderTest {
-
-    @Rule
-    public final TemporaryFolder folder = new TemporaryFolder();
+public class OfficeDocumentReader {
 
 
+    public List<File> listOfficeDocuments(File root) {
+        createDirectories(root.getAbsolutePath(), "dir.xlsx", "dir2.docx");
 
-    @Before
-    public void setUp() {
-        String testDirectory = folder.getRoot().getAbsolutePath();
-
-        createDirectories(testDirectory, "dir.xlsx", "dir2.docx");
-
-        createFiles(testDirectory,
+        createFiles(root.getAbsolutePath(),
                 "a.txt",
                 "b.txt",
                 "p.pptx",
@@ -37,16 +23,10 @@ public class OfficeDocumentReaderTest {
                 "z.xls",
                 "zxls"
         );
-    }
 
-    @Test
-    public void testListOfficeDocuments() {
-        List<File> files = new OfficeDocumentReader().listOfficeDocuments(folder.getRoot());
+        Arrays.sort(root.listFiles());
 
-        assertThat(files.get(0).getName(), equalTo("a.xlsx"));
-        assertThat(files.get(1).getName(), equalTo("f.docx"));
-        assertThat(files.get(2).getName(), equalTo("p.pptx"));
-        assertThat(files.get(3).getName(), equalTo("z.DOCX"));
+        return Arrays.asList(root.listFiles());
     }
 
     private void createDirectories(String prefix, String... paths) {
