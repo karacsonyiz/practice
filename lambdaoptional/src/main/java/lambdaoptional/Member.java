@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Member {
 
-    private String name;
-    private List<String> skills;
-    private Sex gender;
+    private final String name;
+    private final List<String> skills;
+    private final Sex gender;
 
     public Member(String name, List<String> skills, Sex gender) {
         this.name = name;

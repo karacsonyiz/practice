@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public class SocialNetwork {
 
-    private List<Member> members;
+    private final List<Member> members;
 
     public SocialNetwork(List<Member> members) {
         this.members = members;
