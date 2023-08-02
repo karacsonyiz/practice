@@ -2,7 +2,7 @@ package stringbuilder;
 
 public enum Title {
 
-    MR("Mr."), PROF("Dr.");
+    MR("Mr."), PROF("Prof.");
 
     private final String value;
 
