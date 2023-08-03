@@ -1,4 +1,3 @@
-/*
 package stringbuilder;
 
 import org.junit.Rule;
@@ -32,5 +31,3 @@ public class PalindromeValidatorTest {
         assertThat(new PalindromeValidator().isPalindrome("\n\t"), is(true));
     }
 }
-
- */
