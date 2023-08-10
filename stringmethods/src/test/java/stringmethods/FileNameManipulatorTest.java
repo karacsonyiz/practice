@@ -60,7 +60,7 @@ public class FileNameManipulatorTest {
     public void invalidParametersShouldThrowExceptionIfNullString() throws IllegalArgumentException {
 
         exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Empty string!");
+        exception.expectMessage("Invalid argument!");
 
         // When
         new FileNameManipulator().findLastCharacter(null);
@@ -101,7 +101,7 @@ public class FileNameManipulatorTest {
     public void invalidFileNameNull() throws IllegalArgumentException{
 
         exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Invalid file name!");
+        exception.expectMessage("Invalid argument!");
 
         // When
         new FileNameManipulator().findFileExtension(null);
@@ -151,7 +151,7 @@ public class FileNameManipulatorTest {
     public void invalidExtensionEmptyStringGoodFileName() throws IllegalArgumentException {
 
         exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Invalid argument!");
+        exception.expectMessage("Empty string!");
 
         //When
         new FileNameManipulator().identifyFilesByExtension("\t\n\r", "record.dat");
@@ -192,7 +192,7 @@ public class FileNameManipulatorTest {
     public void invalidFileTwoEmptyStringGoodFileOneName() throws IllegalArgumentException {
 
         exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Invalid argument!");
+        exception.expectMessage("Empty string!");
 
         //When
         new FileNameManipulator().compareFilesByName("record.dat", "\n\t\r");
@@ -202,7 +202,7 @@ public class FileNameManipulatorTest {
     public void invalidFileOneEmptyStringGoodFileName() throws IllegalArgumentException {
 
         exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Invalid argument!");
+        exception.expectMessage("Empty string!");
 
         //When
         new FileNameManipulator().compareFilesByName("\n\t\r", "record.dat");
@@ -222,7 +222,7 @@ public class FileNameManipulatorTest {
     public void invalidFileNameToReplaceNull() throws IllegalArgumentException {
 
         exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Empty string!");
+        exception.expectMessage("Invalid argument!");
 
         //When
         new FileNameManipulator().replaceStringPart(null, "jpeg","jpg");
