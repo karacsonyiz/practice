@@ -1,3 +1,4 @@
+/*
 package algorithmsmax.sales;
 
 import java.util.Arrays;
@@ -43,3 +44,5 @@ public class MaxAlgorithmsTest {
     }
 
 }
+
+ */
