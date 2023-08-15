@@ -1,4 +1,3 @@
-/*
 package algorithmsmax.sales;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -17,5 +16,3 @@ public class SalespersonTest {
     }
 
 }
-
- */
