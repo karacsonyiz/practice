@@ -1,4 +1,3 @@
-/*
 package catalog;
 
 
@@ -66,5 +65,3 @@ public class AudioFeaturesTest {
     }
 
 }
-
- */

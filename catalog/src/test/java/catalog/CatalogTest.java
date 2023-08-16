@@ -21,9 +21,9 @@ public class CatalogTest {
 
 
     public CatalogItem catalogItem1 = new CatalogItem("R-1",300,
-                    new AudioFeatures("Night Visions", 185, Arrays.asList("Dan Raynolds"),Arrays.asList("Imagine Dragons")),
+                    new catalog.AudioFeatures("Night Visions", 185, Arrays.asList("Dan Raynolds"),Arrays.asList("Imagine Dragons")),
                     new PrintedFeatures("Harry Potter",600,  Arrays.asList("J.K. Rowling")),
-                    new AudioFeatures("Piece of Mind", 200, Arrays.asList("Steve Harris"),Arrays.asList("Iron Maiden"))
+                    new catalog.AudioFeatures("Piece of Mind", 200, Arrays.asList("Steve Harris"),Arrays.asList("Iron Maiden"))
 
     );
 
@@ -33,7 +33,7 @@ public class CatalogTest {
 
 
     public CatalogItem catalogItem3 = new CatalogItem("R-3", 300,
-                    new AudioFeatures("Californication",100,  Arrays.asList("Flea"), Arrays.asList("RHCP"))
+                    new catalog.AudioFeatures("Californication",100,  Arrays.asList("Flea"), Arrays.asList("RHCP"))
     );
 
    public Catalog catalog = new Catalog();
