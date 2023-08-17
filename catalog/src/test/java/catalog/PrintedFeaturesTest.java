@@ -1,4 +1,3 @@
-/*
 package catalog;
 
 
@@ -51,5 +50,3 @@ public class PrintedFeaturesTest {
     }
 
 }
-
- */
