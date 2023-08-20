@@ -33,7 +33,7 @@ public class PrintedFeatures implements Feature {
     }
 
     private void isTitlePresent(String title){
-        if(title.equals("")){
+        if(Validators.isBlank(title)){
             throw new IllegalArgumentException("Empty title");
         }
     }
@@ -45,7 +45,7 @@ public class PrintedFeatures implements Feature {
     }
 
     private void isAuthorsValid(List<String> authors){
-        if(authors == null) {
+        if(Validators.isEmpty(authors)){
             throw new IllegalArgumentException();
         }
     }

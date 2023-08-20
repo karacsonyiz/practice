@@ -11,7 +11,7 @@ public class AudioFeatures implements Feature {
 
     public AudioFeatures(String title, int length, List<String> contributors) {
         isTitlePresent(title);
-        isLenghtValid(length);
+        isLengthValid(length);
         this.title = title;
         this.length = length;
         this.contributors = contributors;
@@ -19,7 +19,7 @@ public class AudioFeatures implements Feature {
 
     public AudioFeatures(String title, int length, List<String> contributors, List<String> composer) {
         isTitlePresent(title);
-        isLenghtValid(length);
+        isLengthValid(length);
         this.title = title;
         this.length = length;
         this.contributors.addAll(composer);
@@ -41,12 +41,12 @@ public class AudioFeatures implements Feature {
     }
 
     private void isTitlePresent(String title){
-        if(title.equals("")){
+        if(Validators.isBlank(title)){
             throw new IllegalArgumentException("Empty title");
         }
     }
 
-    private void isLenghtValid(int lenght){
+    private void isLengthValid(int lenght){
         if(lenght < 1){
             throw new IllegalArgumentException("Invalid length");
         }
