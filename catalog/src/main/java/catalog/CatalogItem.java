@@ -26,4 +26,24 @@ public class CatalogItem {
     public List<Feature> getFeatures() {
         return features;
     }
+
+    public int numberOfPagesAtOneItem(){
+        int result = 0;
+        for(Feature f : features) {
+            if(f instanceof PrintedFeatures) {
+                result += ((PrintedFeatures) f).getNumberOfPages();
+            }
+        }
+        return result;
+    }
+
+    public int fullLengthAtOneItem(){
+        int result = 0;
+        for(Feature f : features) {
+            if(f instanceof AudioFeatures) {
+                result += ((AudioFeatures) f).getLength();
+            }
+        }
+        return result;
+    }
 }
