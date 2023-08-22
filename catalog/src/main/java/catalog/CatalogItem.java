@@ -1,5 +1,6 @@
 package catalog;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,7 +8,7 @@ public class CatalogItem {
 
     private final String registrationNumber;
     private final int price;
-    private List<Feature> features;
+    private final List<Feature> features;
 
     public CatalogItem(String registrationNumber, int price,Feature... features) {
         this.registrationNumber = registrationNumber;
@@ -45,5 +46,39 @@ public class CatalogItem {
             }
         }
         return result;
+    }
+
+    public List<String> getContributors(){
+        List<String> result = new ArrayList<>();
+        for(Feature f : features){
+            result.addAll(f.getContributors());
+        }
+        return result;
+    }
+
+    public List<String> getTitles(){
+        List<String> result = new ArrayList<>();
+        for(Feature f : features){
+            result.add(f.getTitle());
+        }
+        return result;
+    }
+
+    public boolean hasAudioFeature(){
+        for(Feature f : features) {
+            if(f instanceof AudioFeatures) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasPrintedFeature(){
+        for(Feature f : features) {
+            if(f instanceof PrintedFeatures) {
+                return true;
+            }
+        }
+        return false;
     }
 }

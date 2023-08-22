@@ -56,7 +56,7 @@ public class CatalogItemTest {
         assertThat(catalogItem.fullLengthAtOneItem(),is(385));
     }
 
-    /*
+
     @Test
     public void testGetAllContributorsFromOneItem(){
         List<String> result = Arrays.asList("Imagine Dragons", "Dan Raynolds", "J.K. Rowling", "Iron Maiden", "Steve Harris");
@@ -81,7 +81,7 @@ public class CatalogItemTest {
         assertThat(catalogItem2.hasPrintedFeature(),is(true));
     }
 
-     */
+
 
 
 }
