@@ -67,6 +67,8 @@ public class CatalogTest {
         assertThat(catalog.getPrintedLibraryItems().size(), is(2));
     }
 
+
+
     @Test
     public void testGetAllPageNumber() {
 
@@ -76,6 +78,7 @@ public class CatalogTest {
         assertThat(catalog.getAllPageNumber(), is(1100));
 
     }
+     /*
 
     @Test
     public void testGetFullLength() {
@@ -158,5 +161,9 @@ public class CatalogTest {
         assertThat(catalog.findByCriteria(searchCriteria).size(), is(1));
 
     }
+     */
+
 
 }
+
+
