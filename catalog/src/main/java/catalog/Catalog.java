@@ -76,9 +76,19 @@ public class Catalog {
             throw new IllegalArgumentException("No page");
         }
         return (double) result / validItem;
-
     }
 
+    public List<CatalogItem> findByCriteria(SearchCriteria searchCriteria){
+
+        List<CatalogItem> result = new ArrayList<>();
+        for(CatalogItem c : catalogItems){
+            if(c.getContributors().contains(searchCriteria.getContributor())
+                && c.getTitles().contains(searchCriteria.getTitle())){
+                result.add(c);
+            }
+        }
+        return result;
+    }
 
     public void removeAllItems(){
         catalogItems.clear();

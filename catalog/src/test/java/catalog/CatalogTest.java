@@ -127,10 +127,12 @@ public class CatalogTest {
         assertThat(catalog.averagePageNumberOver(501), is(600.0));
 
     }
-    /*
+
 
     @Test
     public void testFindByCriteriaBoth() {
+
+        catalog.removeAllItems();
 
         SearchCriteria searchCriteria = createByBoth("Night Visions", "Dan Raynolds");
 
@@ -142,6 +144,8 @@ public class CatalogTest {
         assertThat(catalog.findByCriteria(searchCriteria).get(0).getFeatures().get(0).getTitle(), is("Night Visions"));
 
     }
+
+    /*
 
     @Test
     public void testFindByCriteriaContributor() {
