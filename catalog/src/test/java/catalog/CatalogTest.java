@@ -119,13 +119,12 @@ public class CatalogTest {
 
     @Test
     public void testAveragePageNumberOverVariable() {
+
         catalog.addItem(catalogItem1);
         catalog.addItem(catalogItem2);
         catalog.addItem(catalogItem3);
-
         assertThat(catalog.averagePageNumberOver(100), is(550.0));
         assertThat(catalog.averagePageNumberOver(501), is(600.0));
-
     }
 
 
@@ -133,45 +132,32 @@ public class CatalogTest {
     public void testFindByCriteriaBoth() {
 
         catalog.removeAllItems();
-
         SearchCriteria searchCriteria = createByBoth("Night Visions", "Dan Raynolds");
-
-
         catalog.addItem(catalogItem1);
         catalog.addItem(catalogItem2);
-
         assertThat(catalog.findByCriteria(searchCriteria).size(), is(1));
         assertThat(catalog.findByCriteria(searchCriteria).get(0).getFeatures().get(0).getTitle(), is("Night Visions"));
-
     }
 
-    /*
+
 
     @Test
     public void testFindByCriteriaContributor() {
 
-
+        catalog.removeAllItems();
         SearchCriteria searchCriteria = createByContributor("Imagine Dragons");
-
-
         catalog.addItem(catalogItem1);
-
         assertThat(catalog.findByCriteria(searchCriteria).size(), is(1));
-
     }
 
     @Test
     public void testFindByCriteriaTitle() {
 
+        catalog.removeAllItems();
         SearchCriteria searchCriteria = createByTitle("Harry Potter");
-
-
         catalog.addItem(catalogItem1);
-
         assertThat(catalog.findByCriteria(searchCriteria).size(), is(1));
-
     }
-     */
 
 
 }

@@ -1,7 +1,6 @@
 package catalog;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Catalog {
@@ -82,9 +81,16 @@ public class Catalog {
 
         List<CatalogItem> result = new ArrayList<>();
         for(CatalogItem c : catalogItems){
-            if(c.getContributors().contains(searchCriteria.getContributor())
-                && c.getTitles().contains(searchCriteria.getTitle())){
-                result.add(c);
+            if(searchCriteria.hasBoth()){
+                hasBothCriteriaSearch(result,c,searchCriteria);
+                continue;
+            }
+            if(searchCriteria.hasTitle()){
+                hasTitleCriteriaSearch(result,c,searchCriteria);
+                continue;
+            }
+            if(searchCriteria.hasContributor()){
+                hasContributorCriteriaSearch(result,c,searchCriteria);
             }
         }
         return result;
@@ -92,5 +98,24 @@ public class Catalog {
 
     public void removeAllItems(){
         catalogItems.clear();
+    }
+
+    private void hasBothCriteriaSearch(List<CatalogItem> result, CatalogItem catalogItem, SearchCriteria searchCriteria){
+        if(catalogItem.getContributors().contains(searchCriteria.getContributor())
+                && catalogItem.getTitles().contains(searchCriteria.getTitle())){
+            result.add(catalogItem);
+        }
+    }
+
+    private void hasTitleCriteriaSearch(List<CatalogItem> result, CatalogItem catalogItem, SearchCriteria searchCriteria){
+        if(catalogItem.getTitles().contains(searchCriteria.getTitle())){
+            result.add(catalogItem);
+        }
+    }
+
+    private void hasContributorCriteriaSearch(List<CatalogItem> result, CatalogItem catalogItem, SearchCriteria searchCriteria){
+        if(catalogItem.getContributors().contains(searchCriteria.getContributor())){
+            result.add(catalogItem);
+        }
     }
 }

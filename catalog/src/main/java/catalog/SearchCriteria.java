@@ -43,6 +43,10 @@ public class SearchCriteria {
         return contributor != null;
     }
 
+    public boolean hasBoth(){
+        return contributor != null && title != null;
+    }
+
     public String getContributor(){
         return contributor;
     }
