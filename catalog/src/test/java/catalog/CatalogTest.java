@@ -41,11 +41,11 @@ public class CatalogTest {
     @Test
     public void testAddAndDeleteItem() {
         catalog.removeAllItems();
-        assertThat(catalog.catalogItems.size(), is(0));
+        assertThat(Catalog.catalogItems.size(), is(0));
         catalog.addItem(catalogItem1);
-        assertThat(catalog.catalogItems.size(), is(1));
+        assertThat(Catalog.catalogItems.size(), is(1));
         catalog.deleteItemByRegistrationNumber("R-1");
-        assertThat(catalog.catalogItems.size(), is(0));
+        assertThat(Catalog.catalogItems.size(), is(0));
     }
 
 
@@ -54,7 +54,7 @@ public class CatalogTest {
         catalog.removeAllItems();
         catalog.addItem(catalogItem1);
         catalog.addItem(catalogItem2);
-        assertThat(catalog.getAudioLibraryItems().size(), is(1));
+        assertThat(Catalog.getAudioLibraryItems().size(), is(1));
 
     }
 
@@ -64,7 +64,7 @@ public class CatalogTest {
         catalog.removeAllItems();
         catalog.addItem(catalogItem1);
         catalog.addItem(catalogItem2);
-        assertThat(catalog.getPrintedLibraryItems().size(), is(2));
+        assertThat(Catalog.getPrintedLibraryItems().size(), is(2));
     }
 
     @Test
