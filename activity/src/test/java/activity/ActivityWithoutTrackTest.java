@@ -1,4 +1,3 @@
-/*
 package activity;
 
 import org.junit.Test;
@@ -22,5 +21,3 @@ public class ActivityWithoutTrackTest {
 
 
 }
-
- */
