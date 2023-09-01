@@ -1,4 +1,3 @@
-/*
 package activity;
 
 import org.junit.Rule;
@@ -39,5 +38,3 @@ public class CoordinateTest {
         assertThat(coordinate.getLongitude(), is(-34.789));
     }
 }
-
- */
