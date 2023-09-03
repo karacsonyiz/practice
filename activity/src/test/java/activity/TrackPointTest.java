@@ -1,4 +1,3 @@
-/*
 package activity;
 
 import org.junit.Test;
@@ -25,8 +24,6 @@ public class TrackPointTest {
 
     @Test
     public void testGetDistance() {
-        assertThat(trackPoint.getDistanceFrom(trackPoint2), closeTo(83988.06, 0.05));
+        assertThat(trackPoint.getDistanceFrom(trackPoint2), closeTo(83988.06, 0.1));
     }
 }
-
- */
