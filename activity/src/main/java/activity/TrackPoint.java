@@ -27,5 +27,11 @@ public class TrackPoint {
         return elevation;
     }
 
-
+    @Override
+    public String toString() {
+        return "TrackPoint{" +
+                "coordinate=" + coordinate +
+                ", elevation=" + elevation +
+                '}';
+    }
 }
