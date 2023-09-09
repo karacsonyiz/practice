@@ -46,5 +46,20 @@ public class Track {
         return fullDistance;
     }
 
+    public Coordinate findMinimumCoordinate(){
+        Coordinate minLatCoordinate = trackPoints.get(0).getCoordinate();
+        Coordinate minLatLonCoordinate = trackPoints.get(0).getCoordinate();
+        for(TrackPoint trackPoint : trackPoints){
+            if(trackPoint.getCoordinate().getLatitude() < minLatCoordinate.getLatitude()){
+                minLatCoordinate = trackPoint.getCoordinate();
+            }
+            if(trackPoint.getCoordinate().getLatitude() < minLatLonCoordinate.getLatitude()){
+                minLatLonCoordinate = trackPoint.getCoordinate();
+            }
+        }
+
+        return minLatCoordinate;
+    }
+
 
 }

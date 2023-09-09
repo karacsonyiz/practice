@@ -54,7 +54,7 @@ public class TrackTest {
         assertThat(track.getDistance(), closeTo(13611579.62, 20));
     }
 
-    /*
+
 
     @Test
     public void testFindMinimumCoordinate() {
@@ -66,6 +66,8 @@ public class TrackTest {
         assertThat(track.findMinimumCoordinate().getLatitude(), is(-12.5));
         assertThat(track.findMinimumCoordinate().getLongitude(), is(-42.789));
     }
+
+    /*
 
     @Test
     public void testFindMaximumCoordinate() {
