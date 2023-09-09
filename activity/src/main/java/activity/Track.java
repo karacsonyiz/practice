@@ -47,18 +47,17 @@ public class Track {
     }
 
     public Coordinate findMinimumCoordinate(){
-        Coordinate minLatCoordinate = trackPoints.get(0).getCoordinate();
-        Coordinate minLatLonCoordinate = trackPoints.get(0).getCoordinate();
+        Coordinate minCoordinate = new Coordinate(0,0);
         for(TrackPoint trackPoint : trackPoints){
-            if(trackPoint.getCoordinate().getLatitude() < minLatCoordinate.getLatitude()){
-                minLatCoordinate = trackPoint.getCoordinate();
+            if(trackPoint.getCoordinate().getLatitude() < minCoordinate.getLatitude()){
+                minCoordinate.setLatitude(trackPoint.getCoordinate().getLatitude());
             }
-            if(trackPoint.getCoordinate().getLatitude() < minLatLonCoordinate.getLatitude()){
-                minLatLonCoordinate = trackPoint.getCoordinate();
+            if(trackPoint.getCoordinate().getLongitude() < minCoordinate.getLongitude()){
+                minCoordinate.setLongitude(trackPoint.getCoordinate().getLongitude());
             }
         }
 
-        return minLatCoordinate;
+        return minCoordinate;
     }
 
 

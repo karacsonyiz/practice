@@ -2,8 +2,8 @@ package activity;
 
 public class Coordinate {
 
-    private final double latitude;
-    private final double longitude;
+    private double latitude;
+    private double longitude;
 
     public Coordinate(double latitude, double longitude) {
         checkIfCoordinatesAreValid(latitude,longitude);
@@ -26,5 +26,13 @@ public class Coordinate {
         if(lon > 90 || lon < -90) {
             throw new IllegalArgumentException();
         }
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }
