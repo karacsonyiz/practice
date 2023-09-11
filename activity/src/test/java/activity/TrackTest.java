@@ -67,7 +67,7 @@ public class TrackTest {
         assertThat(track.findMinimumCoordinate().getLongitude(), is(-42.789));
     }
 
-    /*
+
 
     @Test
     public void testFindMaximumCoordinate() {
@@ -79,6 +79,8 @@ public class TrackTest {
         assertThat(track.findMaximumCoordinate().getLatitude(), is(13.7));
         assertThat(track.findMaximumCoordinate().getLongitude(), is(45.7));
     }
+
+    /*
 
     @Test
     public void testGetRectangleArea() {

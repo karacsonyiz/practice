@@ -60,5 +60,19 @@ public class Track {
         return minCoordinate;
     }
 
+    public Coordinate findMaximumCoordinate(){
+        Coordinate maxCoordinate = new Coordinate(0,0);
+        for(TrackPoint trackPoint : trackPoints){
+            if(trackPoint.getCoordinate().getLatitude() > maxCoordinate.getLatitude()){
+                maxCoordinate.setLatitude(trackPoint.getCoordinate().getLatitude());
+            }
+            if(trackPoint.getCoordinate().getLongitude() > maxCoordinate.getLongitude()){
+                maxCoordinate.setLongitude(trackPoint.getCoordinate().getLongitude());
+            }
+        }
+
+        return maxCoordinate;
+    }
+
 
 }
