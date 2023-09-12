@@ -18,7 +18,7 @@ public class TrackTest {
         assertThat(track.getTrackPoints().get(0).getCoordinate().getLongitude(), is(34.89));
     }
 
-    /*
+
 
     @Test
     public void testFullElevation() {
@@ -41,7 +41,7 @@ public class TrackTest {
 
         assertThat(track.getFullDecrease(), is(124.0));
     }
-    */
+
 
 
     @Test
