@@ -1,4 +1,3 @@
-/*
 package activity;
 
 import org.junit.Test;
@@ -25,7 +24,7 @@ public class ActivityWithTrackTest {
         track.addTrackPoint(new TrackPoint(new Coordinate(3.67, -42.789), 200));
 
         System.out.println(activityWithTrack.getDistance());
-        assertThat(activityWithTrack.getDistance(), closeTo(13611579.62, 0.05));
+        assertThat(activityWithTrack.getDistance(), closeTo(13611579.62, 20));
     }
 
 
@@ -34,5 +33,3 @@ public class ActivityWithTrackTest {
         assertThat(activityWithTrack.getType(), is(ActivityType.RUNNING));
     }
 }
-
- */

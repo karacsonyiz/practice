@@ -74,5 +74,8 @@ public class Track {
         return maxCoordinate;
     }
 
+    public double getFullDecrease(){
+        return 0;
+    }
 
 }
