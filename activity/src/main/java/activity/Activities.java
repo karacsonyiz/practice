@@ -19,7 +19,7 @@ public class Activities {
         return 0;
     }
 
-    public Report distancesByTypes(){
+    public List<Report> distancesByTypes(){
         return null;
     }
 }
