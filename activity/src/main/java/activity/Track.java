@@ -22,17 +22,16 @@ public class Track {
         double totalElevation = 0;
         double currentElevation = trackPoints.get(0).getElevation();
 
+
         for(TrackPoint track : trackPoints){
-            currentElevation = track.getElevation();
-            System.out.println(track.toString());
             if(track.getElevation() > currentElevation){
                 totalElevation += track.getElevation() - currentElevation;
-                //totalElevation += currentElevation -  track.getElevation();
             }
+            currentElevation = track.getElevation();
+
         }
         System.out.println(totalElevation);
         return totalElevation;
-
     }
 
     public double getDistance(){
