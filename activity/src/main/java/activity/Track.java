@@ -74,7 +74,18 @@ public class Track {
     }
 
     public double getFullDecrease(){
-        return 0;
+        double totalDecrease = 0;
+        double currentDecrease = trackPoints.get(0).getElevation();
+
+        for(TrackPoint track : trackPoints){
+            if(track.getElevation() < currentDecrease){
+                totalDecrease += currentDecrease - track.getElevation();
+            }
+            currentDecrease = track.getElevation();
+
+        }
+        System.out.println(totalDecrease);
+        return totalDecrease;
     }
 
 }
