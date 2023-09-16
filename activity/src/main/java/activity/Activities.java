@@ -1,6 +1,5 @@
 package activity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Activities {
@@ -12,7 +11,13 @@ public class Activities {
     }
 
     public int numberOfTrackActivities(){
-        return 0;
+        int sum = 0;
+        for(Activity activity : activities){
+            if(activity instanceof ActivityWithTrack){
+                sum += 1;
+            }
+        }
+        return sum;
     }
 
     public int numberOfWithoutTrackActivities(){
