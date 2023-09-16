@@ -21,7 +21,13 @@ public class Activities {
     }
 
     public int numberOfWithoutTrackActivities(){
-        return 0;
+        int sum = 0;
+        for(Activity activity : activities){
+            if(activity instanceof ActivityWithoutTrack){
+                sum += 1;
+            }
+        }
+        return sum;
     }
 
     public List<Report> distancesByTypes(){
