@@ -1,5 +1,6 @@
 package activity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Activities {
@@ -31,6 +32,10 @@ public class Activities {
     }
 
     public List<Report> distancesByTypes(){
-        return null;
+        List<Report> result = new ArrayList<>();
+        for(Activity activity : activities){
+            result.add(new Report(activity.getType(),activity.getDistance()));
+        }
+        return result;
     }
 }
