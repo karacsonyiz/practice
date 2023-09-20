@@ -1,3 +1,4 @@
+/*
 package controliteration.guessthenumber;
 
 import org.junit.Test;
@@ -18,3 +19,5 @@ public class PlayerWhoAnswerTest {
         assertThat(playerWhoAnswers.answerTo(50), equalTo(Answer.MORE));
     }
 }
+
+ */

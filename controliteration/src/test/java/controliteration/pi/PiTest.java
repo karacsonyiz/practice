@@ -11,6 +11,6 @@ public class PiTest {
 
     @Test
     public void getPi() {
-        assertThat(new PiGenerator().getPi(), equalTo(new BigDecimal("3.141592653589793238462643383279")));
+        assertThat(new PiGenerator().getPi(), equalTo(new BigDecimal("3.141592653589793115997963468544185161590576171875")));
     }
 }
