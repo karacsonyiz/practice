@@ -1,4 +1,3 @@
-/*
 package controliteration.guessthenumber;
 
 import org.junit.Test;
@@ -22,5 +21,3 @@ public class PlayTest {
     }
 
 }
-
- */
