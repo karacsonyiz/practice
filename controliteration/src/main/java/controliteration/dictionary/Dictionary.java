@@ -10,13 +10,15 @@ public class Dictionary {
 
     public void addItem(String item, List<String> translations){
 
-        for(Translation translation : translationList){
-            if(translation.getTranslations().equals(item)){
-                translation.addTranslation(translations);
-            } else {
-                translationList.add(new Translation(item,translations));
-            }
+        Translation newTranslation = new Translation(item,translations);
+
+        if(translationList.contains(newTranslation)){
+            Translation original = translationList.get(translationList.indexOf(newTranslation));
+            original.addTranslation(translations);
+        } else {
+            translationList.add(newTranslation);
         }
+
     }
 
     public List<String> findTranslations(String item){
