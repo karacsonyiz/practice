@@ -1,4 +1,3 @@
-/*
 package controliteration.conwaysgame;
 
 import org.junit.Test;
@@ -60,5 +59,3 @@ public class ConwaysGameTest {
         assertThat(conwaysGame.getTable(), equalTo(stop));
     }
 }
-
- */
