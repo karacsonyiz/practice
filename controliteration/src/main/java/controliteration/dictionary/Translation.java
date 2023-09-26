@@ -1,14 +1,11 @@
 package controliteration.dictionary;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Translation {
 
     private String name;
-    private List<String> translations = new ArrayList<>();
+    private List<String> translations;
 
     public Translation(String name, List<String> translations) {
         this.name = name;
@@ -16,11 +13,9 @@ public class Translation {
     }
 
     public void addTranslation(List<String> translationList){
-        for(String translation : translationList){
-            if(!translations.contains(translation)){
-                translations.add(translation);
-            }
-        }
+        Set<String> added = new HashSet<>(translations);
+        added.addAll(translationList);
+        translations = new ArrayList<>(added);
     }
 
     public String getName() {
