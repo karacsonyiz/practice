@@ -1,4 +1,3 @@
-/*
 package controlselection.accents;
 
 import org.junit.Test;
@@ -23,5 +22,3 @@ public class WithoutAccentsTest {
         assertThat(new WithoutAccents().convertToCharWithoutAccents('z'), equalTo('z'));
     }
 }
-
- */
