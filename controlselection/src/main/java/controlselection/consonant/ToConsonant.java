@@ -5,12 +5,11 @@ import java.util.*;
 public class ToConsonant {
 
     List<Character> vowels = new ArrayList<>();
-    String characters = "abcdefghijklmnopqrstuvwxyz";
 
     public Character convertToConsonant(char character){
         fillVowels();
         if(!vowels.contains(character)){return character;}
-        List<String> characterList = Arrays.asList(characters.split(""));
+        List<String> characterList = Arrays.asList("abcdefghijklmnopqrstuvwxyz".split(""));
 
         int place = 0;
         for(String s : characterList){
@@ -19,7 +18,6 @@ public class ToConsonant {
             }
             place += 1;
         }
-
         return characterList.get(place+1).charAt(0);
     }
 

@@ -1,4 +1,3 @@
-/*
 package controlselection.month;
 
 import org.junit.Rule;
@@ -37,5 +36,3 @@ public class DayInMonthTest {
         new DayInMonth().numberOfDays(2012, "abc");
     }
 }
-
- */
