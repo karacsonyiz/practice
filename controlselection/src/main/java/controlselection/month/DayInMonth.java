@@ -16,7 +16,7 @@ public class DayInMonth {
         if(found.name().equals("február")){
             found.isLeapYear(year);
         }
-        return found.getNumberOfdays();
+        return found.getDays();
     }
 
 

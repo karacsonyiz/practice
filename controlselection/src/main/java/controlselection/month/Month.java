@@ -21,7 +21,7 @@ public enum Month {
         this.days = days;
     }
 
-    public int getNumberOfdays() {
+    public int getDays() {
         return days;
     }
 
