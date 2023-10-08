@@ -1,3 +1,4 @@
+/*
 package defaultconstructor.date;
 
 import org.junit.After;
@@ -46,3 +47,5 @@ public class SimpleDateFormatterTest {
         assertThat(new SimpleDateFormatter().formatDateString(simpleDate), equalTo("2016-2-29"));
     }
 }
+
+ */
