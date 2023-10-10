@@ -7,15 +7,29 @@ public class SimpleDate {
     private int day;
 
     public void setDate(int year, int month, int day){
+        if(month == 2 && !isLeapYear(year)){
+            throw new IllegalArgumentException("One or more given parameter cannot be applied!");
+        }
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }
 
+    public int getYear() {
+        return year;
     }
-    public int getYear(){
-        return 0;
+
+    public int getMonth() {
+        return month;
     }
-    public int getMonth(){
-        return 0;
+
+    public int getDay() {
+        return day;
     }
-    public int getDay(){
-        return 0;
+
+
+
+    public boolean isLeapYear(int year){
+        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
     }
 }
