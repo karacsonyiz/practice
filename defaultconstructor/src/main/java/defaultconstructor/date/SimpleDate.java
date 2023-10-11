@@ -5,11 +5,17 @@ public class SimpleDate {
     private int year;
     private int month;
     private int day;
+    private Month monthEnum;
 
     public void setDate(int year, int month, int day){
         if(month == 2 && !isLeapYear(year)){
             throw new IllegalArgumentException("One or more given parameter cannot be applied!");
         }
+        if(month > 12 || year <= 1900){
+            throw new IllegalArgumentException("One or more given parameter cannot be applied!");
+        }
+
+
         this.year = year;
         this.month = month;
         this.day = day;
