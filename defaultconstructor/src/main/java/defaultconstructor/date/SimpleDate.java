@@ -13,9 +13,7 @@ public class SimpleDate {
         if(month == 2 && !isLeapYear(year)){
             throw new IllegalArgumentException("One or more given parameter cannot be applied!");
         }
-        if(month > 12 || year <= 1900){
-            throw new IllegalArgumentException("One or more given parameter cannot be applied!");
-        }
+        isMonthCorrect(month,year);
         isDayCorrect(month,day);
 
         this.year = year;
@@ -35,6 +33,12 @@ public class SimpleDate {
         return day;
     }
 
+    private void isMonthCorrect(int month,int year){
+        if(month > 12 || year <= 1900){
+            throw new IllegalArgumentException("One or more given parameter cannot be applied!");
+        }
+    }
+
     private void isDayCorrect(int month,int day){
         Map<Integer,Integer> monthDays = new HashMap<>();
         monthDays.put(1,31);
@@ -49,18 +53,12 @@ public class SimpleDate {
         monthDays.put(10,31);
         monthDays.put(11,30);
         monthDays.put(12,31);
-
-        int m = monthDays.get(month);
-
-        if(m != day){
+        if(monthDays.get(month) != day){
             throw new IllegalArgumentException("One or more given parameter cannot be applied!");
         }
     }
 
-
-
-    public boolean isLeapYear(int year)
-    {
+    public boolean isLeapYear(int year) {
         return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
     }
 }
