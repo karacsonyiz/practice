@@ -4,7 +4,7 @@ public class ArraySearch {
 
     public DataPair<String> getFirstAndLastWord(String[] words){
         checkIfValid(words);
-        return null;
+        return new DataPair<>(words[0],words[words.length-1]);
     }
 
 
