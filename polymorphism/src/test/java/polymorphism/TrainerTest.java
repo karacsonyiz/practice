@@ -38,7 +38,27 @@ public class TrainerTest {
         assertThat(hasName, instanceOf(Human.class));
         assertThat(hasName, instanceOf(Object.class));
         assertThat(hasName, instanceOf(HasName.class));
+    }
 
+    @Test
+    public void testConvert(){
+        Trainer trainer = new Trainer("John Doe", Arrays.asList(new Course("Course1")));
+        Human human = trainer;
+        Object object = trainer;
+        HasName hasName = trainer;
+    }
+
+    @Test
+    public void testExplicitConvert(){
+        Object object = new Trainer("John Doe", Arrays.asList(new Course("Course1")));
+        Trainer trainer = (Trainer) object;
+    }
+
+    @Test
+    public void testExplicitConvertDoesNotWork(){
+        expectedException.expect(ClassCastException.class);
+        Human human = new Human("John Doe");
+        Trainer trainer = (Trainer) human;
     }
 
 }
