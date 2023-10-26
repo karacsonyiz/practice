@@ -3,9 +3,7 @@ package server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,6 +26,7 @@ public class BooksApplication {
 
     @RequestMapping("/book/{id}")
     public Book book(@PathVariable int id){
+        System.out.println(id);
         return books.get(id);
     }
 
