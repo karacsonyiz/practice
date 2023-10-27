@@ -1,9 +1,13 @@
-package server;
+package server.Service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Book {
 
     private String author;
     private String title;
+
 
     public Book(String author, String title) {
         this.author = author;
@@ -17,4 +21,6 @@ public class Book {
     public String getTitle() {
         return title;
     }
+
+
 }
