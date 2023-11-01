@@ -1,4 +1,4 @@
-package server.Service;
+package server.Database;
 
 public class Book {
 
