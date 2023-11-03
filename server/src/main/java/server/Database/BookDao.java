@@ -1,11 +1,7 @@
 package server.Database;
 
-
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 import server.Model.Book;
 
@@ -24,9 +20,10 @@ public class BookDao {
     private static class BookMapper implements RowMapper<Book> {
         @Override
         public Book mapRow(ResultSet resultSet, int i) throws SQLException {
+            Integer id = resultSet.getInt("id");
             String author = resultSet.getString("author");
             String title = resultSet.getString("title");
-            return new Book(author, title);
+            return new Book(id, author, title);
         }
     }
     public List<Book> listBooks() {
@@ -35,8 +32,7 @@ public class BookDao {
     }
 
     public Book getBookById(int id){
-                Book book = jdbcTemplate.queryForObject("select id, author, title from book where id = ?",
+                return jdbcTemplate.queryForObject("select id, author, title from book where id = ?",
                         new BookMapper(), id);
-                return book;
     }
 }

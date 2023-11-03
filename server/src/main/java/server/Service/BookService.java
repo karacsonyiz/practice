@@ -1,10 +1,12 @@
 package server.Service;
 
+import org.springframework.stereotype.Service;
 import server.Database.BookDao;
 import server.Model.Book;
 
 import java.util.List;
 
+@Service
 public class BookService {
 
     private BookDao bookDao;

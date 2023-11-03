@@ -5,7 +5,7 @@ CREATE TABLE book (
  );
 
  INSERT INTO book
-(author, title)
-VALUES("Szophoklész", "Antigoné"),
-("Dickens, Charles","Karácsonyi ének"),
-("Gárdonyi Géza","Egri csillagok");
+(id, author, title)
+VALUES(1, "Szophoklész", "Antigoné"),
+(2, "Dickens, Charles","Karácsonyi ének"),
+(3, "Gárdonyi Géza","Egri csillagok");
