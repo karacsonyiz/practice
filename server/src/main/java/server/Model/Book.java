@@ -1,4 +1,4 @@
-package server.Database;
+package server.Model;
 
 public class Book {
 

@@ -7,8 +7,10 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
+import server.Model.Book;
 
 import java.sql.*;
+import java.util.List;
 
 @Repository
 public class BookDao {
@@ -19,7 +21,7 @@ public class BookDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    private static class UserMapper implements RowMapper<Book> {
+    private static class BookMapper implements RowMapper<Book> {
         @Override
         public Book mapRow(ResultSet resultSet, int i) throws SQLException {
             String author = resultSet.getString("author");
@@ -27,20 +29,14 @@ public class BookDao {
             return new Book(author, title);
         }
     }
+    public List<Book> listBooks() {
+        return jdbcTemplate.query("select id, author, title from book",
+                new BookMapper());
+    }
 
-    public long createUser(Book book) {
-        KeyHolder keyHolder = new GeneratedKeyHolder();
-        jdbcTemplate.update(new PreparedStatementCreator() {
-            @Override
-            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement(
-                        "insert into book(author, title) values(?, ?)",
-                        Statement.RETURN_GENERATED_KEYS);
-                ps.setString(1, book.getAuthor());
-                ps.setString(2, book.getTitle());
-                return ps;
-            }
-        }, keyHolder);
-        return keyHolder.getKey().longValue();
+    public Book getBookById(int id){
+                Book book = jdbcTemplate.queryForObject("select id, author, title from book where id = ?",
+                        new BookMapper(), id);
+                return book;
     }
 }

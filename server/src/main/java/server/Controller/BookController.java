@@ -3,7 +3,8 @@ package server.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import server.Database.Book;
+import server.Model.Book;
+import server.Service.BookService;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,21 +12,20 @@ import java.util.List;
 @RestController
 public class BookController {
 
-    private List<Book> books = Arrays.asList(
-            new Book("Szophoklész","Antigoné"),
-            new Book("Dickens, Charles","Karácsonyi ének"),
-            new Book("Gárdonyi Géza","Egri csillagok"));
+    private BookService bookService;
+
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
+    }
 
 
     @RequestMapping("/books")
-    public List<Book> books(){
-        return books;
+    public List<Book> listBooks(){
+        return bookService.listBooks();
     }
 
     @RequestMapping("/book/{id}")
     public Book book(@PathVariable int id){
-        return books.get(id);
+        return bookService.getBookById(id);
     }
-
-
 }
