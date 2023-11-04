@@ -22,24 +22,20 @@ function createBook(){
                    return response.json();
                })
                .then(function(jsonData) {
-                   handleActions(jsonData);
+                   getBooks();
                })
                .catch(error => console.log(error));
            return false;
 }
 
-function handleActions(jsonData){
-console.log(jsonData)
-}
-
-
 function getBooks() {
+        var booksTable = document.querySelector("#booksTable");
+        booksTable.innerHTML = "";
         fetch("/books")
             .then(function(response) {
                 return response.json();
             })
             .then(function(jsonData) {
-                var booksTable = document.querySelector("#booksTable");
                 for(let i = 0;i < jsonData.length; i++){
                     booksTable.innerHTML += "<tr><td><a href='book.html?id=" + jsonData[i].id +"'>"+ jsonData[i].author + "</a></td><td>" + jsonData[i].title +
                     "</td></tr>"
