@@ -22,4 +22,8 @@ public class BookService {
     public Book getBookById(int id){
         return bookDao.getBookById(id);
     }
+
+    public long createBook(Book book){
+        return bookDao.createBook(book);
+    }
 }

@@ -1,8 +1,6 @@
 package server.Controller;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import server.Model.Book;
 import server.Service.BookService;
 import java.util.List;
@@ -25,5 +23,11 @@ public class BookController {
     @RequestMapping("/book/{id}")
     public Book book(@PathVariable int id){
         return bookService.getBookById(id);
+    }
+
+    @RequestMapping(value = "/createbook", method = RequestMethod.POST)
+    public long createUser(@RequestBody Book book) {
+
+        return bookService.createBook(book);
     }
 }

@@ -1,11 +1,11 @@
 CREATE TABLE book (
- id bigint,
+ id int auto_increment primary key,
  author VARCHAR(255) NOT NULL,
  title VARCHAR(255) NOT NULL
  );
 
  INSERT INTO book
-(id, author, title)
-VALUES(1, "Szophoklész", "Antigoné"),
-(2, "Dickens, Charles","Karácsonyi ének"),
-(3, "Gárdonyi Géza","Egri csillagok");
+(author, title)
+VALUES("Szophoklész", "Antigoné"),
+("Dickens, Charles","Karácsonyi ének"),
+("Gárdonyi Géza","Egri csillagok");

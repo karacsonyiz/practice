@@ -4,6 +4,32 @@ window.onload = function(){
 }
 
 function createBook(){
+
+    let author = document.querySelector("#authorInput").value;
+    let title = document.querySelector("#titleInput").value;
+
+    let book = {
+                   "author": author,
+                   "title": title
+               }
+     fetch("createbook", {
+                 method: "POST",
+                 headers: {
+                     "Content-Type": "application/json; charset=utf-8"
+                         },
+                 body: JSON.stringify(book)
+        }).then(function(response) {
+                   return response.json();
+               })
+               .then(function(jsonData) {
+                   handleActions(jsonData);
+               })
+               .catch(error => console.log(error));
+           return false;
+}
+
+function handleActions(jsonData){
+console.log(jsonData)
 }
 
 
