@@ -1,5 +1,9 @@
 window.onload = function(){
+    document.getElementById("createBook").addEventListener("click", createBook, false);
     getBooks();
+}
+
+function createBook(){
 }
 
 
@@ -16,3 +20,4 @@ function getBooks() {
                 }
             }).catch(error => console.log(error));
 }
+

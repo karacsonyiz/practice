@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import server.Model.Book;
 import server.Service.BookService;
-
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
