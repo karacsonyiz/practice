@@ -37,8 +37,10 @@ function getBooks() {
             })
             .then(function(jsonData) {
                 for(let i = 0;i < jsonData.length; i++){
+                    let btn = document.createElement("button");
+                    btn.setAttribute("id",jsonData[i].id);
                     booksTable.innerHTML += "<tr><td><a href='book.html?id=" + jsonData[i].id +"'>"+ jsonData[i].author + "</a></td><td>" + jsonData[i].title +
-                    "</td></tr>"
+                    "  <button class='edit' id="+ jsonData[i].id +">Szerkeszt</button><button class='delete' id="+ jsonData[i].id +">Töröl</button></td></tr>";
                 }
             }).catch(error => console.log(error));
 }
