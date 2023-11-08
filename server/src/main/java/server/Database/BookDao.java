@@ -52,4 +52,9 @@ public class BookDao {
         }, keyHolder);
         return keyHolder.getKey().intValue();
     }
+
+    public int deleteBook(int id) {
+        jdbcTemplate.update("delete from book where id = ?", id);
+        return id;
+    }
 }

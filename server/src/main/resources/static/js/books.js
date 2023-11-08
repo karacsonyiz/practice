@@ -7,6 +7,16 @@ $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
 
+function deleteBook(id) {
+        fetch("/book/delete/" + id)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(jsonData) {
+                getBooks();
+            }).catch(error => console.log(error));
+}
+
 function createBook(){
     let author = document.querySelector("#authorInput").value;
     let title = document.querySelector("#titleInput").value;
@@ -71,6 +81,7 @@ function createRow(row){
         let deleteBtn = document.createElement("button");
         deleteBtn.setAttribute("id",row.id);
         deleteBtn.setAttribute("class","delete btn btn-danger rounded-pill px-3");
+        deleteBtn.addEventListener("click", function(){deleteBook(row.id);}, false);
         deleteBtn.innerHTML = "Töröl";
         tr.appendChild(deleteBtn);
         let editBtn = document.createElement("button");

@@ -21,7 +21,7 @@ public class BookController {
     }
 
     @RequestMapping("/book/{id}")
-    public Book book(@PathVariable int id){
+    public Book getBook(@PathVariable int id){
         return bookService.getBookById(id);
     }
 
@@ -30,4 +30,10 @@ public class BookController {
 
         return bookService.createBook(book);
     }
+
+    @RequestMapping("/book/delete/{id}")
+    public int deleteBook(@PathVariable int id){
+        return bookService.deleteBook(id);
+    }
+
 }

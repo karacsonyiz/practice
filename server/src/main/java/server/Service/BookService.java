@@ -26,4 +26,8 @@ public class BookService {
     public long createBook(Book book){
         return bookDao.createBook(book);
     }
+
+    public int deleteBook(int id){
+        return bookDao.deleteBook(id);
+    }
 }
