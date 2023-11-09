@@ -1,6 +1,6 @@
 window.onload = function(){
     document.getElementById("createBook").addEventListener("click", createBook, false);
-    document.getElementById("saveBook").addEventListener("click", saveBook, false);
+    document.getElementById("modifyBook").addEventListener("click", modifyBook, false);
     getBooks();
 }
 
@@ -8,11 +8,16 @@ $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
 
-function saveBook(){
+function modifyBook(){
 console.log("a")
     let author = document.querySelector("#author").value;
     let title = document.querySelector("#title").value;
     let id = document.querySelector("#bookId").value;
+
+    if(!areValuesValid(author,title)){
+        setModifyNotification(false);
+        return;
+    }
 
         let book = {
                        "author": author,
@@ -29,14 +34,21 @@ console.log("a")
                       return response.json();
                   })
                   .then(function(jsonData) {
-                      saveNotification();
+                      setModifyNotification(true);
                   })
                   .catch(error => console.log(error));
               return false;
 }
 
-function saveNotification(){
-    document.querySelector("#notification").innerHTML = "Modification Successful!";
+function setModifyNotification(isValid){
+        if(!isValid){
+            document.querySelector("#modifyNotification").setAttribute("style","color : red;")
+            document.querySelector("#modifyNotification").innerHTML = "Invalid input!"
+        }
+        if(isValid) {
+            document.querySelector("#modifyNotification").setAttribute("style","color : green;")
+            document.querySelector("#modifyNotification").innerHTML = "Modification Successful!";
+        }
     getBooks()
 }
 
@@ -50,9 +62,32 @@ function deleteBook(id) {
             }).catch(error => console.log(error));
 }
 
+function areValuesValid(author,title){
+    if(author == "" || title == ""){
+        return false;
+    }
+    return true;
+}
+
+function setCreateNotification(isValid){
+    if(!isValid){
+        document.querySelector("#createNotification").setAttribute("style","color : red;")
+        document.querySelector("#createNotification").innerHTML = "Invalid input!"
+    }
+    if(isValid) {
+        document.querySelector("#createNotification").setAttribute("style","color : green;")
+        document.querySelector("#createNotification").innerHTML = "Book Created!"
+    }
+}
+
 function createBook(){
     let author = document.querySelector("#authorInput").value;
     let title = document.querySelector("#titleInput").value;
+
+    if(!areValuesValid(author,title)){
+        setCreateNotification(false);
+        return;
+    }
 
     console.log(author)
     console.log(title)
@@ -71,6 +106,7 @@ function createBook(){
                    return response.json();
                })
                .then(function(jsonData) {
+                   setCreateNotification(true);
                    getBooks();
                })
                .catch(error => console.log(error));
@@ -117,7 +153,7 @@ function createRow(row){
         editBtn.setAttribute("style","background-color: #ffc107;");
         editBtn.innerHTML = "Edit";
         editBtn.setAttribute("data-toggle","modal");
-        editBtn.setAttribute("data-target","#exampleModal");
+        editBtn.setAttribute("data-target","#modifyModal");
         editBtn.addEventListener("click", function(){getBook(row.id);}, false);
         let idContainer = document.createElement("p");
         idContainer.setAttribute("style","display:none;");

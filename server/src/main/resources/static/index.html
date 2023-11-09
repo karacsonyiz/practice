@@ -19,34 +19,46 @@
     </tbody>
 </table>
 <h2>Create new Book</h2>
-<div class="mb-3">
-    <label for="authorInput" class="form-label">Author</label>
-    <input type="text" class="form-control" id="authorInput">
+<div class="row">
+    <div class="col-3">
+        <div class="mb-2" >
+            <label for="authorInput" class="form-label">Author</label>
+            <input type="text" class="form-control" id="authorInput">
+        </div>
+        <div class="mb-2">
+            <label for="titleInput" class="form-label">Title</label>
+            <input type="text" class="form-control" id="titleInput">
+        </div>
+        <h6 id="createNotification"></h6>
+        <button class="btn btn-primary" id="createBook">Create new book</button>
+    </div>
 </div>
-<div class="mb-3">
-    <label for="titleInput" class="form-label">Title</label>
-    <input type="text" class="form-control" id="titleInput">
-</div>
-<button class="btn btn-primary" id="createBook">Create new book</button>
+
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="modifyModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modify</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title">Modify Book</h5>
             </div>
             <div class="modal-body">
-                <p id="bookId"></p>
-                Author : <input id="author">
-                <br>
-                Title : <input id="title">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Author</label>
+                            <input type="text" class="form-control" id="author">
+                        </div>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title">
+                        </div>
+                        <p id="bookId"></p>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <p id="notification" style="color:green;margin-right: auto;"></p>
-                <button type="button" class="btn btn-primary" id="saveBook">Save</button>
+                <p class="right-margin" id="modifyNotification"></p>
+                <button type="button" class="btn btn-primary" id="modifyBook">Save</button>
                 <button type="button" class="btn btn-secondary" id="closeButton" data-dismiss="modal">Close</button>
             </div>
         </div>
