@@ -30,4 +30,8 @@ public class BookService {
     public int deleteBook(int id){
         return bookDao.deleteBook(id);
     }
+
+    public int updateBook(int id, Book book){
+        return bookDao.updateBook(id,book);
+    }
 }

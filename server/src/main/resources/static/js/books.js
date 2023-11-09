@@ -1,11 +1,44 @@
 window.onload = function(){
     document.getElementById("createBook").addEventListener("click", createBook, false);
+    document.getElementById("saveBook").addEventListener("click", saveBook, false);
     getBooks();
 }
 
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
+
+function saveBook(){
+console.log("a")
+    let author = document.querySelector("#author").value;
+    let title = document.querySelector("#title").value;
+    let id = document.querySelector("#bookId").value;
+
+        let book = {
+                       "author": author,
+                       "title": title
+                   }
+
+    fetch("book/update/" + id, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                            },
+                    body: JSON.stringify(book)
+           }).then(function(response) {
+                      return response.json();
+                  })
+                  .then(function(jsonData) {
+                      saveNotification();
+                  })
+                  .catch(error => console.log(error));
+              return false;
+}
+
+function saveNotification(){
+    document.querySelector("#notification").innerHTML = "Modification Successful!";
+    getBooks()
+}
 
 function deleteBook(id) {
         fetch("/book/delete/" + id)
@@ -66,14 +99,7 @@ function fillTable(jsonData){
 function createRow(row){
         let tr = document.createElement("tr");
         let authorTd = document.createElement("td");
-        let link = document.createElement("p");
-        link.setAttribute("style","text-decoration: underline; cursor: pointer;");
-        link.setAttribute("id","row.id");
-        link.addEventListener("click", function(){getBook(row.id);}, false);
-        link.setAttribute("data-toggle","modal");
-        link.setAttribute("data-target","#exampleModal");
-        link.innerHTML = row.author;
-        authorTd.appendChild(link);
+        authorTd.innerHTML = row.author;
         tr.appendChild(authorTd);
         let titleTd = document.createElement("td");
         titleTd.innerHTML = row.title;
@@ -81,13 +107,20 @@ function createRow(row){
         let deleteBtn = document.createElement("button");
         deleteBtn.setAttribute("id",row.id);
         deleteBtn.setAttribute("class","delete btn btn-danger rounded-pill px-3");
+        deleteBtn.setAttribute("style","background-color: #dc3545;");
         deleteBtn.addEventListener("click", function(){deleteBook(row.id);}, false);
-        deleteBtn.innerHTML = "Töröl";
+        deleteBtn.innerHTML = "Delete";
         tr.appendChild(deleteBtn);
         let editBtn = document.createElement("button");
         editBtn.setAttribute("id",row.id);
         editBtn.setAttribute("class","edit btn btn-warning rounded-pill px-3");
-        editBtn.innerHTML = "Módosít";
+        editBtn.setAttribute("style","background-color: #ffc107;");
+        editBtn.innerHTML = "Edit";
+        editBtn.setAttribute("data-toggle","modal");
+        editBtn.setAttribute("data-target","#exampleModal");
+        editBtn.addEventListener("click", function(){getBook(row.id);}, false);
+        let idContainer = document.createElement("p");
+        idContainer.setAttribute("style","display:none;");
         tr.appendChild(editBtn);
         return tr;
 }
@@ -99,15 +132,13 @@ function getBook(id) {
             })
             .then(function(jsonData) {
                 console.log(jsonData);
-                fillBook(jsonData);
+                fillModal(jsonData);
             }).catch(error => console.log(error));
 }
 
-function fillBook(jsonData){
-    console.log(jsonData)
-
-    document.querySelector("#author").innerHTML = jsonData.author;
-    document.querySelector("#title").innerHTML = jsonData.title;
-
+function fillModal(jsonData){
+    document.querySelector("#bookId").value = jsonData.id;
+    document.querySelector("#author").value = jsonData.author;
+    document.querySelector("#title").value = jsonData.title;
 }
 

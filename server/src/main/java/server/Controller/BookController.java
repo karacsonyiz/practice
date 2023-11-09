@@ -9,11 +9,9 @@ import java.util.List;
 public class BookController {
 
     private BookService bookService;
-
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
-
 
     @RequestMapping("/books")
     public List<Book> listBooks(){
@@ -34,6 +32,11 @@ public class BookController {
     @RequestMapping("/book/delete/{id}")
     public int deleteBook(@PathVariable int id){
         return bookService.deleteBook(id);
+    }
+
+    @RequestMapping("/book/update/{id}")
+    public int updateBook(@RequestBody Book book, @PathVariable int id){
+        return bookService.updateBook(id,book);
     }
 
 }
