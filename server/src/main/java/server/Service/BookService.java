@@ -1,37 +1,46 @@
 package server.Service;
 
 import org.springframework.stereotype.Service;
-import server.Database.BookDao;
-import server.Model.Book;
+import server.Database.BookRepository;
+import server.Entity.Book;
+
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService {
 
-    private BookDao bookDao;
+    private final BookRepository bookRepository;
 
-    public BookService(BookDao bookDao) {
-        this.bookDao = bookDao;
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
     public List<Book> listBooks(){
-        return bookDao.listBooks();
+        return bookRepository.findAll();
     }
 
-    public Book getBookById(int id){
-        return bookDao.getBookById(id);
+    public Optional<Book> getBookById(Long id){
+        return bookRepository.findById(id);
     }
 
     public long createBook(Book book){
-        return bookDao.createBook(book);
+        bookRepository.save(book);
+        return book.getId();
     }
 
-    public int deleteBook(int id){
-        return bookDao.deleteBook(id);
+    public Long deleteBook(Long id){
+        bookRepository.deleteById(id);
+        return id;
     }
 
-    public int updateBook(int id, Book book){
-        return bookDao.updateBook(id,book);
+    public Long updateBook(Long id, Book book){
+
+        Book bookToSave = bookRepository.findById(id).get();
+        bookToSave.setAuthor(book.getAuthor());
+        bookToSave.setTitle(book.getTitle());
+        bookRepository.save(bookToSave);
+        return bookToSave.getId();
     }
 }
