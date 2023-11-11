@@ -18,7 +18,6 @@ console.log("a")
         setModifyNotification(false);
         return;
     }
-
         let book = {
                        "author": author,
                        "title": title
@@ -34,13 +33,14 @@ console.log("a")
                       return response.json();
                   })
                   .then(function(jsonData) {
-                      setModifyNotification(true);
+                      setModifyNotification(true,jsonData);
                   })
                   .catch(error => console.log(error));
               return false;
 }
 
-function setModifyNotification(isValid){
+function setModifyNotification(isValid,jsonData){
+console.log(jsonData)
         if(!isValid){
             document.querySelector("#modifyNotification").setAttribute("style","color : red;")
             document.querySelector("#modifyNotification").innerHTML = "Invalid input!"

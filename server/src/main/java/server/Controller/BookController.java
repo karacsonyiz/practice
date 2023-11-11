@@ -1,7 +1,10 @@
 package server.Controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import server.Entity.Book;
+import server.Response.ResponseText;
 import server.Service.BookService;
 import java.util.List;
 
@@ -38,7 +41,7 @@ public class BookController {
     }
 
     @RequestMapping("/book/update/{id}")
-    public Long updateBook(@RequestBody Book book, @PathVariable Long id){
+    public ResponseEntity<ResponseText> updateBook(@RequestBody Book book, @PathVariable Long id){
         return bookService.updateBook(id,book);
     }
 
