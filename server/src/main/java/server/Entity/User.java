@@ -1,10 +1,7 @@
 package server.Entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class User {
@@ -15,16 +12,19 @@ public class User {
     private String name;
     private String password;
     private String email;
+    private int enabled;
+    @Enumerated(EnumType.STRING)
     private UserRole role = UserRole.ROLE_USER;
 
     public User() {
     }
 
-    public User(long id, String name, String password,String email, String role) {
+    public User(long id, String name, String password,String email, int enabled, String role) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.email = email;
+        this.enabled = enabled;
         this.role = UserRole.valueOf(role);
     }
 
@@ -69,5 +69,11 @@ public class User {
         this.role = UserRole.valueOf(role);
     }
 
+    public int getEnabled() {
+        return enabled;
+    }
 
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
+    }
 }

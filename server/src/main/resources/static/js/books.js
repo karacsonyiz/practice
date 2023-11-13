@@ -2,6 +2,7 @@ window.onload = function(){
     document.getElementById("createBook").addEventListener("click", createBook, false);
     document.getElementById("modifyBook").addEventListener("click", modifyBook, false);
     getBooks();
+    getUsers();
 }
 
 $('#myModal').on('shown.bs.modal', function () {
@@ -120,6 +121,16 @@ function getBooks() {
             })
             .then(function(jsonData) {
                 fillTable(jsonData);
+            }).catch(error => console.log(error));
+}
+
+function getUsers() {
+        fetch("/users")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(jsonData) {
+                console.log(jsonData);
             }).catch(error => console.log(error));
 }
 
