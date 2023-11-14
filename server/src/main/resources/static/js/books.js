@@ -3,6 +3,17 @@ window.onload = function(){
     document.getElementById("modifyBook").addEventListener("click", modifyBook, false);
     getBooks();
     getUsers();
+    getPrincipal();
+}
+
+function getPrincipal() {
+        fetch("/principal")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(jsonData) {
+                console.log(jsonData);
+            }).catch(error => console.log(error));
 }
 
 $('#myModal').on('shown.bs.modal', function () {
