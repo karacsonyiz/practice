@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="css/login.css" crossorigin="anonymous">
+</head>
+
+<body>
+<form class="form-signin" method="post" action="http://localhost:8080/process-login">
+    <div class="login">
+        <div class="login-screen">
+            <div class="login-title">
+                <h1>Login</h1>
+            </div>
+            <div class="login-form">
+                <div class="control-group">
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Username" required="" autofocus="">
+                </div>
+
+                <div class="control-group">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large btn-block" href="#">Log in</button>
+                <h4 id="errormsg" style="display : none;">Wrong username/password!</h4>
+                <a class="login-link" href="#">Forgot password?</a>
+                <a class="login-link" href="/register.html">Registration</a>
+            </div>
+
+            <pre></pre>
+        </div>
+    </div>
+</form>
+</body>
+
+</html>
