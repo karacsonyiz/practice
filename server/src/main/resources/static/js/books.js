@@ -4,6 +4,7 @@ window.onload = function(){
     getBooks();
     getUsers();
     getPrincipal();
+
 }
 
 function getPrincipal() {
