@@ -163,16 +163,17 @@ function createRow(row){
         let titleTd = document.createElement("td");
         titleTd.innerHTML = row.title;
         tr.appendChild(titleTd);
+        let buttonTd = document.createElement("td");
         let deleteBtn = document.createElement("button");
         deleteBtn.setAttribute("id",row.id);
-        deleteBtn.setAttribute("class","delete btn btn-danger rounded-pill px-3");
+        deleteBtn.setAttribute("class","delete btn btn-danger rounded-pill px-3 mr-2");
         deleteBtn.setAttribute("style","background-color: #dc3545;");
         deleteBtn.addEventListener("click", function(){deleteBook(row.id);}, false);
         deleteBtn.innerHTML = "Delete";
-        tr.appendChild(deleteBtn);
+        buttonTd.appendChild(deleteBtn);
         let editBtn = document.createElement("button");
         editBtn.setAttribute("id",row.id);
-        editBtn.setAttribute("class","edit btn btn-warning rounded-pill px-3");
+        editBtn.setAttribute("class","edit btn btn-warning rounded-pill px-3 mr-2");
         editBtn.setAttribute("style","background-color: #ffc107;");
         editBtn.innerHTML = "Edit";
         editBtn.setAttribute("data-toggle","modal");
@@ -180,7 +181,8 @@ function createRow(row){
         editBtn.addEventListener("click", function(){getBook(row.id);}, false);
         let idContainer = document.createElement("p");
         idContainer.setAttribute("style","display:none;");
-        tr.appendChild(editBtn);
+        buttonTd.appendChild(editBtn);
+        tr.appendChild(buttonTd);
         return tr;
 }
 
