@@ -13,6 +13,7 @@ function loadBooks(){
 }
 
 function fillTable(jsonData) {
+console.log(jsonData)
 let rowDiv = document.querySelector("#rowDiv");
 
         for(let i = 0;i < jsonData.length; i++){
@@ -22,7 +23,7 @@ let rowDiv = document.querySelector("#rowDiv");
             card.setAttribute("class","card mb-4 box-shadow");
             let img = document.createElement("img");
             img.setAttribute("class","card-img-top");
-            img.setAttribute("src","img/egri.jfif");
+            img.setAttribute("src",jsonData[i].imgsrc);
             img.setAttribute("height","200");
             let cardBody = document.createElement("div");
             cardBody.setAttribute("class","card-body");
