@@ -39,8 +39,8 @@ public class SecurityConfig {
         http.authorizeHttpRequests ()
                 .requestMatchers("/login").permitAll()
                 .requestMatchers("/js/**", "/css/**").permitAll()
+                .requestMatchers("/admin.html").hasAnyRole("ADMIN")
                 .requestMatchers("/**").hasAnyRole("USER", "ADMIN")
-                .requestMatchers("/admin").hasAnyRole("ADMIN")
                 .and()
                 .formLogin()
                 .loginPage("/login.html")
@@ -57,7 +57,6 @@ public class SecurityConfig {
                 .and()
                 .csrf()
                 .disable();
-
         return http.build();
     }
 
