@@ -42,6 +42,8 @@ public class SecurityConfig {
                 .requestMatchers("/admin.html").hasAnyRole("ADMIN")
                 .requestMatchers("/**").hasAnyRole("USER", "ADMIN")
                 .and()
+                .exceptionHandling().accessDeniedPage("/forbidden.html")
+                .and()
                 .formLogin()
                 .loginPage("/login.html")
                 .loginProcessingUrl("/process-login")
@@ -59,5 +61,4 @@ public class SecurityConfig {
                 .disable();
         return http.build();
     }
-
 }
