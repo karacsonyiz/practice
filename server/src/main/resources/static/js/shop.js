@@ -1,5 +1,24 @@
 window.onload = function(){
+getPrincipal();
 loadBooks();
+}
+
+function checkPrivileges(principal) {
+console.log(principal.authorities[0].authority)
+    if(principal.authorities[0].authority == "ROLE_ADMIN") {
+    document.querySelector("#adminhref").setAttribute("style","visibility: visible;");
+    }
+}
+
+
+function getPrincipal() {
+        fetch("/principal")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(jsonData) {
+                checkPrivileges(jsonData);
+            }).catch(error => console.log(error));
 }
 
 function loadBooks(){
