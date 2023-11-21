@@ -162,6 +162,9 @@ function createRow(row){
         let titleTd = document.createElement("td");
         titleTd.innerHTML = row.title;
         tr.appendChild(titleTd);
+        let priceTd = document.createElement("td");
+        priceTd.innerHTML = row.price;
+        tr.appendChild(priceTd);
         let buttonTd = document.createElement("td");
         let deleteBtn = document.createElement("button");
         deleteBtn.setAttribute("id",row.id);
@@ -200,5 +203,6 @@ function fillModal(jsonData){
     document.querySelector("#bookId").value = jsonData.id;
     document.querySelector("#author").value = jsonData.author;
     document.querySelector("#title").value = jsonData.title;
+    document.querySelector("#price").value = jsonData.price;
 }
 

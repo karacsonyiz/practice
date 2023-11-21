@@ -12,6 +12,7 @@ public class Book {
     private String Author;
     private String Title;
     private String imgsrc;
+    private int price;
 
     public Long getId() {
         return id;
@@ -43,5 +44,13 @@ public class Book {
 
     public void setImgsrc(String imgsrc) {
         this.imgsrc = imgsrc;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }
