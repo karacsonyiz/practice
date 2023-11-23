@@ -30,7 +30,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "/createbook", method = RequestMethod.POST)
-    public long createUser(@RequestBody Book book) {
+    public long createBook(@RequestBody Book book) {
         return bookService.createBook(book);
     }
 

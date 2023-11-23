@@ -2,7 +2,7 @@ CREATE TABLE book (
  id int auto_increment primary key,
  author VARCHAR(255) NOT NULL,
  title VARCHAR(255) NOT NULL,
- imgsrc VARCHAR(255) NOT NULL,
+ imgsrc VARCHAR(255),
  price int NOT NULL
  );
 

@@ -95,6 +95,7 @@ function setCreateNotification(isValid){
 function createBook(){
     let author = document.querySelector("#authorInput").value;
     let title = document.querySelector("#titleInput").value;
+    let price = document.querySelector("#priceInput").value;
 
     if(!areValuesValid(author,title)){
         setCreateNotification(false);
@@ -106,7 +107,8 @@ function createBook(){
 
     let book = {
                    "author": author,
-                   "title": title
+                   "title": title,
+                   "price": price
                }
      fetch("createbook", {
                  method: "POST",

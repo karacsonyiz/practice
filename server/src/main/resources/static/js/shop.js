@@ -43,6 +43,7 @@ let rowDiv = document.querySelector("#rowDiv");
             let img = document.createElement("img");
             img.setAttribute("class","card-img-top");
             img.setAttribute("src",jsonData[i].imgsrc);
+            img.setAttribute("alt","NO IMG AVAILABLE");
             img.setAttribute("height","200");
             let cardBody = document.createElement("div");
             cardBody.setAttribute("class","card-body");
