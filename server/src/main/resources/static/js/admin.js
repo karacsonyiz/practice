@@ -24,6 +24,7 @@ function modifyBook(){
 console.log("a")
     let author = document.querySelector("#author").value;
     let title = document.querySelector("#title").value;
+    let price = document.querySelector("#price").value;
     let id = document.querySelector("#bookId").value;
 
     if(!areValuesValid(author,title)){
@@ -32,7 +33,8 @@ console.log("a")
     }
         let book = {
                        "author": author,
-                       "title": title
+                       "title": title,
+                       "price": price
                    }
 
     fetch("book/update/" + id, {

@@ -44,6 +44,7 @@ public class BookService {
             Book bookToSave = bookRepository.findById(id).get();
             bookToSave.setAuthor(book.getAuthor());
             bookToSave.setTitle(book.getTitle());
+            bookToSave.setPrice(book.getPrice());
             bookRepository.save(bookToSave);
             return new ResponseEntity<>(new ResponseText("Modification Successful!"), HttpStatus.OK);
         }
