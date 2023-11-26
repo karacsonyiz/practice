@@ -85,12 +85,12 @@ function areValuesValid(author,title){
 
 function setCreateNotification(isValid){
     if(!isValid){
-        document.querySelector("#createNotification").setAttribute("style","color : red;")
-        document.querySelector("#createNotification").innerHTML = "Invalid input!"
+        document.querySelector("#createNotificationForBook").setAttribute("style","color : red;")
+        document.querySelector("#createNotificationForBook").innerHTML = "Invalid input!"
     }
     if(isValid) {
-        document.querySelector("#createNotification").setAttribute("style","color : green;")
-        document.querySelector("#createNotification").innerHTML = "Book Created!"
+        document.querySelector("#createNotificationForBook").setAttribute("style","color : green;")
+        document.querySelector("#createNotificationForBook").innerHTML = "Book Created!"
     }
 }
 

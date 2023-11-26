@@ -33,9 +33,10 @@
         <tbody id="booksTable">
         </tbody>
     </table>
-    <h2>Create new Book</h2>
+
     <div class="row">
-        <div class="col-3">
+        <div class="col-6">
+            <h2>Create new Book</h2>
             <div class="mb-2" >
                 <label for="authorInput" class="form-label">Author</label>
                 <input type="text" class="form-control" id="authorInput">
@@ -48,8 +49,25 @@
                 <label for="priceInput" class="form-label">Price</label>
                 <input type="text" class="form-control" id="priceInput">
             </div>
-            <h6 id="createNotification"></h6>
+            <h6 id="createNotificationForBook"></h6>
             <button class="btn btn-primary" id="createBook">Create new book</button>
+        </div>
+        <div class="col-6">
+            <h2>Create new User</h2>
+            <div class="mb-2" >
+                <label for="nameInput" class="form-label">Name</label>
+                <input type="text" class="form-control" id="nameInput">
+            </div>
+            <div class="mb-2">
+                <label for="passwordInput" class="form-label">Password</label>
+                <input type="text" class="form-control" id="passwordInput">
+            </div>
+            <div class="mb-2">
+                <label for="emailInput" class="form-label">Email</label>
+                <input type="text" class="form-control" id="emailInput">
+            </div>
+            <h6 id="createNotificationForUser"></h6>
+            <button class="btn btn-primary" id="createUser">Create new user</button>
         </div>
     </div>
 
