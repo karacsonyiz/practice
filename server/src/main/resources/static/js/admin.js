@@ -1,5 +1,6 @@
 window.onload = function(){
     document.getElementById("createBook").addEventListener("click", createBook, false);
+    document.getElementById("createUser").addEventListener("click", createUser, false);
     document.getElementById("modifyBook").addEventListener("click", modifyBook, false);
     getBooks();
     getUsers();
@@ -118,6 +119,41 @@ function createBook(){
                      "Content-Type": "application/json; charset=utf-8"
                          },
                  body: JSON.stringify(book)
+        }).then(function(response) {
+                   return response.json();
+               })
+               .then(function(jsonData) {
+                   setCreateNotification(true);
+                   getBooks();
+               })
+               .catch(error => console.log(error));
+           return false;
+}
+
+function createUser(){
+    let name = document.querySelector("#nameInput").value;
+    let password = document.querySelector("#passwordInput").value;
+    let email = document.querySelector("#emailInput").value;
+
+    //if(!areValuesValid(author,title)){
+     //   setCreateNotification(false);
+     //  return;
+    //}
+
+    //console.log(author)
+    //console.log(title)
+
+    let user = {
+                   "name": name,
+                   "password": password,
+                   "email": email
+               }
+     fetch("createuser", {
+                 method: "POST",
+                 headers: {
+                     "Content-Type": "application/json; charset=utf-8"
+                         },
+                 body: JSON.stringify(user)
         }).then(function(response) {
                    return response.json();
                })
