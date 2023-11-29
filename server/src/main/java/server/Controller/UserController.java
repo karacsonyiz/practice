@@ -1,7 +1,10 @@
 package server.Controller;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import server.Entity.Book;
 import server.Entity.User;
 import server.Service.UserService;
 
@@ -26,5 +29,10 @@ public class UserController {
     @RequestMapping("/principal")
     public Principal retrievePrincipal(Principal principal) {
         return principal;
+    }
+
+    @RequestMapping(value = "/createuser", method = RequestMethod.POST)
+    public long createBook(@RequestBody User user) {
+        return userService.createUser(user);
     }
 }

@@ -19,6 +19,14 @@ public class User {
     public User() {
     }
 
+    public User(String name, String password,String email, int enabled, String role) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.enabled = enabled;
+        this.role = UserRole.valueOf(role);
+    }
+
     public User(long id, String name, String password,String email, int enabled, String role) {
         this.id = id;
         this.name = name;
