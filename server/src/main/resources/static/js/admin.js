@@ -84,15 +84,32 @@ function areValuesValid(author,title){
     return true;
 }
 
-function setCreateNotification(isValid){
-    if(!isValid){
-        document.querySelector("#createNotificationForBook").setAttribute("style","color : red;")
-        document.querySelector("#createNotificationForBook").innerHTML = "Invalid input!"
+function setCreateNotification(isValid,type){
+
+    if(type == "USER") {
+            if(!isValid){
+
+                document.querySelector("#createNotificationForUser").setAttribute("style","color : red;")
+                document.querySelector("#createNotificationForUser").innerHTML = "Invalid input!"
+            }
+            if(isValid) {
+                document.querySelector("#createNotificationForUser").setAttribute("style","color : green;")
+                document.querySelector("#createNotificationForUser").innerHTML = "Book Created!"
+            }
+        } else {
+            if(!isValid){
+
+                document.querySelector("#createNotificationForBook").setAttribute("style","color : red;")
+                document.querySelector("#createNotificationForBook").innerHTML = "Invalid input!"
+            }
+            if(isValid) {
+                document.querySelector("#createNotificationForBook").setAttribute("style","color : green;")
+                document.querySelector("#createNotificationForBook").innerHTML = "Book Created!"
+            }
+
     }
-    if(isValid) {
-        document.querySelector("#createNotificationForBook").setAttribute("style","color : green;")
-        document.querySelector("#createNotificationForBook").innerHTML = "Book Created!"
-    }
+
+
 }
 
 function createBook(){
@@ -158,7 +175,7 @@ function createUser(){
                    return response.json();
                })
                .then(function(jsonData) {
-                   setCreateNotification(true);
+                   setCreateNotification(true,"USER");
                    getBooks();
                })
                .catch(error => console.log(error));
