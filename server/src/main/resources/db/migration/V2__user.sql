@@ -1,8 +1,8 @@
 create table user(
      id int auto_increment primary key,
-     name varchar(255),
-     password varchar(255),
-     email varchar(255),
+     name varchar (255) NOT NULL,
+     password varchar (255) NOT NULL,
+     email varchar (255) NOT NULL,
      enabled int,
      role varchar(255));
 

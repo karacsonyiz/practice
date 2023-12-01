@@ -22,7 +22,6 @@ $('#myModal').on('shown.bs.modal', function () {
 })
 
 function modifyBook(){
-console.log("a")
     let author = document.querySelector("#author").value;
     let title = document.querySelector("#title").value;
     let price = document.querySelector("#price").value;
@@ -55,7 +54,6 @@ console.log("a")
 }
 
 function setModifyNotification(isValid,jsonData){
-console.log(jsonData)
         if(!isValid){
             document.querySelector("#modifyNotification").setAttribute("style","color : red;")
             document.querySelector("#modifyNotification").innerHTML = "Invalid input!"
@@ -77,8 +75,8 @@ function deleteBook(id) {
             }).catch(error => console.log(error));
 }
 
-function areValuesValid(author,title){
-    if(author == "" || title == ""){
+function areValuesValid(input1,input2){
+    if(input1 == "" || input2 == ""){
         return false;
     }
     return true;
@@ -86,19 +84,19 @@ function areValuesValid(author,title){
 
 function setCreateNotification(isValid,type){
 
-    if(type == "USER") {
+    if(type == "User") {
             if(!isValid){
-
                 document.querySelector("#createNotificationForUser").setAttribute("style","color : red;")
                 document.querySelector("#createNotificationForUser").innerHTML = "Invalid input!"
             }
             if(isValid) {
                 document.querySelector("#createNotificationForUser").setAttribute("style","color : green;")
-                document.querySelector("#createNotificationForUser").innerHTML = "Book Created!"
+                document.querySelector("#createNotificationForUser").innerHTML = "User Created!"
             }
-        } else {
-            if(!isValid){
+    }
 
+    if(type == "Book") {
+            if(!isValid){
                 document.querySelector("#createNotificationForBook").setAttribute("style","color : red;")
                 document.querySelector("#createNotificationForBook").innerHTML = "Invalid input!"
             }
@@ -106,7 +104,6 @@ function setCreateNotification(isValid,type){
                 document.querySelector("#createNotificationForBook").setAttribute("style","color : green;")
                 document.querySelector("#createNotificationForBook").innerHTML = "Book Created!"
             }
-
     }
 
 
@@ -118,12 +115,9 @@ function createBook(){
     let price = document.querySelector("#priceInput").value;
 
     if(!areValuesValid(author,title)){
-        setCreateNotification(false);
+        setCreateNotification(false,"Book");
         return;
     }
-
-    console.log(author)
-    console.log(title)
 
     let book = {
                    "author": author,
@@ -140,7 +134,7 @@ function createBook(){
                    return response.json();
                })
                .then(function(jsonData) {
-                   setCreateNotification(true);
+                   setCreateNotification(true,"Book");
                    getBooks();
                })
                .catch(error => console.log(error));
@@ -152,13 +146,10 @@ function createUser(){
     let password = document.querySelector("#passwordInput").value;
     let email = document.querySelector("#emailInput").value;
 
-    //if(!areValuesValid(author,title)){
-     //   setCreateNotification(false);
-     //  return;
-    //}
-
-    //console.log(author)
-    //console.log(title)
+    if(!areValuesValid(name,password)){
+        setCreateNotification(false,"User");
+      return;
+    }
 
     let user = {
                    "name": name,
@@ -175,7 +166,7 @@ function createUser(){
                    return response.json();
                })
                .then(function(jsonData) {
-                   setCreateNotification(true,"USER");
+                   setCreateNotification(true,"User");
                    getBooks();
                })
                .catch(error => console.log(error));
