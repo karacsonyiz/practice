@@ -20,7 +20,12 @@
     </div>
 </header>
 <div class="container">
-    <h2>Books</h2>
+    <div class="input-group m-3">
+        <div class="input-group">
+            <button class="btn btn-outline-secondary mr-1 btn-lg" id="booksBtn" type="button">Books</button>
+            <button class="btn btn-outline-secondary btn-lg" id="usersBtn" type="button">Users</button>
+        </div>
+    </div>
     <table class="table table-hover">
         <thead>
         <tr>
@@ -31,6 +36,18 @@
         </tr>
         </thead>
         <tbody id="booksTable">
+        </tbody>
+    </table>
+    <table class="table table-hover" style="display : hidden;">
+        <thead>
+        <tr>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="usersTable">
         </tbody>
     </table>
 

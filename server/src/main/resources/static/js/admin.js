@@ -179,7 +179,7 @@ function getBooks() {
                 return response.json();
             })
             .then(function(jsonData) {
-                fillTable(jsonData);
+                fillBookTable(jsonData);
             }).catch(error => console.log(error));
 }
 
@@ -189,20 +189,30 @@ function getUsers() {
                 return response.json();
             })
             .then(function(jsonData) {
+                fillUserTable(jsonData);
                 console.log(jsonData);
             }).catch(error => console.log(error));
 }
 
-function fillTable(jsonData){
+function fillBookTable(jsonData){
         const booksTable = document.querySelector("#booksTable");
         booksTable.innerHTML = "";
         for(let i = 0;i < jsonData.length; i++){
-            tr = createRow(jsonData[i]);
+            tr = createRowForBooks(jsonData[i]);
             booksTable.appendChild(tr);
         }
 }
 
-function createRow(row){
+function fillUserTable(jsonData){
+        const usersTable = document.querySelector("#usersTable");
+        usersTable.innerHTML = "";
+        for(let i = 0;i < jsonData.length; i++){
+            tr = createRowForUsers(jsonData[i]);
+            usersTable.appendChild(tr);
+        }
+}
+
+function createRowForBooks(row){
         let tr = document.createElement("tr");
         let authorTd = document.createElement("td");
         authorTd.innerHTML = row.author;
