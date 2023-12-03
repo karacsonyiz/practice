@@ -22,36 +22,64 @@ $('#myModal').on('shown.bs.modal', function () {
 })
 
 function modifyBook(){
-    let author = document.querySelector("#author").value;
-    let title = document.querySelector("#title").value;
-    let price = document.querySelector("#price").value;
-    let id = document.querySelector("#bookId").value;
+     let author = document.querySelector("#author").value;
+     let title = document.querySelector("#title").value;
+     let price = document.querySelector("#price").value;
+     let id = document.querySelector("#bookId").value;
 
-    if(!areValuesValid(author,title)){
-        setModifyNotification(false);
-        return;
-    }
-        let book = {
-                       "author": author,
-                       "title": title,
-                       "price": price
-                   }
+     if(!areValuesValid(author,title)){
+         setModifyNotification(false);
+         return;
+     }
+         let book = {
+                        "author": author,
+                        "title": title,
+                        "price": price
+                    }
 
-    fetch("book/update/" + id, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json; charset=utf-8"
-                            },
-                    body: JSON.stringify(book)
-           }).then(function(response) {
-                      return response.json();
-                  })
-                  .then(function(jsonData) {
-                      setModifyNotification(true,jsonData);
-                  })
-                  .catch(error => console.log(error));
-              return false;
-}
+     fetch("book/update/" + id, {
+                     method: "POST",
+                     headers: {
+                         "Content-Type": "application/json; charset=utf-8"
+                             },
+                     body: JSON.stringify(book)
+            }).then(function(response) {
+                       return response.json();
+                   })
+                   .then(function(jsonData) {
+                       setModifyNotification(true,jsonData);
+                   })
+                   .catch(error => console.log(error));
+               return false;
+ }
+
+ function modifyUser(){
+
+    let name = document.querySelector("#nameInput").value;
+    let password = document.querySelector("#passwordInput").value;
+    let email = document.querySelector("#emailInput").value;
+
+    let user = {
+                   "name": name,
+                   "password": password,
+                   "email": email
+               }
+
+     fetch("user/update/" + id, {
+                     method: "POST",
+                     headers: {
+                         "Content-Type": "application/json; charset=utf-8"
+                             },
+                     body: JSON.stringify(book)
+            }).then(function(response) {
+                       return response.json();
+                   })
+                   .then(function(jsonData) {
+                       setModifyNotification(true,jsonData);
+                   })
+                   .catch(error => console.log(error));
+               return false;
+ }
 
 function setModifyNotification(isValid,jsonData){
         if(!isValid){
