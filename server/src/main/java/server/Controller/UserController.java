@@ -32,7 +32,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/createuser", method = RequestMethod.POST)
-    public long createBook(@RequestBody User user) {
+    public long createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
 }
