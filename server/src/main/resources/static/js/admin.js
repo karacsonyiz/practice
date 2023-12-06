@@ -2,9 +2,21 @@ window.onload = function(){
     document.getElementById("createBook").addEventListener("click", createBook, false);
     document.getElementById("createUser").addEventListener("click", createUser, false);
     document.getElementById("modifyBook").addEventListener("click", modifyBook, false);
+    document.getElementById("booksBtn").addEventListener("click", showBooks, false);
+    document.getElementById("usersBtn").addEventListener("click", showUsers, false);
     getBooks();
     getUsers();
     getPrincipal();
+}
+
+function showBooks(){
+document.querySelector("#books").style = "display : block;"
+document.querySelector("#users").style = "display : none;"
+}
+
+function showUsers(){
+document.querySelector("#users").style = "display : block;"
+document.querySelector("#books").style = "display : none;"
 }
 
 function getPrincipal() {
@@ -239,6 +251,49 @@ function fillUserTable(jsonData){
             usersTable.appendChild(tr);
         }
 }
+
+function createRowForUsers(row){
+        let tr = document.createElement("tr");
+        let nameTd = document.createElement("td");
+        nameTd.innerHTML = row.name;
+        tr.appendChild(nameTd);
+        let emailTd = document.createElement("td");
+        emailTd.innerHTML = row.email;
+        tr.appendChild(emailTd);
+        let enabledTd = document.createElement("td");
+        enabledTd.innerHTML = row.enabled;
+        tr.appendChild(enabledTd);
+        let roleTd = document.createElement("td");
+        roleTd.innerHTML = row.role;
+        tr.appendChild(roleTd);
+        let buttonTd = document.createElement("td");
+        let deleteBtn = document.createElement("button");
+        deleteBtn.setAttribute("id",row.id);
+        deleteBtn.setAttribute("class","delete btn btn-danger rounded-pill px-3 mr-2");
+        deleteBtn.setAttribute("style","background-color: #dc3545;");
+        deleteBtn.addEventListener("click", function(){deleteUser(row.id);}, false);
+        deleteBtn.innerHTML = "Delete";
+        buttonTd.appendChild(deleteBtn);
+        let editBtn = document.createElement("button");
+        editBtn.setAttribute("id",row.id);
+        editBtn.setAttribute("class","edit btn btn-warning rounded-pill px-3 mr-2");
+        editBtn.setAttribute("style","background-color: #ffc107;");
+        editBtn.innerHTML = "Edit";
+        editBtn.addEventListener("click", function(){getUser(row.id);}, false);
+        buttonTd.appendChild(editBtn);
+        tr.appendChild(buttonTd);
+        return tr;
+}
+
+function deleteUser(){
+console.log("delete");
+
+}
+
+function getUser(){
+console.log("get");
+}
+
 
 function createRowForBooks(row){
         let tr = document.createElement("tr");
