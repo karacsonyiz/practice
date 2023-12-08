@@ -10,11 +10,13 @@ window.onload = function(){
 }
 
 function showBooks(){
+    getBooks();
 document.querySelector("#books").style = "display : block;"
 document.querySelector("#users").style = "display : none;"
 }
 
 function showUsers(){
+    getUsers();
 document.querySelector("#users").style = "display : block;"
 document.querySelector("#books").style = "display : none;"
 }
