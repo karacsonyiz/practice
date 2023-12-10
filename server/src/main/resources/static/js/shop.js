@@ -67,6 +67,7 @@ let rowDiv = document.querySelector("#rowDiv");
             viewBtn.setAttribute("type","button");
             viewBtn.setAttribute("class","btn btn-sm btn-outline-secondary");
             viewBtn.innerHTML = "View";
+            viewBtn.addEventListener("click", viewBook, false);
             let buyBtn = document.createElement("button");
             buyBtn.setAttribute("type","button");
             buyBtn.setAttribute("class","btn btn-sm btn-outline-secondary");
@@ -84,5 +85,10 @@ let rowDiv = document.querySelector("#rowDiv");
             rowDiv.appendChild(colDiv);
 
         }
+}
+
+function viewBook() {
+
+
 }
 

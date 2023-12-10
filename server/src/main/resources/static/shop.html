@@ -35,6 +35,39 @@
             </p>
         </div>
     </div>
+    <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">View Book</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="mb-3">
+                                <label for="author" class="form-label">Author</label>
+                                <input type="text" class="form-control" id="author">
+                            </div>
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="title">
+                            </div>
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Price</label>
+                                <input type="text" class="form-control" id="price">
+                            </div>
+                            <p id="bookId"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p class="right-margin" id="modifyNotification"></p>
+                    <button type="button" class="btn btn-primary" id="modifyBook">Save</button>
+                    <button type="button" class="btn btn-secondary" id="closeButton" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
