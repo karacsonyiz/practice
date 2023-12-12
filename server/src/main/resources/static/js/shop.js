@@ -67,7 +67,9 @@ let rowDiv = document.querySelector("#rowDiv");
             viewBtn.setAttribute("type","button");
             viewBtn.setAttribute("class","btn btn-sm btn-outline-secondary");
             viewBtn.innerHTML = "View";
-            viewBtn.addEventListener("click", viewBook, false);
+            viewBtn.setAttribute("data-toggle","modal");
+            viewBtn.setAttribute("data-target","#viewBookModal");
+            viewBtn.addEventListener("click", function(){viewBook(jsonData[i].id);}, false);
             let buyBtn = document.createElement("button");
             buyBtn.setAttribute("type","button");
             buyBtn.setAttribute("class","btn btn-sm btn-outline-secondary");
@@ -87,8 +89,14 @@ let rowDiv = document.querySelector("#rowDiv");
         }
 }
 
-function viewBook() {
-
-
+function viewBook(id) {
+        fetch("/book/" + id)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(jsonData) {
+                console.log(jsonData);
+                document.querySelector("#synopsys").innerHTML = "Synopsys of this book";
+            }).catch(error => console.log(error));
 }
 
