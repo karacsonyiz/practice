@@ -12,6 +12,7 @@ public class Book {
     private String Author;
     private String Title;
     private String imgsrc;
+    private String synopsys;
     private int price;
 
     public Long getId() {
@@ -52,5 +53,13 @@ public class Book {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public String getSynopsys() {
+        return synopsys;
+    }
+
+    public void setSynopsys(String synopsys) {
+        this.synopsys = synopsys;
     }
 }
