@@ -96,7 +96,7 @@ function viewBook(id) {
             })
             .then(function(jsonData) {
                 console.log(jsonData);
-                document.querySelector("#synopsys").innerHTML = "Synopsys of this book";
+                document.querySelector("#synopsys").innerHTML = jsonData.synopsys;
             }).catch(error => console.log(error));
 }
 
