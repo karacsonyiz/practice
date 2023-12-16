@@ -281,6 +281,8 @@ function createRowForUsers(row){
         editBtn.setAttribute("class","edit btn btn-warning rounded-pill px-3 mr-2");
         editBtn.setAttribute("style","background-color: #ffc107;");
         editBtn.innerHTML = "Edit";
+        editBtn.setAttribute("data-toggle","modal");
+        editBtn.setAttribute("data-target","#modifyUserModal");
         editBtn.addEventListener("click", function(){getUser(row.id);}, false);
         buttonTd.appendChild(editBtn);
         tr.appendChild(buttonTd);
@@ -322,7 +324,7 @@ function createRowForBooks(row){
         editBtn.setAttribute("style","background-color: #ffc107;");
         editBtn.innerHTML = "Edit";
         editBtn.setAttribute("data-toggle","modal");
-        editBtn.setAttribute("data-target","#modifyModal");
+        editBtn.setAttribute("data-target","#modifyBookModal");
         editBtn.addEventListener("click", function(){getBook(row.id);}, false);
         let idContainer = document.createElement("p");
         idContainer.setAttribute("style","display:none;");
