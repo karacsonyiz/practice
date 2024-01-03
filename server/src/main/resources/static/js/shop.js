@@ -74,6 +74,9 @@ let rowDiv = document.querySelector("#rowDiv");
             buyBtn.setAttribute("type","button");
             buyBtn.setAttribute("class","btn btn-sm btn-outline-secondary");
             buyBtn.innerHTML = "Buy";
+            buyBtn.setAttribute("data-toggle","modal");
+            buyBtn.setAttribute("data-target","#buyBookModal");
+            buyBtn.addEventListener("click", function(){buyBook(jsonData[i].id);}, false);
             priceDiv.appendChild(priceText);
             btnGroupDiv.appendChild(viewBtn);
             btnGroupDiv.appendChild(buyBtn);
@@ -87,6 +90,17 @@ let rowDiv = document.querySelector("#rowDiv");
             rowDiv.appendChild(colDiv);
 
         }
+}
+
+function buyBook(id) {
+        fetch("/book/" + id)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(jsonData) {
+                console.log(jsonData);
+                document.querySelector("#synopsys").innerHTML = jsonData.synopsys;
+            }).catch(error => console.log(error));
 }
 
 function viewBook(id) {
