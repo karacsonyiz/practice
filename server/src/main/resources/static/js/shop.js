@@ -99,7 +99,7 @@ function buyBook(id) {
             })
             .then(function(jsonData) {
                 console.log(jsonData);
-                document.querySelector("#synopsys").innerHTML = jsonData.synopsys;
+                document.querySelector("#bookName").innerHTML = jsonData.author + " - " + jsonData.title;
             }).catch(error => console.log(error));
 }
 
