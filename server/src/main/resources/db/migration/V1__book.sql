@@ -1,10 +1,11 @@
 CREATE TABLE book (
- id int auto_increment primary key,
+ id int auto_increment,
  author VARCHAR(255) NOT NULL,
  title VARCHAR(255) NOT NULL,
  synopsys TEXT NOT NULL,
  imgsrc VARCHAR(255),
- price int NOT NULL
+ price int NOT NULL,
+ CONSTRAINT pk_book PRIMARY KEY(id)
  );
 
  INSERT INTO book
