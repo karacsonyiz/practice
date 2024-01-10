@@ -19,4 +19,9 @@ public class BasketService {
     public Optional<Basket> getBasketById(Long id){
         return basketRepository.findById(id);
     }
+
+    public long addBasket(Basket basket) {
+        basketRepository.save(basket);
+        return basket.getId();
+    }
 }

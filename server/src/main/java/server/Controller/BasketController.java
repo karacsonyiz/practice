@@ -22,4 +22,9 @@ public class BasketController {
         }
         return null;
     }
+
+    @RequestMapping("/createbasket")
+    public long addBasket(Basket basket) {
+        return basketService.addBasket(basket);
+    }
 }

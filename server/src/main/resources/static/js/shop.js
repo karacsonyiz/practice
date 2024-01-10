@@ -10,6 +10,11 @@ console.log(principal.authorities[0].authority)
     }
 }
 
+function createBasket() {
+
+
+}
+
 
 function getPrincipal() {
         fetch("/principal")
