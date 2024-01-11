@@ -10,7 +10,16 @@ console.log(principal.authorities[0].authority)
     }
 }
 
-function createBasket() {
+function createBasket(id) {
+
+    console.log(id);
+    fetch("/createbasket/" + id)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(jsonData) {
+            console.log(jsonData);
+        }).catch(error => console.log(error));
 
 
 }
@@ -23,6 +32,7 @@ function getPrincipal() {
             })
             .then(function(jsonData) {
                 checkPrivileges(jsonData);
+                console.log(jsonData);
             }).catch(error => console.log(error));
 }
 
@@ -105,6 +115,7 @@ function buyBook(id) {
             .then(function(jsonData) {
                 console.log(jsonData);
                 document.querySelector("#bookName").innerHTML = jsonData.author + " - " + jsonData.title;
+                createBasket(jsonData.id);
             }).catch(error => console.log(error));
 }
 

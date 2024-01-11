@@ -31,4 +31,5 @@ public class UserService {
                 user.getEmail(),1, UserRole.ROLE_USER.name());
         return userRepository.save(createdUser).getId();
     }
+
 }

@@ -12,6 +12,8 @@ public class Basket {
     private long userId;
     private long bookId;
 
+
+
     public Long getId() {
         return id;
     }

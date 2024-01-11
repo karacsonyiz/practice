@@ -23,8 +23,9 @@ public class BasketController {
         return null;
     }
 
-    @RequestMapping("/createbasket")
-    public long addBasket(Basket basket) {
-        return basketService.addBasket(basket);
+    @RequestMapping("/createbasket/{id}")
+    public long addBasket(@PathVariable Long id) {
+        System.out.println(id);
+        return basketService.addBasket(id);
     }
 }
