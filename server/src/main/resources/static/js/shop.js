@@ -10,7 +10,9 @@ console.log(principal.authorities[0].authority)
     }
 }
 
-function createBasket(id) {
+function createBasket() {
+
+    let id = document.querySelector("#loginId").value;
 
     console.log(id);
     fetch("/createbasket/" + id)
@@ -115,7 +117,7 @@ function buyBook(id) {
             .then(function(jsonData) {
                 console.log(jsonData);
                 document.querySelector("#bookName").innerHTML = jsonData.author + " - " + jsonData.title;
-                createBasket(jsonData.id);
+                createBasket();
             }).catch(error => console.log(error));
 }
 
