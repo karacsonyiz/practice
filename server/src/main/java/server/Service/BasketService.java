@@ -8,7 +8,6 @@ import server.Database.UserRepository;
 import server.Entity.Basket;
 import server.Entity.Book;
 
-import java.security.Principal;
 import java.util.Optional;
 
 @Service
