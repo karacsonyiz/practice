@@ -1,9 +1,11 @@
 package server.Entity;
 
+import jakarta.persistence.Entity;
+
 import java.time.LocalDateTime;
 
+@Entity
 public class Order {
-
 
     private long id;
     private long userId;
