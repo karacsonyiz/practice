@@ -3,7 +3,7 @@ package server.Service;
 
 import org.springframework.stereotype.Service;
 import server.Database.OrderItemRepository;
-import server.Entity.Order;
+import server.Entity.OrderItem;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class OrderItemService {
         this.orderItemRepository = orderItemRepository;
     }
 
-    public List<Order> getOrderItems() {
+    public List<OrderItem> getOrderItems() {
         return orderItemRepository.findAll();
     }
 }
