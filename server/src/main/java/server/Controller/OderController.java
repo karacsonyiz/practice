@@ -1,7 +1,10 @@
 package server.Controller;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import server.Entity.Book;
 import server.Entity.Order;
 import server.Service.OrderService;
 
@@ -19,5 +22,10 @@ public class OderController {
     @RequestMapping("/orders")
     public List<Order> getOrders() {
         return orderService.getOrders();
+    }
+
+    @RequestMapping(value = "/createorder", method = RequestMethod.POST)
+    public long createOrder(@RequestBody Order order) {
+        return orderService.createOrder(order);
     }
 }
