@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 public class OderController {
 
-    private OrderService orderService;
+    private final OrderService orderService;
 
     public OderController(OrderService orderService) {
         this.orderService = orderService;

@@ -9,7 +9,7 @@ import server.Service.BasketService;
 @RestController
 public class BasketController {
 
-    private BasketService basketService;
+    private final BasketService basketService;
 
     public BasketController(BasketService basketService) {
         this.basketService = basketService;

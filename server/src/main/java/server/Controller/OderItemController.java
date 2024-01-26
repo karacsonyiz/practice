@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 public class OderItemController {
 
-    private OrderItemService orderItemService;
+    private final OrderItemService orderItemService;
 
     public OderItemController(OrderItemService orderItemService) {
         this.orderItemService = orderItemService;

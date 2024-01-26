@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class BasketService {
 
-    private BasketRepository basketRepository;
+    private final BasketRepository basketRepository;
     private BookRepository bookRepository;
     private UserRepository userRepository;
 
