@@ -1,5 +1,8 @@
 package server.Entity;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Report {
 
     private long totalPrice;
