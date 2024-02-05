@@ -1,6 +1,7 @@
 package server;
 
 import org.junit.Before;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,6 +10,10 @@ import server.Controller.UserController;
 import server.Entity.User;
 import server.Entity.UserRole;
 import server.Service.UserService;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
