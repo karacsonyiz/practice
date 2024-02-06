@@ -30,4 +30,12 @@ public class UserTest {
         userService.createUser(new User(1,"admin","admin","admin@gmail.com",1, UserRole.ROLE_ADMIN.name()));
         userService.createUser(new User(2,"user","user","user@gmail.com",1, UserRole.ROLE_USER.name()));
     }
+
+
+    @Test
+    public void testListUsers() {
+        List<User> users1 = userService.listUsers();
+
+        assertEquals(users1.size(), 2);
+    }
 }
