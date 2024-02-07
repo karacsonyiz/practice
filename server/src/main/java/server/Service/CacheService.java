@@ -7,10 +7,13 @@ import java.util.Objects;
 @Service
 public class CacheService {
 
-    private final CacheManager cacheManager;
+    private CacheManager cacheManager;
 
     public CacheService(CacheManager cacheManager) {
         this.cacheManager = cacheManager;
+    }
+
+    public CacheService() {
     }
 
     public void evictAllCaches() {
