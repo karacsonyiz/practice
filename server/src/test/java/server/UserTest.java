@@ -38,4 +38,16 @@ public class UserTest {
 
         assertEquals(users1.size(), 2);
     }
+
+    @Test
+    public void testCreateUsers() {
+        List<User> users1 = userController.listUsers();
+
+        userController.createUser(new User("user2", "user2", "user2@gmail.com", 1, UserRole.ROLE_USER.name()));
+
+        List<User> users2 = userController.listUsers();
+
+        assertEquals(users1.size(), 3);
+        assertEquals(users2.size(), 4);
+    }
 }
