@@ -4,6 +4,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import server.Database.UserRepository;
+import server.Entity.Response;
 import server.Entity.User;
 import server.Entity.UserRole;
 
@@ -30,6 +31,11 @@ public class UserService {
         User createdUser = new User(user.getName(),passwordEncoder().encode(user.getPassword()),
                 user.getEmail(),1, UserRole.ROLE_USER.name());
         return userRepository.save(createdUser).getId();
+    }
+
+    public Response deleteUser(User user) {
+        userRepository.delete(user);
+        return new Response(true,"User " + user.getId() + " has been deleted");
     }
 
 }
