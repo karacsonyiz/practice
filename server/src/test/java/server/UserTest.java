@@ -50,4 +50,18 @@ public class UserTest {
         assertEquals(users1.size(), 3);
         assertEquals(users2.size(), 4);
     }
+
+    @Test
+    public void testDeleteUser() {
+        userController.createUser(new User("user3", "user3", "user3@gmail.com", 1, UserRole.ROLE_USER.name()));        List<User> users1 = userController.listUsers();
+
+        assertEquals(users1.size(), 5);
+
+        User users3 = userController.listUsers().get(5);
+
+        userService.deleteUser(users3);
+        List<User> users2 = userController.listUsers();
+
+        assertEquals(users2.size(), 4);
+    }
 }
