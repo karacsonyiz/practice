@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import server.Entity.Response;
 import server.Entity.User;
 import server.Service.UserService;
 
@@ -34,4 +35,10 @@ public class UserController {
     public long createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
+
+    @RequestMapping(value = "/deleteuser", method = RequestMethod.POST)
+    public Response deleteUser(@RequestBody User user) {
+        return userService.deleteUser(user);
+    }
+
 }
