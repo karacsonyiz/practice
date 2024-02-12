@@ -9,6 +9,7 @@ import server.Entity.User;
 import server.Entity.UserRole;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -36,6 +37,10 @@ public class UserService {
     public Response deleteUser(User user) {
         userRepository.delete(user);
         return new Response(true,"User " + user.getId() + " has been deleted");
+    }
+
+    public Optional<User> getUser(long id) {
+        return userRepository.findById(id);
     }
 
 }
