@@ -40,7 +40,7 @@ public class UserController {
 
     @RequestMapping(value = "/getuser", method = RequestMethod.GET)
     public User getUser(@PathVariable Long id) {
-        return userService.getUser(id).get();
+        return userService.getUser(id);
     }
 
 }

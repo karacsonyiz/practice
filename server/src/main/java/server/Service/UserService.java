@@ -39,8 +39,11 @@ public class UserService {
         return new Response(true,"User " + user.getId() + " has been deleted");
     }
 
-    public Optional<User> getUser(long id) {
-        return userRepository.findById(id);
+    public User getUser(long id) {
+        if(userRepository.findById(id).isPresent()){
+            return userRepository.findById(id).get();
+        }
+        return null;
     }
 
 }
