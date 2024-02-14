@@ -64,4 +64,9 @@ public class UserTest {
 
         assertEquals(users2.size(), 4);
     }
+
+    public void testGetUser(){
+        User user = userService.getUser(1);
+        assertEquals(user.getName(), "admin");
+    }
 }
