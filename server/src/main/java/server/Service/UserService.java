@@ -9,7 +9,6 @@ import server.Entity.User;
 import server.Entity.UserRole;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -46,4 +45,8 @@ public class UserService {
         return null;
     }
 
+    public long updateUser(User user, long id) {
+        User userToUpdate = new User(id, user.getName(),user.getPassword(),user.getEmail(),1, user.getRole());
+        return userRepository.save(userToUpdate).getId();
+    }
 }

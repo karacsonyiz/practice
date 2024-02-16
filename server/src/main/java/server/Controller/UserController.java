@@ -43,4 +43,9 @@ public class UserController {
         return userService.getUser(id);
     }
 
+    @RequestMapping(value = "/updateuser", method = RequestMethod.POST)
+    public long UpdateUser(@RequestBody User user, @PathVariable Long id) {
+        return userService.updateUser(user,id);
+    }
+
 }
