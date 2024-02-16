@@ -1,12 +1,16 @@
 package server.Service;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import server.Database.UserRepository;
+import server.Entity.Book;
 import server.Entity.Response;
 import server.Entity.User;
 import server.Entity.UserRole;
+import server.Response.ResponseText;
 
 import java.util.List;
 
@@ -45,8 +49,17 @@ public class UserService {
         return null;
     }
 
-    public long updateUser(User user, long id) {
-        User userToUpdate = new User(id, user.getName(),user.getPassword(),user.getEmail(),1, user.getRole());
-        return userRepository.save(userToUpdate).getId();
+    public ResponseEntity<ResponseText> updateUser(User user, long id) {
+        if(userRepository.findById(id).isPresent()){
+            User userToSave = userRepository.findById(id).get();
+            userToSave.setName(user.getName());
+            userToSave.setEmail(user.getEmail());
+            userToSave.setPassword(user.getPassword());
+            userToSave.setEnabled(user.getEnabled());
+            userToSave.setRole(user.getRole());
+            userRepository.save(userToSave);
+            return new ResponseEntity<>(new ResponseText("Modification Successful!"), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(new ResponseText("Invalid Input!"), HttpStatus.BAD_REQUEST);
     }
 }

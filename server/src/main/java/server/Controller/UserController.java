@@ -1,8 +1,10 @@
 package server.Controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import server.Entity.Response;
 import server.Entity.User;
+import server.Response.ResponseText;
 import server.Service.UserService;
 
 import java.security.Principal;
@@ -44,7 +46,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/updateuser", method = RequestMethod.POST)
-    public long UpdateUser(@RequestBody User user, @PathVariable Long id) {
+    public ResponseEntity<ResponseText> UpdateUser(@RequestBody User user, @PathVariable Long id) {
         return userService.updateUser(user,id);
     }
 
