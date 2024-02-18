@@ -6,7 +6,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import server.Database.UserRepository;
-import server.Entity.Book;
 import server.Entity.Response;
 import server.Entity.User;
 import server.Entity.UserRole;

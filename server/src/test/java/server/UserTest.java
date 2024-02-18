@@ -44,7 +44,6 @@ public class UserTest {
         List<User> users1 = userController.listUsers();
 
         userController.createUser(new User("user2", "user2", "user2@gmail.com", 1, UserRole.ROLE_USER.name()));
-
         List<User> users2 = userController.listUsers();
 
         assertEquals(users1.size(), 3);
@@ -58,7 +57,6 @@ public class UserTest {
         assertEquals(users1.size(), 5);
 
         User users3 = userController.listUsers().get(5);
-
         userService.deleteUser(users3);
         List<User> users2 = userController.listUsers();
 
@@ -68,5 +66,13 @@ public class UserTest {
     public void testGetUser(){
         User user = userService.getUser(1);
         assertEquals(user.getName(), "admin");
+    }
+
+    public void testUpdateUser() {
+        List<User> users1 = userController.listUsers();
+
+        User userToUpdate = users1.get(1);
+        userController.updateUser(new User("user4", "user4", "user4@gmail.com", 1, UserRole.ROLE_USER.name()),userToUpdate.getId());
+        assertEquals(userToUpdate.getName(), "user4");
     }
 }

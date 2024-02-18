@@ -46,7 +46,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/updateuser", method = RequestMethod.POST)
-    public ResponseEntity<ResponseText> UpdateUser(@RequestBody User user, @PathVariable Long id) {
+    public ResponseEntity<ResponseText> updateUser(@RequestBody User user, @PathVariable Long id) {
         return userService.updateUser(user,id);
     }
 
