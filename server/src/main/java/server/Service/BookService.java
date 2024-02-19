@@ -43,7 +43,7 @@ public class BookService {
         if(bookRepository.findById(id).isPresent()){
             Book bookToSave = bookRepository.findById(id).get();
             bookToSave.setAuthor(book.getAuthor());
-            bookToSave.setTitle(book.getTitle());
+            bookToSave.settitle(book.gettitle());
             bookToSave.setPrice(book.getPrice());
             bookRepository.save(bookToSave);
             return new ResponseEntity<>(new ResponseText("Modification Successful!"), HttpStatus.OK);
