@@ -9,11 +9,18 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String Author;
-    private String Title;
+    private String author;
+    private String title;
     private String imgsrc;
     private String synopsys;
     private int price;
+
+
+    public Book(String author, String title, int price) {
+        this.author = author;
+        this.title = title;
+        this.price = price;
+    }
 
     public Long getId() {
         return id;
@@ -24,19 +31,19 @@ public class Book {
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 
     public void setAuthor(String author) {
-        Author = author;
+        this.author = author;
     }
 
-    public String getTitle() {
-        return Title;
+    public String gettitle() {
+        return title;
     }
 
-    public void setTitle(String title) {
-        Title = title;
+    public void settitle(String title) {
+        this.title = title;
     }
 
     public String getImgsrc() {
