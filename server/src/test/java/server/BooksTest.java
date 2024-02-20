@@ -42,6 +42,7 @@ public class BooksTest {
                 .andExpect(content().json("{\"author\":\"Szophoklész\",\"title\":\"Antigoné\"}"));
     }
 
+    @Test
     public void createBookTest() {
 
         List<Book> bookList = bookService.listBooks();
@@ -53,6 +54,20 @@ public class BooksTest {
 
         assertEquals(bookList.size(), 4);
     }
+
+    public void deleteBookTest() {
+        List<Book> bookList = bookService.listBooks();
+
+        assertEquals(bookList.size(), 3);
+
+        bookService.deleteBook(2L);
+
+        assertEquals(bookList.size(), 2);
+    }
+
+
+
+
 
 
 }
