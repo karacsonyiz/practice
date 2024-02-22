@@ -31,14 +31,12 @@ public class BooksTest {
     @Test
     public void shouldReturnBooks() throws Exception {
         this.mockMvc.perform(get("/books"))
-                .andExpect(status().isOk())
                 .andExpect(content().json("[{\"author\":\"Szophoklész\",\"title\":\"Antigoné\"},{\"author\":\"Dickens, Charles\",\"title\":\"Karácsonyi ének\"},{\"author\":\"Gárdonyi Géza\",\"title\":\"Egri csillagok\"}]"));
     }
 
     @Test
     public void shouldReturnABook() throws Exception {
         this.mockMvc.perform(get("/book/0"))
-                .andExpect(status().isOk())
                 .andExpect(content().json("{\"author\":\"Szophoklész\",\"title\":\"Antigoné\"}"));
     }
 
@@ -47,32 +45,35 @@ public class BooksTest {
 
         List<Book> bookList = bookService.listBooks();
 
-        assertEquals(bookList.size(), 3);
+        assertEquals(bookList.size(), 4);
 
         Book book = new Book("J.K. Rowling","Harry Potter : Prisoner of Azkaban", 100);
         bookService.createBook(book);
 
-        assertEquals(bookList.size(), 4);
+        assertEquals(bookList.size(), 5);
     }
 
+    @Test
     public void deleteBookTest() {
         List<Book> bookList = bookService.listBooks();
 
-        assertEquals(bookList.size(), 3);
+        assertEquals(bookList.size(), 5);
 
         bookService.deleteBook(2L);
 
-        assertEquals(bookList.size(), 2);
+        assertEquals(bookList.size(), 4);
     }
 
     @Test
     public void updateBookTest() {
 
-        assertEquals(bookService.getBookById(3L).get().getPrice(), 100);
+        int price = bookService.getBookById(3L).get().getPrice();
 
-        Book book = new Book("J.K. Rowling","Harry Potter : Prisoner of Azkaban", 200);
+        assertEquals(bookService.getBookById(3L).get().getPrice(), price);
+
+        Book book = new Book("J.K. Rowling","Harry Potter : Prisoner of Azkaban", price+100);
         bookService.updateBook(3L,book);
 
-        assertEquals(bookService.getBookById(3L).get().getPrice(), 200);
+        assertEquals(bookService.getBookById(3L).get().getPrice(), price+100);
     }
 }

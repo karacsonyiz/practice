@@ -15,6 +15,8 @@ public class Book {
     private String synopsys;
     private int price;
 
+    public Book() {
+    }
 
     public Book(String author, String title, int price) {
         this.author = author;
