@@ -65,9 +65,14 @@ public class BooksTest {
         assertEquals(bookList.size(), 2);
     }
 
+    @Test
+    public void updateBookTest() {
 
+        assertEquals(bookService.getBookById(3L).get().getPrice(), 100);
 
+        Book book = new Book("J.K. Rowling","Harry Potter : Prisoner of Azkaban", 200);
+        bookService.updateBook(3L,book);
 
-
-
+        assertEquals(bookService.getBookById(3L).get().getPrice(), 200);
+    }
 }
