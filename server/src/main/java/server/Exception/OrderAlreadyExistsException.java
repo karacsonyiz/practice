@@ -2,7 +2,7 @@ package server.Exception;
 
 public class OrderAlreadyExistsException extends RuntimeException {
 
-    public OrderAlreadyExistException(String message) {
+    public OrderAlreadyExistsException(String message) {
         super(message);
     }
 }
