@@ -1,8 +1,6 @@
 package server.Entity;
 
-import jakarta.persistence.Access;
-import jakarta.persistence.AccessType;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -10,6 +8,9 @@ import java.time.LocalDateTime;
 @Access(value= AccessType.FIELD)
 public class Feedback {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private int ratingScore;
     private String ratingText;
     private LocalDateTime ratingDate;
@@ -63,5 +64,13 @@ public class Feedback {
 
     public void setCanEditOrDelete(boolean canEditOrDelete) {
         this.canEditOrDelete = canEditOrDelete;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

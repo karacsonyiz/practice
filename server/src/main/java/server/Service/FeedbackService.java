@@ -34,6 +34,11 @@ public class FeedbackService {
         return id;
     }
 
+    public long createFeedback(Feedback feedback){
+        feedbackRepository.save(feedback);
+        return feedback.getId();
+    }
+
     public ResponseEntity<ResponseText> updateFeedback(Long id, Feedback feedback){
 
         if(feedbackRepository.findById(id).isPresent()){
