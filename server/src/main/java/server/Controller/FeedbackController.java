@@ -1,7 +1,12 @@
 package server.Controller;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import server.Entity.Feedback;
+import server.Response.ResponseText;
 import server.Service.FeedbackService;
+
+import java.util.List;
 
 @RestController
 public class FeedbackController {
@@ -10,6 +15,34 @@ public class FeedbackController {
 
     public FeedbackController(FeedbackService feedbackService) {
         this.feedbackService = feedbackService;
+    }
+
+    @RequestMapping("/feedbacks")
+    public List<Feedback> listFeedbacks(){
+        return feedbackService.listFeedbacks();
+    }
+
+    @RequestMapping("/feedback/{id}")
+    public Feedback getFeedback(@PathVariable Long id){
+        if(feedbackService.getFeedbackById(id).isPresent()){
+            return feedbackService.getFeedbackById(id).get();
+        }
+        return null;
+    }
+
+    @RequestMapping(value = "/createfeedback", method = RequestMethod.POST)
+    public long createFeedback(@RequestBody Feedback feedback) {
+        return feedbackService.createFeedback(feedback);
+    }
+
+    @RequestMapping("/feedback/delete/{id}")
+    public Long deleteFeedback(@PathVariable Long id){
+        return feedbackService.deleteFeedback(id);
+    }
+
+    @RequestMapping("/feedback/update/{id}")
+    public ResponseEntity<ResponseText> updateFeedback(@RequestBody Feedback feedback, @PathVariable Long id){
+        return feedbackService.updateFeedback(id,feedback);
     }
 
 
