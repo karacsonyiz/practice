@@ -14,6 +14,14 @@ public class Dashboard {
         this.orderCount = orderCount;
     }
 
+    public Dashboard(long userCount, long bookCount) {
+        this.userCount = userCount;
+        this.bookCount = bookCount;
+    }
+
+    public Dashboard() {
+    }
+
     public long getUserCount() {
         return userCount;
     }
