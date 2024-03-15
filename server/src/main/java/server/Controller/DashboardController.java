@@ -9,7 +9,7 @@ import server.Service.DashboardService;
 @RestController
 public class DashboardController {
 
-    private DashboardService dashboardService;
+    private final DashboardService dashboardService;
 
     public DashboardController(DashboardService dashboardService) {
         this.dashboardService = dashboardService;
