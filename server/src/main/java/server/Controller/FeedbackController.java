@@ -3,9 +3,11 @@ package server.Controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import server.Entity.Feedback;
+import server.Entity.User;
 import server.Response.ResponseText;
 import server.Service.FeedbackService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -44,6 +46,8 @@ public class FeedbackController {
     public ResponseEntity<ResponseText> updateFeedback(@RequestBody Feedback feedback, @PathVariable Long id){
         return feedbackService.updateFeedback(id,feedback);
     }
-
-
+    @RequestMapping("/feedback/test")
+    public ResponseEntity<ResponseText> testFeedback(){
+            return feedbackService.testFeedback();
+        }
 }

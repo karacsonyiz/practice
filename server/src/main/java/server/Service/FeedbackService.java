@@ -5,9 +5,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import server.Database.FeedbackRepository;
+import server.Database.UserRepository;
 import server.Entity.Feedback;
+import server.Entity.User;
 import server.Response.ResponseText;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,9 +19,11 @@ public class FeedbackService {
 
     @Autowired
     private final FeedbackRepository feedbackRepository;
+    private final UserRepository userRepository;
 
-    public FeedbackService(FeedbackRepository feedbackRepository) {
+    public FeedbackService(FeedbackRepository feedbackRepository, UserRepository userRepository) {
         this.feedbackRepository = feedbackRepository;
+        this.userRepository = userRepository;
     }
 
     public List<Feedback> listFeedbacks(){
@@ -37,6 +42,12 @@ public class FeedbackService {
     public long createFeedback(Feedback feedback){
         feedbackRepository.save(feedback);
         return feedback.getId();
+    }
+
+    public ResponseEntity<ResponseText> testFeedback(){
+        User testUser = userRepository.findById(2L).get();
+        Feedback testFeedback = new Feedback(1,"test", LocalDateTime.now(),testUser);
+        return new ResponseEntity<>(new ResponseText("Modification Successful!"), HttpStatus.OK);
     }
 
     public ResponseEntity<ResponseText> updateFeedback(Long id, Feedback feedback){
