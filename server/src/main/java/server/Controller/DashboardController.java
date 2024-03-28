@@ -15,7 +15,7 @@ public class DashboardController {
         this.dashboardService = dashboardService;
     }
 
-    @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
+    @RequestMapping(value = "/dashboard/create", method = RequestMethod.GET)
     public Dashboard createDashboard() {
         return dashboardService.createDashboard();
     }
