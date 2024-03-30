@@ -1,5 +1,7 @@
 package server.Service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -18,6 +20,8 @@ public class UserService {
 
     private final UserRepository userRepository;
 
+    public static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
+
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
@@ -33,11 +37,13 @@ public class UserService {
     public long createUser(User user){
         User createdUser = new User(user.getName(),passwordEncoder().encode(user.getPassword()),
                 user.getEmail(),1, UserRole.ROLE_USER.name());
+        LOGGER.info("User Created with id : " + user.getId());
         return userRepository.save(createdUser).getId();
     }
 
     public Response deleteUser(User user) {
         userRepository.delete(user);
+        LOGGER.info("User Deleted with id : " + user.getId());
         return new Response(true,"User " + user.getId() + " has been deleted");
     }
 
