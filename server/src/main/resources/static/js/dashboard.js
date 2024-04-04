@@ -14,5 +14,21 @@ function getDashboard(){
 
 function fillDashboardTable(jsonData) {
     console.log(jsonData)
-    let tbody = document.querySelector("#dashboardtbody");
+    const tbody = document.querySelector("#dashboardtbody");
+        tbody.innerHTML = "";
+        for(let i = 0;i < jsonData.length; i++){
+            tr = createRowForDashboard(jsonData[i]);
+            usersTable.appendChild(tr);
+        }
+}
+
+function createRowForDashboard(row){
+        let tr = document.createElement("tr");
+        let bookTd = document.createElement("td");
+        bookTd.innerHTML = row.book;
+        tr.appendChild(bookTd);
+        let userTd = document.createElement("td");
+        userTd.innerHTML = row.user;
+        tr.appendChild(userTd);
+        return tr;
 }
