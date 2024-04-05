@@ -15,11 +15,11 @@ function getDashboard(){
 function fillDashboardTable(jsonData) {
     console.log(jsonData)
     const tbody = document.querySelector("#dashboardtbody");
-        tbody.innerHTML = "";
-        for(let i = 0;i < jsonData.length; i++){
-            tr = createRowForDashboard(jsonData[i]);
-            usersTable.appendChild(tr);
-        }
+    tbody.innerHTML = "";
+    for(let i = 0;i < jsonData.length; i++){
+        tr = createRowForDashboard(jsonData[i]);
+        usersTable.appendChild(tr);
+    }
 }
 
 function createRowForDashboard(row){

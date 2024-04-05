@@ -13,7 +13,6 @@ console.log(principal.authorities[0].authority)
 function createBasket() {
 
     let id = document.querySelector("#loginId").value;
-
     console.log(id);
     fetch("/createbasket/" + id)
         .then(function(response) {
@@ -22,8 +21,6 @@ function createBasket() {
         .then(function(jsonData) {
             console.log(jsonData);
         }).catch(error => console.log(error));
-
-
 }
 
 
