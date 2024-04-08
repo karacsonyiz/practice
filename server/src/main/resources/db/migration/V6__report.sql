@@ -1,7 +1,8 @@
 CREATE TABLE report (
 id BIGINT auto_increment,
-user_id BIGINT,
-date DATETIME NOT NULL,
-CONSTRAINT pk_report PRIMARY KEY(id)
+month int NOT NULL,
+product_name varchar (255) NOT NULL,
+product_count int NOT NULL,
+product_price int NOT NULL,
+total_price int NOT NULL
 );
-
