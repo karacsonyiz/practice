@@ -1,9 +1,7 @@
 package server.Controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import server.Entity.Report;
-import server.Entity.User;
 import server.Service.ReportService;
 
 import java.util.List;
@@ -20,6 +18,24 @@ public class ReportController {
     @RequestMapping("/reports")
     public List<Report> listReports() {
         return reportService.listReports();
+    }
+
+    @RequestMapping("/report/{id}")
+    public Report getReport(@PathVariable int id){
+        if(reportService.getReportById(id).isPresent()){
+            return reportService.getReportById(id).get();
+        }
+        return null;
+    }
+
+    @RequestMapping(value = "/createreport", method = RequestMethod.POST)
+    public long createReport(@RequestBody Report report) {
+        return reportService.createReport(report);
+    }
+
+    @RequestMapping("/report/delete/{id}")
+    public int deleteReport(@PathVariable int id){
+        return reportService.deleteReport(id);
     }
 
 
