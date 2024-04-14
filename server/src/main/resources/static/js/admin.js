@@ -244,6 +244,22 @@ function fillBookTable(jsonData){
             booksTable.appendChild(tr);
         }
 }
+function getReports() {
+        fetch("/reports")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(jsonData) {
+                fillReportTable(jsonData);
+                console.log(jsonData);
+            }).catch(error => console.log(error));
+}
+
+function fillReportTable(reports) {
+console.log(reports)
+}
+
+
 
 function fillUserTable(jsonData){
         const usersTable = document.querySelector("#usersTable");
