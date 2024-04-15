@@ -255,6 +255,24 @@ function getReports() {
             }).catch(error => console.log(error));
 }
 
+function createReport(report) {
+
+     fetch("createreport", {
+                 method: "POST",
+                 headers: {
+                     "Content-Type": "application/json; charset=utf-8"
+                         },
+                 body: JSON.stringify(report)
+        }).then(function(response) {
+                   return response.json();
+               })
+               .then(function(jsonData) {
+                   setCreateNotification(true,"Report");
+               })
+               .catch(error => console.log(error));
+           return false;
+}
+
 function fillReportTable(reports) {
 console.log(reports)
 }
