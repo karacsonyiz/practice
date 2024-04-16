@@ -274,7 +274,13 @@ function createReport(report) {
 }
 
 function fillReportTable(reports) {
-console.log(reports)
+    console.log(reports)
+    const reportTable = document.querySelector("#reportTable");
+    reportTable.innerHTML = "";
+        for(let i = 0;i < reports.length; i++){
+            tr = createRowForReport(reports[i]);
+            reportTable.appendChild(tr);
+        }
 }
 
 
