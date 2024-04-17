@@ -283,6 +283,14 @@ function fillReportTable(reports) {
         }
 }
 
+function createRowForReport(row){
+        let tr = document.createElement("tr");
+        let totalPriceTd = document.createElement("td");
+        totalPriceTd.innerHTML = row.totalPrice;
+        tr.appendChild(totalPriceTd);
+        return tr;
+}
+
 
 
 function fillUserTable(jsonData){
