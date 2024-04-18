@@ -68,7 +68,6 @@ function modifyBook(){
  }
 
  function modifyUser(){
-
     let name = document.querySelector("#nameInput").value;
     let password = document.querySelector("#passwordInput").value;
     let email = document.querySelector("#emailInput").value;
@@ -232,7 +231,6 @@ function getUsers() {
             })
             .then(function(jsonData) {
                 fillUserTable(jsonData);
-                console.log(jsonData);
             }).catch(error => console.log(error));
 }
 
@@ -251,12 +249,10 @@ function getReports() {
             })
             .then(function(jsonData) {
                 fillReportTable(jsonData);
-                console.log(jsonData);
             }).catch(error => console.log(error));
 }
 
 function createReport(report) {
-
      fetch("createreport", {
                  method: "POST",
                  headers: {
@@ -274,7 +270,6 @@ function createReport(report) {
 }
 
 function fillReportTable(reports) {
-    console.log(reports)
     const reportTable = document.querySelector("#reportTable");
     reportTable.innerHTML = "";
         for(let i = 0;i < reports.length; i++){
@@ -282,11 +277,6 @@ function fillReportTable(reports) {
             reportTable.appendChild(tr);
         }
 }
-
-            <th>Product Price</th>
-            <th>Product Count</th>
-            <th>Product Name</th>
-            <th>Month</th>
 
 function createRowForReport(row){
         let tr = document.createElement("tr");
@@ -304,8 +294,6 @@ function createRowForReport(row){
         tr.appendChild(monthTd);
         return tr;
 }
-
-
 
 function fillUserTable(jsonData){
         const usersTable = document.querySelector("#usersTable");
