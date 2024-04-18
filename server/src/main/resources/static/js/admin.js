@@ -283,11 +283,25 @@ function fillReportTable(reports) {
         }
 }
 
+            <th>Product Price</th>
+            <th>Product Count</th>
+            <th>Product Name</th>
+            <th>Month</th>
+
 function createRowForReport(row){
         let tr = document.createElement("tr");
         let totalPriceTd = document.createElement("td");
         totalPriceTd.innerHTML = row.totalPrice;
         tr.appendChild(totalPriceTd);
+        let productCountTd = document.createElement("td");
+        productCountTd.innerHTML = row.productCount;
+        tr.appendChild(productCountTd);
+        let productNameTd = document.createElement("td");
+        productNameTd.innerHTML = row.productName;
+        tr.appendChild(productNameTd);
+        let monthTd = document.createElement("td");
+        monthTd.innerHTML = row.month;
+        tr.appendChild(monthTd);
         return tr;
 }
 
