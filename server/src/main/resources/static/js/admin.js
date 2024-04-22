@@ -339,8 +339,18 @@ function createRowForUsers(row){
         return tr;
 }
 
-function deleteUser(){
-console.log("delete");
+function deleteUser(user){
+        fetch("/deleteuser")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(jsonData) {
+                console.log(jsonData);
+                setDeleteNotification(jsonData);
+            }).catch(error => console.log(error));
+}
+
+function setDeleteNotification(jsonData){
 
 }
 
