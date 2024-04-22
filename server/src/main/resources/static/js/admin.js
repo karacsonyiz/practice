@@ -352,6 +352,8 @@ function deleteUser(user){
 
 function setDeleteNotification(jsonData){
 
+let notification = document.querySelector("#deleteNotification");
+notification.innerHTML = jsonData.message;
 }
 
 function getUser(){
