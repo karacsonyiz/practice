@@ -356,13 +356,13 @@ let notification = document.querySelector("#deleteNotification");
 notification.innerHTML = jsonData.message;
 }
 
-function getUser(){
+function user getUser(){
         fetch("/getuser")
             .then(function(response) {
                 return response.json();
             })
             .then(function(jsonData) {
-                console.log(jsonData);
+                return(jsonData);
             }).catch(error => console.log(error));
 }
 
