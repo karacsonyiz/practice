@@ -41,7 +41,8 @@ public class UserService {
         return userRepository.save(createdUser).getId();
     }
 
-    public Response deleteUser(User user) {
+    public Response deleteUser(Long id) {
+        User user = userRepository.findById(id).get();
         userRepository.delete(user);
         LOGGER.info("User Deleted with id : " + user.getId());
         return new Response(true,"User " + user.getId() + " has been deleted");

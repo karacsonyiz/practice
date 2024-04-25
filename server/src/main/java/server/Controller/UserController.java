@@ -36,8 +36,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/deleteuser", method = RequestMethod.GET)
-    public Response deleteUser(@RequestBody User user) {
-        return userService.deleteUser(user);
+    public Response deleteUser(@PathVariable Long id) {
+        return userService.deleteUser(id);
     }
 
     @RequestMapping(value = "/getuser", method = RequestMethod.GET)

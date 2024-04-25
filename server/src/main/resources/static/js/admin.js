@@ -7,6 +7,7 @@ window.onload = function(){
     getBooks();
     getUsers();
     getPrincipal();
+
 }
 
 function showBooks(){
@@ -340,7 +341,7 @@ function createRowForUsers(row){
 }
 
 function deleteUser(user){
-        fetch("/deleteuser")
+        fetch("/deleteuser/"+user)
             .then(function(response) {
                 return response.json();
             })
@@ -356,8 +357,8 @@ let notification = document.querySelector("#deleteNotification");
 notification.innerHTML = jsonData.message;
 }
 
-function user getUser(){
-        fetch("/getuser")
+function getUser(id){
+        fetch("/getuser"+id)
             .then(function(response) {
                 return response.json();
             })
