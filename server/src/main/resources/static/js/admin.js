@@ -357,7 +357,7 @@ let notification = document.querySelector("#deleteNotification");
 notification.innerHTML = jsonData.message;
 }
 
-function getUser(id){
+function jsonData getUser(id){
         fetch("/getuser"+id)
             .then(function(response) {
                 return response.json();
