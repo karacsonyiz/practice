@@ -42,10 +42,15 @@ public class UserService {
     }
 
     public Response deleteUser(Long id) {
-        User user = userRepository.findById(id).get();
-        userRepository.delete(user);
-        LOGGER.info("User Deleted with id : " + user.getId());
-        return new Response(true,"User " + user.getId() + " has been deleted");
+        if(userRepository.findById(id).isPresent()){
+            User user = userRepository.findById(id).get();
+            userRepository.delete(user);
+            LOGGER.info("User Deleted with id : " + user.getId());
+            return new Response(true,"User " + user.getId() + " has been deleted");
+        } else {
+            LOGGER.info("User can not be found");
+        }
+        return new Response(false,"User can not be found");
     }
 
     public User getUser(long id) {
