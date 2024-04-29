@@ -7,8 +7,9 @@ window.onload = function(){
     getBooks();
     getUsers();
     getPrincipal();
-
 }
+
+
 
 function showBooks(){
     getBooks();
@@ -69,9 +70,10 @@ function modifyBook(){
  }
 
  function modifyUser(){
-    let name = document.querySelector("#nameInput").value;
-    let password = document.querySelector("#passwordInput").value;
-    let email = document.querySelector("#emailInput").value;
+    let name = document.querySelector("#modifyNameInput").value;
+    let password = document.querySelector("#modifyPasswordInput").value;
+    let email = document.querySelector("#modifyEmailInput").value;
+    let id = document.querySelector("#userId").value;
 
     let user = {
                    "name": name,
@@ -352,7 +354,6 @@ function deleteUser(user){
 }
 
 function setDeleteNotification(jsonData){
-
 let notification = document.querySelector("#deleteNotification");
 notification.innerHTML = jsonData.message;
 }
