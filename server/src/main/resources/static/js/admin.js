@@ -400,6 +400,13 @@ function createRowForBooks(row){
         idContainer.setAttribute("style","display:none;");
         buttonTd.appendChild(editBtn);
         tr.appendChild(buttonTd);
+        let recommendTd = document.createElement("td");
+        let recommendBtn = document.createElement("button");
+        recommendBtn.setAttribute("id",row.id);
+        recommendBtn.innerHTML = "Recommend";
+        recommendBtn.addEventListener("click", function(){setRecommend(row.id);}, false);
+        recommendTd.appendChild(recommendBtn);
+        tr.appendChild(authorTd);
         return tr;
 }
 
@@ -419,5 +426,9 @@ function fillModal(jsonData){
     document.querySelector("#author").value = jsonData.author;
     document.querySelector("#title").value = jsonData.title;
     document.querySelector("#price").value = jsonData.price;
+}
+
+function setRecommend(data) {
+    console.log(data);
 }
 
