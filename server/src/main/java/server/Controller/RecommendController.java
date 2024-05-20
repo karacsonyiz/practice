@@ -44,4 +44,6 @@ public class RecommendController {
     public ResponseEntity<ResponseText> updateRecommendation(@RequestBody Recommend recommend, @PathVariable Long id){
         return recommendService.updateRecommend(id,recommend);
     }
+
+
 }
