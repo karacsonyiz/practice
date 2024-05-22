@@ -4,8 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
 
 @Entity
+@Data
 public class Report {
 
     @Id
@@ -26,69 +28,5 @@ public class Report {
         this.productCount = productCount;
         this.productPrice = productPrice;
         this.totalPrice = totalPrice;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(long totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public OrderStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(OrderStatus status) {
-        this.status = status;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public long getProductCount() {
-        return productCount;
-    }
-
-    public void setProductCount(long productCount) {
-        this.productCount = productCount;
-    }
-
-    public int getMonth() {
-        return month;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
-    public long getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(long productPrice) {
-        this.productPrice = productPrice;
     }
 }
