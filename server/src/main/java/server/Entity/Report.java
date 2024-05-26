@@ -14,14 +14,14 @@ public class Report {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private long totalPrice;
+    private final long id;
+    private final long totalPrice;
     private String date;
-    private int month;
+    private final int month;
     private OrderStatus status;
-    private String productName;
-    private long productCount;
-    private long productPrice;
+    private final String productName;
+    private final long productCount;
+    private final long productPrice;
 
     public Report(long id, String productName,int month,long productCount,long productPrice,long totalPrice) {
         this.id = id;
