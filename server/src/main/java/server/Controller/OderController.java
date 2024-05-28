@@ -1,7 +1,6 @@
 package server.Controller;
 
 import org.springframework.web.bind.annotation.*;
-import server.Entity.Book;
 import server.Entity.Order;
 import server.Service.OrderService;
 
@@ -32,5 +31,10 @@ public class OderController {
             return orderService.getOrderById(id).get();
         }
         return null;
+    }
+
+    @RequestMapping(value = "/deleteorder", method = RequestMethod.POST)
+    public long deleteOrder(@PathVariable Long id) {
+        return orderService.deleteOrder(id);
     }
 }
