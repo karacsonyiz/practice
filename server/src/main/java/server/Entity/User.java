@@ -13,17 +13,17 @@ public class User {
     private String email;
     private int enabled;
     @Enumerated(EnumType.STRING)
-    private final UserRole role = UserRole.ROLE_USER;
+    private UserRole role = UserRole.ROLE_USER;
 
     public User() {
     }
 
-    public User(Long id, String name, String password, String email, int enabled) {
-        this.id = id;
+    public User(String name, String password, String email, int enabled, String role) {
         this.name = name;
         this.password = password;
         this.email = email;
         this.enabled = enabled;
+        this.role = UserRole.valueOf(role);
     }
 
     public Long getId() {
@@ -68,5 +68,9 @@ public class User {
 
     public UserRole getRole() {
         return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
     }
 }
