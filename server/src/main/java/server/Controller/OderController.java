@@ -1,7 +1,10 @@
 package server.Controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import server.Entity.Book;
 import server.Entity.Order;
+import server.Response.ResponseText;
 import server.Service.OrderService;
 
 import java.util.List;
@@ -36,5 +39,10 @@ public class OderController {
     @RequestMapping(value = "/deleteorder", method = RequestMethod.POST)
     public long deleteOrder(@PathVariable Long id) {
         return orderService.deleteOrder(id);
+    }
+
+    @RequestMapping("/order/update/{id}")
+    public ResponseEntity<ResponseText> updateOrder(@RequestBody Order order, @PathVariable Long id){
+        return orderService.updateOrder(id,order);
     }
 }
