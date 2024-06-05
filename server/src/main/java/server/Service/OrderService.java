@@ -45,7 +45,9 @@ public class OrderService {
     public ResponseEntity<ResponseText> updateOrder(Long id, Order order){
 
         if(orderRepository.findById(id).isPresent()){
-            //impl
+            Order orderToSave = orderRepository.findById(id).get();
+            orderToSave.setUserId(order.getUserId());
+//
             return new ResponseEntity<>(new ResponseText("Modification Successful!"), HttpStatus.OK);
         }
         LOGGER.info("Order Modified with id : " + id);
