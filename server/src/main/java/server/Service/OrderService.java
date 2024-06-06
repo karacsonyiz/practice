@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import server.Database.OrderRepository;
-import server.Entity.Book;
 import server.Entity.Order;
 import server.Response.ResponseText;
 
@@ -43,11 +42,13 @@ public class OrderService {
     }
 
     public ResponseEntity<ResponseText> updateOrder(Long id, Order order){
-
         if(orderRepository.findById(id).isPresent()){
             Order orderToSave = orderRepository.findById(id).get();
             orderToSave.setUserId(order.getUserId());
-//
+            orderToSave.setDate(order.getDate());
+            orderToSave.setStatus(order.getStatus());
+            orderToSave.setDeliveryAddress(order.getDeliveryAddress());
+            orderRepository.save(orderToSave);
             return new ResponseEntity<>(new ResponseText("Modification Successful!"), HttpStatus.OK);
         }
         LOGGER.info("Order Modified with id : " + id);
