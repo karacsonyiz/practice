@@ -1,8 +1,6 @@
 package server.Controller;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import server.Entity.Basket;
 import server.Service.BasketService;
 
@@ -27,5 +25,10 @@ public class BasketController {
     public long addBasket(@PathVariable Long id) {
         System.out.println(id);
         return basketService.addBasket(id);
+    }
+
+    @RequestMapping(value = "/createbasket", method = RequestMethod.POST)
+    public long createBasket(@RequestBody Basket basket) {
+        return basketService.createBasket(basket);
     }
 }
