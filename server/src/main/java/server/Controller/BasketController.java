@@ -27,8 +27,12 @@ public class BasketController {
         return basketService.addBasket(id);
     }
 
-    @RequestMapping(value = "/createbasket", method = RequestMethod.POST)
-    public long createBasket(@RequestBody Basket basket) {
-        return basketService.createBasket(basket);
+    @RequestMapping("/basket/delete/{id}")
+    public Long deleteBasket(@PathVariable Long id){
+        return basketService.deleteBasket(id);
     }
+
+
+
+
 }
