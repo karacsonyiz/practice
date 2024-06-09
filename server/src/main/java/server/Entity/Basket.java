@@ -12,6 +12,9 @@ public class Basket {
     private long userId;
     private long bookId;
 
+    public Basket() {
+    }
+
     public Basket(Long id, long userId, long bookId) {
         this.id = id;
         this.userId = userId;
