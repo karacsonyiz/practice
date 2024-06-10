@@ -33,4 +33,9 @@ public class BasketService {
         return basket.getId();
     }
 
+    public Long deleteBasket(Long id){
+        basketRepository.deleteById(id);
+        //LOGGER.info("Book Deleted with id : " + id);
+        return id;
+    }
 }
