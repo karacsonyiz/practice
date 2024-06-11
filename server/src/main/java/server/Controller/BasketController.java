@@ -1,8 +1,9 @@
 package server.Controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import server.Entity.Basket;
-import server.Entity.Book;
+import server.Response.ResponseText;
 import server.Service.BasketService;
 
 @RestController
@@ -32,7 +33,9 @@ public class BasketController {
         return basketService.deleteBasket(id);
     }
 
-
-
+    @RequestMapping("/basket/update/{id}")
+    public ResponseEntity<ResponseText> updateBasket(@RequestBody Basket basket, @PathVariable Long id){
+        return basketService.updateBasket(id,basket);
+    }
 
 }

@@ -15,8 +15,6 @@ import java.util.Optional;
 public class BasketService {
 
     private final BasketRepository basketRepository;
-    private BookRepository bookRepository;
-    private UserRepository userRepository;
 
     public static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
