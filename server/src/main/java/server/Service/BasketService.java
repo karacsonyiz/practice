@@ -1,12 +1,13 @@
 package server.Service;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import server.Database.BasketRepository;
 import server.Database.BookRepository;
 import server.Database.UserRepository;
 import server.Entity.Basket;
-import server.Entity.Book;
 
 import java.util.Optional;
 
@@ -17,6 +18,8 @@ public class BasketService {
     private BookRepository bookRepository;
     private UserRepository userRepository;
 
+    public static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
+
     public BasketService(BasketRepository basketRepository) {
         this.basketRepository = basketRepository;
     }
@@ -25,17 +28,15 @@ public class BasketService {
         return basketRepository.findById(id);
     }
 
-    public long addBasket(Long id) {
-        Optional<Book> book = bookRepository.findById(id);
-        Basket basket = new Basket();
-        basket.setBookId(id);
+    public long addBasket(Basket basket) {
         basketRepository.save(basket);
+        LOGGER.info("Basket Created with id : " + basket.getId());
         return basket.getId();
     }
 
     public Long deleteBasket(Long id){
         basketRepository.deleteById(id);
-        //LOGGER.info("Book Deleted with id : " + id);
+        LOGGER.info("Book Deleted with id : " + id);
         return id;
     }
 }

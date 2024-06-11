@@ -2,6 +2,7 @@ package server.Controller;
 
 import org.springframework.web.bind.annotation.*;
 import server.Entity.Basket;
+import server.Entity.Book;
 import server.Service.BasketService;
 
 @RestController
@@ -22,9 +23,8 @@ public class BasketController {
     }
 
     @RequestMapping("/createbasket/{id}")
-    public long addBasket(@PathVariable Long id) {
-        System.out.println(id);
-        return basketService.addBasket(id);
+    public long addBasket(@RequestBody Basket basket) {
+        return basketService.addBasket(basket);
     }
 
     @RequestMapping("/basket/delete/{id}")
