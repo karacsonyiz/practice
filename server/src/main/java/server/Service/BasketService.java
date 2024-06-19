@@ -43,6 +43,11 @@ public class BasketService {
     }
 
     public ResponseEntity<ResponseText> updateBasket(Long id, Basket basket){
+
+        Basket basketToSave = basketRepository.findById(id).get();
+        basketToSave.setUserId(basket.getUserId());
+        basketToSave.setBookId(basket.getBookId());
+        basketRepository.save(basketToSave);
         LOGGER.info("Basket Modified with id : " + id);
         return new ResponseEntity<>(new ResponseText("Invalid Input!"), HttpStatus.BAD_REQUEST);
     }
