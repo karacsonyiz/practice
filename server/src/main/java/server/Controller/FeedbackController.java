@@ -46,8 +46,4 @@ public class FeedbackController {
     public ResponseEntity<ResponseText> updateFeedback(@RequestBody Feedback feedback, @PathVariable Long id){
         return feedbackService.updateFeedback(id,feedback);
     }
-    @RequestMapping("/feedback/test")
-    public ResponseEntity<ResponseText> testFeedback(){
-            return feedbackService.testFeedback();
-        }
 }

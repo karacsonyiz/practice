@@ -44,12 +44,6 @@ public class FeedbackService {
         return feedback.getId();
     }
 
-    public ResponseEntity<ResponseText> testFeedback(){
-        User testUser = userRepository.findById(2L).get();
-        Feedback testFeedback = new Feedback(1,"test", LocalDateTime.now(),testUser);
-        return new ResponseEntity<>(new ResponseText("Modification Successful!"), HttpStatus.OK);
-    }
-
     public ResponseEntity<ResponseText> updateFeedback(Long id, Feedback feedback){
 
         if(feedbackRepository.findById(id).isPresent()){
