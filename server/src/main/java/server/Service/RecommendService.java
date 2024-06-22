@@ -41,6 +41,7 @@ public class RecommendService {
 
 
     public ResponseEntity<ResponseText> updateRecommend(Long id, Recommend recommend){
+        //Impl
 
         return new ResponseEntity<>(new ResponseText("Invalid Input!"), HttpStatus.BAD_REQUEST);
     }
