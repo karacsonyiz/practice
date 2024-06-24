@@ -1,5 +1,7 @@
 package server.Service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ public class RecommendService {
 
     @Autowired
     private final RecommendRepository recommendRepository;
+    public static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
     public RecommendService(RecommendRepository recommendRepository) {
         this.recommendRepository = recommendRepository;
@@ -40,9 +43,15 @@ public class RecommendService {
     }
 
 
-    public ResponseEntity<ResponseText> updateRecommend(Long id, Recommend recommend){
-        //Impl
+    public ResponseEntity<ResponseText> updateRecommend(Integer id, Recommend recommend){
 
+        if(recommendRepository.findById(id).isPresent()){
+            Recommend recommendToSave = recommendRepository.findById(id).get();
+            recommendToSave.setId(id);
+            recommendRepository.save(recommendToSave);
+            return new ResponseEntity<>(new ResponseText("Modification Successful!"), HttpStatus.OK);
+        }
+        LOGGER.info("Recommend Modified with id : " + id);
         return new ResponseEntity<>(new ResponseText("Invalid Input!"), HttpStatus.BAD_REQUEST);
     }
 }
