@@ -20,4 +20,8 @@ public class DashboardService {
         return new Dashboard(userService.listUsers().size(),bookService.listBooks().size());
     }
 
+    public Dashboard createDashboardWithOrderCount(){
+        return new Dashboard(userService.listUsers().size(),bookService.listBooks().size(),1,1);
+    }
+
 }
