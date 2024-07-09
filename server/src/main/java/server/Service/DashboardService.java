@@ -2,6 +2,7 @@ package server.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import server.Database.OrderRepository;
 import server.Pojo.Dashboard;
 
 @Service
@@ -10,6 +11,7 @@ public class DashboardService {
     @Autowired
     private final UserService userService;
     private final BookService bookService;
+    private final OrderRepository orderRepository;
 
     public DashboardService(UserService userService, BookService bookService) {
         this.userService = userService;
