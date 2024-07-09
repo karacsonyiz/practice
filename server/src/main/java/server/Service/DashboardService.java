@@ -13,9 +13,10 @@ public class DashboardService {
     private final BookService bookService;
     private final OrderRepository orderRepository;
 
-    public DashboardService(UserService userService, BookService bookService) {
+    public DashboardService(UserService userService, BookService bookService,OrderRepository orderRepository) {
         this.userService = userService;
         this.bookService = bookService;
+        this.orderRepository = orderRepository;
     }
 
     public Dashboard createDashboard() {
@@ -23,7 +24,7 @@ public class DashboardService {
     }
 
     public Dashboard createDashboardWithOrderCount(){
-        return new Dashboard(userService.listUsers().size(),bookService.listBooks().size(),1,1);
+        return new Dashboard(userService.listUsers().size(),bookService.listBooks().size(),1,orderRepository.count());
     }
 
 }
