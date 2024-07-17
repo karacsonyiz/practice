@@ -4,6 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import server.Database.SurveyRepository;
+import server.Entity.Survey;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SurveyService {
@@ -14,4 +18,14 @@ public class SurveyService {
     public SurveyService(SurveyRepository surveyRepository) {
         this.surveyRepository = surveyRepository;
     }
+
+    public List<Survey> listSurveys(){
+        return surveyRepository.findAll();
+    }
+
+    public Optional<Survey> getSurveyById(Long id){
+        return surveyRepository.findById(id);
+    }
+
+    
 }
