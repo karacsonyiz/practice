@@ -2,9 +2,12 @@ package server.Service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import server.Database.SurveyRepository;
 import server.Entity.Survey;
+import server.Response.ResponseText;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,5 +42,15 @@ public class SurveyService {
         return id;
     }
 
-    
+    public ResponseEntity<ResponseText> updateSurvey(Long id, Survey survey){
+        if(surveyRepository.findById(id).isPresent()){
+            Survey surveyToSave = surveyRepository.findById(id).get();
+            surveyToSave.setQuestion(survey.getQuestion());
+            surveyToSave.setAnswer(survey.getAnswer());
+            surveyRepository.save(surveyToSave);
+            return new ResponseEntity<>(new ResponseText("Modification Successful!"), HttpStatus.OK);
+        }
+        LOGGER.info("Survey Modified with id : " + id);
+        return new ResponseEntity<>(new ResponseText("Invalid Input!"), HttpStatus.BAD_REQUEST);
+    }
 }
