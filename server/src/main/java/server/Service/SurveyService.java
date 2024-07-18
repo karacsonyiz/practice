@@ -27,5 +27,17 @@ public class SurveyService {
         return surveyRepository.findById(id);
     }
 
+    public long createSurvey(Survey survey){
+        surveyRepository.save(survey);
+        LOGGER.info("Survey Created with id : " + survey.getId());
+        return survey.getId();
+    }
+
+    public Long deleteSurvey(Long id){
+        surveyRepository.deleteById(id);
+        LOGGER.info("Survey Deleted with id : " + id);
+        return id;
+    }
+
     
 }
