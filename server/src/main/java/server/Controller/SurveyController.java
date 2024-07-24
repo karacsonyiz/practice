@@ -27,6 +27,11 @@ public class SurveyController {
         return surveyService.deleteSurvey(id);
     }
 
+    @RequestMapping(value = "/getsurvey", method = RequestMethod.GET)
+    public Survey getSurvey(@PathVariable Long id) {
+        return surveyService.getSurveyById(id).get();
+    }
+
 
 
 
