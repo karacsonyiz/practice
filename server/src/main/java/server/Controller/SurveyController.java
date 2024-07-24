@@ -1,11 +1,13 @@
 package server.Controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import server.Entity.Survey;
+import server.Response.ResponseText;
 import server.Service.SurveyService;
 
 @Controller
@@ -32,7 +34,8 @@ public class SurveyController {
         return surveyService.getSurveyById(id).get();
     }
 
-
-
-
+    @RequestMapping(value = "/updatesurvey", method = RequestMethod.POST)
+    public ResponseEntity<ResponseText> updateSurvey(@RequestBody Survey survey, @PathVariable Long id) {
+        return surveyService.updateSurvey(id,survey);
+    }
 }
