@@ -10,6 +10,8 @@ import server.Entity.Survey;
 import server.Response.ResponseText;
 import server.Service.SurveyService;
 
+import java.util.List;
+
 @Controller
 public class SurveyController {
 
@@ -17,6 +19,11 @@ public class SurveyController {
 
     public SurveyController(SurveyService surveyService) {
         this.surveyService = surveyService;
+    }
+
+    @RequestMapping("/surveys")
+    public List<Survey> listSurveys() {
+        return surveyService.listSurveys();
     }
 
     @RequestMapping(value = "/createsurvey", method = RequestMethod.POST)
@@ -38,4 +45,6 @@ public class SurveyController {
     public ResponseEntity<ResponseText> updateSurvey(@RequestBody Survey survey, @PathVariable Long id) {
         return surveyService.updateSurvey(id,survey);
     }
+
+
 }
