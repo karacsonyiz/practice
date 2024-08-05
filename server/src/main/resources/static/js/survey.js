@@ -14,9 +14,17 @@ function loadSurveys() {
             }).catch(error => console.log(error));
 }
 
-function fillSurveyTable(jsonData) {
-    console.log(jsonData)
-    let surveyRowDiv = document.querySelector("#surveyRowDiv");
+function fillSurveyTable(surveys) {
+    console.log(surveys);
+    const surveysTable = document.querySelector("#surveysTable");
+    surveysTable.innerHTML = "";
 
-    
+    for(let i = 0;i < surveys.length; i++){
+        tr = createRowForSurvey(surveys[i]);
+        surveysTable.appendChild(tr);
+    }
+}
+
+function createRowForSurvey(data){
+//
 }
