@@ -30,5 +30,8 @@ function createRowForSurvey(data){
         let questionTd = document.createElement("td");
         questionTd.innerHTML = row.question;
         tr.appendChild(questionTd);
+        let answerTd = document.createElement("td");
+        answerTd.innerHTML = row.answer;
+        tr.appendChild(answerTd);
         return tr;
 }
