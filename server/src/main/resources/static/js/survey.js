@@ -26,5 +26,9 @@ function fillSurveyTable(surveys) {
 }
 
 function createRowForSurvey(data){
-//
+        let tr = document.createElement("tr");
+        let questionTd = document.createElement("td");
+        questionTd.innerHTML = row.question;
+        tr.appendChild(questionTd);
+        return tr;
 }
