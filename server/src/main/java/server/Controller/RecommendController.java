@@ -41,7 +41,7 @@ public class RecommendController {
     }
 
     @RequestMapping("/recommend/update/{id}")
-    public ResponseEntity<ResponseText> updateRecommendation(@RequestBody Recommend recommend, @PathVariable Long id){
+    public ResponseEntity<ResponseText> updateRecommendation(@RequestBody Recommend recommend, @PathVariable int id){
         return recommendService.updateRecommend(id,recommend);
     }
 
