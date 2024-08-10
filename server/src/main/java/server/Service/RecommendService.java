@@ -34,11 +34,13 @@ public class RecommendService {
 
     public int deleteRecommend(int id){
         recommendRepository.deleteById(id);
+        LOGGER.info("Recommend Deleted with id : " + id);
         return id;
     }
 
     public long createRecommend(Recommend recommend){
         recommendRepository.save(recommend);
+        LOGGER.info("Recommend Created with id : " + recommend.getId());
         return recommend.getId();
     }
 
