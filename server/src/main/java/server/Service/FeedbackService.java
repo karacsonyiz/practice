@@ -1,5 +1,7 @@
 package server.Service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,7 @@ public class FeedbackService {
     @Autowired
     private final FeedbackRepository feedbackRepository;
     private final UserRepository userRepository;
+    public static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
     public FeedbackService(FeedbackRepository feedbackRepository, UserRepository userRepository) {
         this.feedbackRepository = feedbackRepository;
@@ -36,11 +39,13 @@ public class FeedbackService {
 
     public Long deleteFeedback(Long id){
         feedbackRepository.deleteById(id);
+        LOGGER.info("Feedback Deleted with id : " + id);
         return id;
     }
 
     public long createFeedback(Feedback feedback){
         feedbackRepository.save(feedback);
+        LOGGER.info("Feedback Created with id : " + feedback.getId());
         return feedback.getId();
     }
 
@@ -54,6 +59,7 @@ public class FeedbackService {
             feedbackToSave.setRatingText(feedback.getRatingText());
             feedbackToSave.setCanEditOrDelete(feedback.isCanEditOrDelete());
             feedbackRepository.save(feedbackToSave);
+            LOGGER.info("Feedback Updated with id : " + feedback.getId());
             return new ResponseEntity<>(new ResponseText("Modification Successful!"), HttpStatus.OK);
         }
         return new ResponseEntity<>(new ResponseText("Invalid Input!"), HttpStatus.BAD_REQUEST);
