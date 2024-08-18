@@ -15,6 +15,8 @@ public class Book {
     private String synopsys;
     private int price;
 
+
+
     public Book(Long id, String author, String title, String imgsrc, String synopsys, int price) {
         this.id = id;
         this.author = author;

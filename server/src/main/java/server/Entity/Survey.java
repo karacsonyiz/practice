@@ -15,6 +15,9 @@ public class Survey {
         this.answer = answer;
     }
 
+    public Survey() {
+    }
+
     public long getId() {
         return id;
     }
